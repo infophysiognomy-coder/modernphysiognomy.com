@@ -254,6 +254,30 @@
   </div>
 </section>
 
+<!-- ░░ FREE APP ░░ -->
+<section id="app" class="bg-ivory px-5 py-24 sm:px-8 lg:px-12 lg:py-32">
+  <div class="reveal mx-auto max-w-3xl overflow-hidden rounded-[4px] border border-line bg-paper p-9 text-center sm:p-14">
+    <span class="text-[11px] tracking-luxe text-bronzeDeep">FREE WEB APP ・ お試し無料</span>
+    <h2 class="mt-6 font-display text-4xl font-light leading-tight text-ink sm:text-5xl">
+      気になるあの人と、<br class="hidden sm:block"/><em class="italic text-bronze">顔の相性</em>診断。
+    </h2>
+    <p class="mx-auto mt-6 max-w-xl font-mincho text-[15px] leading-loose tracking-wide text-taupe">
+      2人の顔写真から、観相学の視点で相性を読み解く無料Webアプリ。登録不要、その場ですぐにお試しいただけます。
+    </p>
+    <div class="mx-auto mt-8 flex max-w-md items-start gap-3 rounded-[3px] border border-line bg-ivory/70 p-4 text-left">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="mt-0.5 flex-none text-bronzeDeep"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+      <p class="text-[12px] leading-relaxed text-taupe">
+        アップロードされた<span class="text-ink">画像データは保存・蓄積されません。</span>診断後はサーバーに残らないため、安心してご利用いただけます。
+      </p>
+    </div>
+    <a href="https://kaomirucouple.netlify.app" target="_blank" rel="noopener"
+       class="group mt-9 inline-flex w-full items-center justify-center gap-3 rounded-full bg-bronze px-10 py-4 text-xs tracking-wide2 text-charcoal shadow-[0_18px_40px_-18px_rgba(197,163,91,.6)] transition-all duration-300 hover:bg-charcoal hover:text-cream sm:w-auto">
+      無料で相性診断を試す
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" class="transition-transform duration-300 group-hover:translate-x-1"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="8 7 17 7 17 16"/></svg>
+    </a>
+  </div>
+</section>
+
 <!-- ░░ READING / PRICING ░░ -->
 <section id="reading" class="bg-cream px-5 py-28 sm:px-8 lg:px-12 lg:py-40">
   <div class="mx-auto max-w-7xl">
@@ -424,8 +448,12 @@
         <a href="mailto:info.physiognomy@gmail.com" class="link-underline mt-10 inline-block pb-1 font-display text-2xl italic text-bronze">info.physiognomy@gmail.com</a>
       </div>
 
-      <form class="reveal d1 lg:col-span-7" id="contactForm" novalidate>
+      <form class="reveal d1 lg:col-span-7" id="contactForm" action="https://formsubmit.co/info.physiognomy@gmail.com" method="POST" novalidate>
         <div class="grid grid-cols-1 gap-7">
+          <input type="hidden" name="_subject" value="【Modern Physiognomy】サイトからのお問い合わせ" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="text" name="_honey" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true" />
           <div>
             <label for="name" class="block text-[11px] tracking-wide2 text-cream/60">お名前 <span class="text-bronze">*</span></label>
             <input id="name" name="name" type="text" required
@@ -450,7 +478,7 @@
             送信する
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="transition-transform duration-300 group-hover:translate-x-1"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg>
           </button>
-          <p id="formNote" class="hidden text-[13px] text-bronze">送信ありがとうございます。デモ表示のため、実際には送信されません。</p>
+          <p id="formNote" class="hidden text-[13px] text-bronze">お問い合わせありがとうございます。通常2日以内にご返信いたします。</p>
         </div>
       </form>
     </div>
@@ -554,12 +582,32 @@
   document.querySelectorAll('[data-modal-close]').forEach(b=>b.addEventListener('click', closeModal));
   document.addEventListener('keydown', e=>{ if(e.key==='Escape'){ closeModal(); close(); } });
 
-  // demo form
-  document.getElementById('contactForm').addEventListener('submit', e=>{
+  // contact form -> FormSubmit (AJAX)
+  document.getElementById('contactForm').addEventListener('submit', async (e)=>{
     e.preventDefault();
+    const form = e.target;
     const note = document.getElementById('formNote');
-    note.classList.remove('hidden');
-    e.target.querySelector('button[type="submit"]').textContent='送信しました';
+    const btn = form.querySelector('button[type="submit"]');
+    if(!form.checkValidity()){ form.reportValidity(); return; }
+    btn.disabled = true;
+    btn.textContent = '送信中…';
+    try{
+      const res = await fetch('https://formsubmit.co/ajax/info.physiognomy@gmail.com', {
+        method:'POST',
+        headers:{ 'Content-Type':'application/json', 'Accept':'application/json' },
+        body: JSON.stringify(Object.fromEntries(new FormData(form)))
+      });
+      if(!res.ok) throw new Error('failed');
+      note.textContent = 'お問い合わせありがとうございます。通常2日以内にご返信いたします。';
+      note.classList.remove('hidden');
+      btn.textContent = '送信しました';
+      form.reset();
+    }catch(err){
+      note.textContent = '送信に失敗しました。お手数ですが info.physiognomy@gmail.com まで直接ご連絡ください。';
+      note.classList.remove('hidden');
+      btn.disabled = false;
+      btn.textContent = '送信する';
+    }
   });
 </script>
 </body>
