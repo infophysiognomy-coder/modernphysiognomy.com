@@ -1,31 +1,4 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>現代観相学 — Modern Physiognomy</title>
-<meta name="description" content="現代観相学 Modern Physiognomy — 人相・人相占いの先にある、顔から内面と印象を読み解く外見分析メソッド。占いではなく、15年・国内外1万人以上の実践から生まれた現代の観相学。お試し鑑定5,500円〜、オンライン全国対応。" />
-<meta name="keywords" content="現代観相学,観相学,人相,人相占い,顔分析,印象分析,顔の相性,Modern Physiognomy,メイク,TOMOKO" />
-<meta name="author" content="TOMOKO" />
-<meta name="robots" content="index, follow" />
-<link rel="canonical" href="https://modernphysiognomy.com/" />
-<meta property="og:site_name" content="現代観相学 Modern Physiognomy" />
-<meta property="og:title" content="現代観相学 Modern Physiognomy ｜ 人相・人相占いの先へ" />
-<meta property="og:description" content="YOUR FACE. YOUR STORY. 顔から内面と印象を読み解く外見分析メソッド。15年・国内外1万人以上の実践から生まれた現代の観相学。" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://modernphysiognomy.com/" />
-<meta property="og:image" content="https://modernphysiognomy.com/images/hero.jpg" />
-<meta property="og:image:alt" content="現代観相学 Modern Physiognomy" />
-<meta property="og:locale" content="ja_JP" />
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="現代観相学 Modern Physiognomy ｜ 人相・人相占いの先へ" />
-<meta name="twitter:description" content="顔から内面と印象を読み解く外見分析メソッド。15年・1万人以上の実践から生まれた現代の観相学。" />
-<meta name="twitter:image" content="https://modernphysiognomy.com/images/hero.jpg" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Shippori+Mincho:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
+<!DOCTYPE html><html lang="ja" data-astro-cid-j7pv25f6> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>現代観相学 — Modern Physiognomy</title><meta name="description" content="現代観相学 Modern Physiognomy — 人相・人相占いの先にある、顔から内面と印象を読み解く外見分析メソッド。占いではなく、15年・国内外1万人以上の実践から生まれた現代の観相学。お試し鑑定5,500円〜、オンライン全国対応。"><meta name="keywords" content="現代観相学,観相学,人相,人相占い,顔分析,印象分析,顔の相性,Modern Physiognomy,メイク,TOMOKO"><meta name="author" content="TOMOKO"><meta name="robots" content="index, follow"><link rel="canonical" href="https://modernphysiognomy.com/"><meta property="og:site_name" content="現代観相学 Modern Physiognomy"><meta property="og:title" content="現代観相学 Modern Physiognomy ｜ 人相・人相占いの先へ"><meta property="og:description" content="YOUR FACE. YOUR STORY. 顔から内面と印象を読み解く外見分析メソッド。15年・国内外1万人以上の実践から生まれた現代の観相学。"><meta property="og:type" content="website"><meta property="og:url" content="https://modernphysiognomy.com/"><meta property="og:image" content="https://modernphysiognomy.com/images/hero.jpg"><meta property="og:image:alt" content="現代観相学 Modern Physiognomy"><meta property="og:locale" content="ja_JP"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="現代観相学 Modern Physiognomy ｜ 人相・人相占いの先へ"><meta name="twitter:description" content="顔から内面と印象を読み解く外見分析メソッド。15年・1万人以上の実践から生まれた現代の観相学。"><meta name="twitter:image" content="https://modernphysiognomy.com/images/hero.jpg"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Shippori+Mincho:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"><script src="https://cdn.tailwindcss.com"></script><script>
   tailwind.config = {
     theme: {
       extend: {
@@ -53,805 +26,84 @@
       },
     },
   };
-</script>
-<style>
-  html { scroll-behavior: smooth; }
-  body { background:#F4F4F2; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; }
-  ::selection { background:#C5A35B; color:#14141A; }
-
-  /* film-grain texture overlay */
-  .grain::before{
-    content:""; position:fixed; inset:0; pointer-events:none; z-index:1; opacity:.035;
-    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  }
-
-  /* portrait placeholder */
-  .portrait{ position:relative; overflow:hidden; background:
-      radial-gradient(120% 90% at 70% 15%, rgba(197,163,91,.18), transparent 55%),
-      linear-gradient(160deg,#EAEAE8 0%,#DBDBDA 45%,#CACAC9 100%); }
-  .portrait::after{ content:""; position:absolute; inset:0;
-      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)' opacity='.5'/%3E%3C/svg%3E");
-      opacity:.06; mix-blend-mode:multiply; }
-  .face-line{ stroke:#C5A35B; fill:none; opacity:.34; }
-
-  /* scroll reveal */
-  .reveal{ opacity:0; transform:translateY(26px); transition:opacity 1s cubic-bezier(.22,1,.36,1), transform 1s cubic-bezier(.22,1,.36,1); }
-  .reveal.in{ opacity:1; transform:none; }
-  .reveal.d1{ transition-delay:.08s } .reveal.d2{ transition-delay:.16s } .reveal.d3{ transition-delay:.24s } .reveal.d4{ transition-delay:.32s }
-
-  .hairline{ height:1px; background:linear-gradient(90deg,transparent,#CFCFCB,transparent); }
-  .vrule{ width:1px; background:linear-gradient(180deg,transparent,#CFCFCB 30%,#CFCFCB 70%,transparent); }
-
-  .link-underline{ background-image:linear-gradient(#C5A35B,#C5A35B); background-size:0% 1px; background-repeat:no-repeat; background-position:0 100%; transition:background-size .4s ease; }
-  .link-underline:hover{ background-size:100% 1px; }
-
-  .price-card{ transition:transform .5s cubic-bezier(.22,1,.36,1), box-shadow .5s ease, border-color .5s ease; }
-  .price-card:hover{ transform:translateY(-6px); box-shadow:0 30px 60px -30px rgba(20,20,26,.25); border-color:#C5A35B; }
-
-  .btn-ink{ transition:background-color .4s ease,color .4s ease,letter-spacing .4s ease; }
-  .btn-ink:hover{ background:#1A1A1A; color:#FAFAF8; letter-spacing:.18em; }
-
-  *:focus-visible{ outline:2px solid #C5A35B; outline-offset:3px; border-radius:2px; }
-
-  /* marquee */
-  @keyframes drift{ from{transform:translateX(0)} to{transform:translateX(-50%)} }
-  .marquee{ display:flex; width:max-content; animation:drift 38s linear infinite; }
-
-  summary::-webkit-details-marker{ display:none; }
-  summary{ list-style:none; }
-
-  @media (prefers-reduced-motion: reduce){
-    html{ scroll-behavior:auto; }
-    .reveal{ opacity:1 !important; transform:none !important; transition:none; }
-    .marquee{ animation:none; }
-  }
-</style>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "ProfessionalService",
-      "@id": "https://modernphysiognomy.com/#service",
-      "name": "現代観相学 Modern Physiognomy",
-      "description": "人相・人相占いの先にある、顔から内面と印象を読み解く外見分析メソッド。占いではなく、15年・国内外1万人以上の実践から生まれた現代の観相学。",
-      "url": "https://modernphysiognomy.com/",
-      "image": "https://modernphysiognomy.com/images/hero.jpg",
-      "email": "info.physiognomy@gmail.com",
-      "priceRange": "¥5,500〜¥38,000",
-      "areaServed": {
-        "@type": "Country",
-        "name": "日本"
-      },
-      "availableLanguage": "ja",
-      "founder": { "@id": "https://modernphysiognomy.com/#tomoko" },
-      "sameAs": [
-        "https://www.youtube.com/@modernphysiognomy",
-        "https://www.instagram.com/modernphysiognomy"
-      ],
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "個人鑑定メニュー",
-        "itemListElement": [
-          {
-            "@type": "Offer",
-            "name": "お試し鑑定 ／ First Impression",
-            "description": "顔写真1枚から、あなたの観相を鑑定します。",
-            "price": "5500",
-            "priceCurrency": "JPY"
-          },
-          {
-            "@type": "Offer",
-            "name": "印象鑑定 ／ Inner & Outer",
-            "description": "正面・横顔の2枚から、対外的な印象と本質を読み解きます。",
-            "price": "11000",
-            "priceCurrency": "JPY"
-          },
-          {
-            "@type": "Offer",
-            "name": "パーツ鑑定 ／ Detail Reading",
-            "description": "額・眉・目・鼻・口・輪郭・頬・顎まで、各パーツを詳細に鑑定します。",
-            "price": "22000",
-            "priceCurrency": "JPY"
-          },
-          {
-            "@type": "Offer",
-            "name": "総合鑑定 ／ Complete Styling",
-            "description": "写真＋10秒以内の動画で、動きと表情まで読み取る最上位の画像鑑定。",
-            "price": "35000",
-            "priceCurrency": "JPY"
-          },
-          {
-            "@type": "Offer",
-            "name": "対面鑑定 ／ In-Person Session",
-            "description": "50分の対面セッション＋メイク実演アドバイス。鑑定書付き。",
-            "price": "38000",
-            "priceCurrency": "JPY"
-          }
-        ]
-      }
-    },
-    {
-      "@type": "Person",
-      "@id": "https://modernphysiognomy.com/#tomoko",
-      "name": "TOMOKO",
-      "jobTitle": "現代観相学研究家／メイクアップアーティスト",
-      "description": "ニューヨーク州立大学にてCommunication Media Arts専攻を修了後、ロンドン・パリのメイクスクールでメイクアップを学ぶ。15年・国内外1万人以上の顔と向き合い、現代の観相学「Modern Physiognomy」の研究と分析セッションを展開。",
-      "image": "https://modernphysiognomy.com/images/tomoko.jpg",
-      "knowsAbout": ["人相", "人相占い", "観相学", "Physiognomy", "顔分析", "印象分析", "メイクアップ"],
-      "worksFor": { "@id": "https://modernphysiognomy.com/#service" },
-      "url": "https://modernphysiognomy.com/"
-    },
-    {
-      "@type": "WebSite",
-      "@id": "https://modernphysiognomy.com/#website",
-      "url": "https://modernphysiognomy.com/",
-      "name": "現代観相学 Modern Physiognomy",
-      "inLanguage": "ja",
-      "publisher": { "@id": "https://modernphysiognomy.com/#service" }
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://modernphysiognomy.com/#faq",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "現代観相学は人相占いと何が違うのですか？",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "現代観相学は「口角が下がっていたら凶相」といった一面的な人相占いとは異なります。占いではなく、15年・国内外1万人以上の実践から生まれた外見分析メソッドとして、顔から内面と印象を立体的に読み解きます。"
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "顔写真1枚だけでも鑑定できますか？",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "はい。お試し鑑定（5,500円）は顔写真1枚から、全体の印象・活かすべきチャームポイント・今伸ばしどきのポイントを鑑定します。より深く読み解きたい場合は、複数枚や動画を用いた上位メニューもご用意しています。"
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "人相は生まれつきで決まっていますか？変えられますか？",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "顔は、あなたがどう生きてきたかの証であり、これからどう生きるかでまだ変わっていきます。良い顔は作れます。鑑定では、現実的なメイクや印象の育て方までご提案します。"
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "オンラインで全国どこからでも受けられますか？",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "はい。お試し鑑定から総合鑑定までは、お写真や動画をお送りいただくオンライン鑑定として全国どこからでもご利用いただけます。対面鑑定のみ対面セッションとなります。"
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "鑑定料金と申し込み方法を教えてください。",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "料金はお試し鑑定5,500円から対面鑑定38,000円までの5メニューです。お申し込みは、まずお問い合わせフォームよりご連絡いただき、詳細のご返信・事前決済を経て鑑定を実施します。"
-          }
-        }
-      ]
-    }
-  ]
-}
-</script>
-</head>
-<body class="grain font-mincho text-ink antialiased">
-
-<!-- ░░ NAV ░░ -->
-<header id="nav" class="fixed inset-x-0 top-0 z-50 transition-all duration-500">
-  <div class="mx-auto flex max-w-7xl items-center justify-between px-5 py-5 sm:px-8 lg:px-12">
-    <a href="#top" class="flex flex-col leading-none">
-      <span class="font-display text-xl tracking-wide2 text-ink sm:text-2xl">Modern Physiognomy</span>
-      <span class="mt-1 text-[10px] tracking-luxe text-taupe">現 代 観 相 学</span>
-    </a>
-    <nav class="hidden items-center gap-9 text-xs tracking-wide2 text-taupe md:flex">
-      <a href="#concept" class="link-underline pb-1">CONCEPT</a>
-      <a href="#reading" class="link-underline pb-1">READING</a>
-      <a href="#about" class="link-underline pb-1">ABOUT</a>
-      <a href="#faq" class="link-underline pb-1">FAQ</a>
-      <a href="#contact" class="btn-ink rounded-full border border-ink px-6 py-2.5 text-ink">CONTACT</a>
-    </nav>
-    <button id="menuBtn" aria-label="メニューを開く" aria-expanded="false" class="md:hidden cursor-pointer p-2 text-ink">
-      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><line x1="3" y1="8" x2="21" y2="8"/><line x1="3" y1="16" x2="21" y2="16"/></svg>
-    </button>
-  </div>
-  <div class="hairline opacity-0 transition-opacity duration-500" id="navline"></div>
-</header>
-
-<!-- mobile menu -->
-<div id="mobileMenu" class="fixed inset-0 z-50 hidden bg-cream/98 backdrop-blur-sm">
-  <div class="flex items-center justify-between px-6 py-5">
-    <span class="font-display text-xl tracking-wide2">Modern Physiognomy</span>
-    <button id="menuClose" aria-label="メニューを閉じる" class="cursor-pointer p-2">
-      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg>
-    </button>
-  </div>
-  <nav class="mt-10 flex flex-col items-center gap-8 font-display text-3xl text-ink">
-    <a href="#concept" class="mm-link">Concept</a>
-    <a href="#reading" class="mm-link">Reading</a>
-    <a href="#about" class="mm-link">About</a>
-    <a href="#faq" class="mm-link">FAQ</a>
-    <a href="#contact" class="mm-link">Contact</a>
-  </nav>
-</div>
-
-<main id="top">
-
-<!-- ░░ HERO ░░ -->
-<section class="relative min-h-screen overflow-hidden bg-ivory">
-  <div class="mx-auto grid min-h-screen max-w-7xl grid-cols-1 items-center gap-10 px-5 pb-16 pt-32 sm:px-8 lg:grid-cols-12 lg:gap-6 lg:px-12 lg:pt-28">
-    <!-- copy -->
-    <div class="lg:col-span-6 lg:pr-6">
-      <div class="reveal mb-8 flex items-center gap-4">
-        <span class="h-px w-12 bg-bronze"></span>
-        <span class="text-[11px] tracking-luxe text-bronzeDeep">EXTERIOR ANALYSIS METHOD</span>
-      </div>
-      <h1 class="reveal d1 font-display text-[15vw] font-light leading-[0.92] text-ink sm:text-7xl lg:text-[5.6rem]">
-        YOUR&nbsp;FACE.<br/><em class="italic text-bronzeDeep">Your Story.</em>
-      </h1>
-      <p class="reveal d2 mt-9 max-w-md font-mincho text-base leading-loose tracking-wide text-taupe">
-        顔は、“内面の情報”である。<br/>
-        外見から人間と自己理解を読み解く、外見分析メソッド。
-      </p>
-      <div class="reveal d3 mt-11 flex flex-col gap-4 sm:flex-row sm:items-center">
-        <a href="#reading" class="btn-ink inline-flex items-center justify-center rounded-full border border-ink px-9 py-4 text-xs tracking-wide2 text-ink">個人鑑定を見る</a>
-        <a href="#concept" class="link-underline inline-flex items-center gap-2 self-start pb-1 text-xs tracking-wide2 text-taupe sm:self-auto">
-          現代の観相学とは
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg>
-        </a>
-      </div>
-    </div>
-
-    <!-- portrait -->
-    <div class="reveal d2 lg:col-span-6">
-      <figure class="relative ml-auto w-full max-w-md lg:max-w-none">
-        <div class="portrait aspect-[3/4] w-full rounded-[2px] shadow-[0_50px_90px_-50px_rgba(20,20,26,.5)]">
-          <!-- 画像差し替え：images/hero.jpg を置くと表示されます（推奨 900×1200px / 縦3:4） -->
-          <img src="images/hero.jpg" alt="現代観相学 Modern Physiognomy ― 人相・観相からあなたの印象を読み解くポートレート" width="1232" height="928"
-               class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'" />
-          <svg viewBox="0 0 300 400" class="absolute inset-0 h-full w-full" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-            <g class="face-line" stroke-width="1">
-              <path d="M150 70 C100 70 92 140 95 195 C98 255 120 320 150 330 C180 320 202 255 205 195 C208 140 200 70 150 70 Z"/>
-              <line x1="150" y1="70" x2="150" y2="330"/>
-              <line x1="80" y1="140" x2="220" y2="140"/>
-              <line x1="80" y1="205" x2="220" y2="205"/>
-              <line x1="80" y1="270" x2="220" y2="270"/>
-              <circle cx="123" cy="170" r="10"/><circle cx="177" cy="170" r="10"/>
-              <path d="M138 235 q12 12 24 0"/>
-            </g>
-          </svg>
-        </div>
-        <span class="absolute -right-4 bottom-16 hidden rotate-90 text-[10px] tracking-luxe text-bronzeDeep lg:block">EST. 観相</span>
-      </figure>
-    </div>
-  </div>
-
-  <a href="#concept" class="absolute bottom-7 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 text-[10px] tracking-luxe text-taupe lg:flex">
-    SCROLL
-    <span class="h-10 w-px bg-gradient-to-b from-bronze to-transparent"></span>
-  </a>
-</section>
-
-<!-- ░░ MARQUEE ░░ -->
-<div class="overflow-hidden border-y border-line bg-cream py-5">
-  <div class="marquee items-center text-bronzeDeep">
-    <span class="flex items-center">
-      <span class="px-8 font-display text-2xl italic">Modern Physiognomy</span><span class="text-bronze">✦</span>
-      <span class="px-8 font-mincho text-sm tracking-wide2">生きてきた深さ</span><span class="text-bronze">✦</span>
-      <span class="px-8 font-display text-2xl italic">Your Face, Your Story</span><span class="text-bronze">✦</span>
-      <span class="px-8 font-mincho text-sm tracking-wide2">積み重ねてきた経験</span><span class="text-bronze">✦</span>
-    </span>
-    <span class="flex items-center" aria-hidden="true">
-      <span class="px-8 font-display text-2xl italic">Modern Physiognomy</span><span class="text-bronze">✦</span>
-      <span class="px-8 font-mincho text-sm tracking-wide2">生きてきた深さ</span><span class="text-bronze">✦</span>
-      <span class="px-8 font-display text-2xl italic">Your Face, Your Story</span><span class="text-bronze">✦</span>
-      <span class="px-8 font-mincho text-sm tracking-wide2">積み重ねてきた経験</span><span class="text-bronze">✦</span>
-    </span>
-  </div>
-</div>
-
-<!-- ░░ CONCEPT ░░ -->
-<section id="concept" class="bg-ivory px-5 py-28 sm:px-8 lg:px-12 lg:py-40">
-  <div class="mx-auto max-w-7xl">
-    <div class="grid grid-cols-1 gap-14 lg:grid-cols-12 lg:gap-12">
-      <div class="reveal lg:col-span-4">
-        <span class="text-[11px] tracking-luxe text-bronzeDeep">01 — CONCEPT</span>
-        <h2 class="mt-6 font-display text-5xl font-light leading-tight text-ink lg:text-6xl">
-          現代の<br/>観相学
-        </h2>
-        <p class="mt-4 font-display text-xl italic text-taupe">Modern Physiognomy</p>
-      </div>
-      <div class="reveal d1 lg:col-span-7 lg:col-start-6">
-        <p class="font-mincho text-lg font-medium leading-loose tracking-wide text-ink lg:text-xl">
-          Modern Physiognomy は、古い人相占いではありません。
-        </p>
-        <p class="mt-7 font-mincho text-[15px] leading-loose tracking-wide text-taupe">
-          本来、顔はもっと豊かな情報を持っています。生きてきた深さ、積み重ねてきた経験、内側から滲み出る人柄——それらはすべて、顔つきとなって現れます。
-        </p>
-        <p class="mt-6 font-mincho text-[15px] leading-loose tracking-wide text-taupe">
-          あなたの顔は、あなたがどう生きてきたかの証です。そしてこれからどう生きるかで、まだ変わっていきます。
-        </p>
-        <div class="mt-10 hairline"></div>
-        <div class="mt-10 rounded-[3px] border border-line bg-paper/70 p-7 sm:p-8">
-          <p class="text-[11px] tracking-luxe text-bronzeDeep">PHYSIOGNOMY COURSE</p>
-          <p class="mt-3 font-mincho text-base leading-relaxed text-ink">現代観相学を学びたい方へ。<br class="hidden sm:block"/>セブンビューティーアカデミーで動画講座開催中。</p>
-          <a href="https://7beauty-academy.com/GoodsDetail.jsp?salesGoodsCode=11874" target="_blank" rel="noopener"
-             class="group mt-6 inline-flex w-full items-center justify-center gap-3 rounded-full bg-bronze px-10 py-4 text-xs tracking-wide2 text-charcoal shadow-[0_18px_40px_-18px_rgba(197,163,91,.6)] transition-all duration-300 hover:bg-charcoal hover:text-cream sm:w-auto">
-            フィジオノミー講座はこちら
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" class="transition-transform duration-300 group-hover:translate-x-1"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="8 7 17 7 17 16"/></svg>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ░░ PHILOSOPHY band ░░ -->
-<section class="relative overflow-hidden bg-charcoal px-5 py-28 text-cream sm:px-8 lg:px-12 lg:py-40">
-  <div class="mx-auto max-w-5xl text-center">
-    <span class="reveal text-[11px] tracking-luxe text-bronze">PHILOSOPHY</span>
-    <p class="reveal d1 mx-auto mt-10 max-w-3xl font-display text-3xl font-light leading-snug text-cream sm:text-4xl lg:text-[2.9rem] lg:leading-[1.35]">
-      美醜と魅力は、<em class="italic text-bronze">まったく別のもの</em>。<br class="hidden sm:block"/>
-      外見には、内面が現れる。
-    </p>
-    <p class="reveal d2 mx-auto mt-9 max-w-xl font-mincho text-sm leading-loose tracking-wide text-cream/65">
-      「口角が下がっていたら凶相」——そんな一面的な解釈には収まりません。15年の研究と1万人以上との実践から生まれた、外見への新しい視点。
-    </p>
-  </div>
-</section>
-
-<!-- ░░ FREE APP ░░ -->
-<section id="app" class="bg-ivory px-5 py-24 sm:px-8 lg:px-12 lg:py-32">
-  <div class="reveal mx-auto max-w-3xl overflow-hidden rounded-[4px] border border-line bg-paper p-9 text-center sm:p-14">
-    <span class="text-[11px] tracking-luxe text-bronzeDeep">FREE WEB APP ・ お試し無料</span>
-    <h2 class="mt-6 font-display text-4xl font-light leading-tight text-ink sm:text-5xl">
-      気になるあの人と、<br class="hidden sm:block"/><em class="italic text-bronze">顔の相性</em>診断。
-    </h2>
-    <p class="mx-auto mt-6 max-w-xl font-mincho text-[15px] leading-loose tracking-wide text-taupe">
-      2人の顔写真から、観相学の視点で相性を読み解く無料Webアプリ。登録不要、その場ですぐにお試しいただけます。
-    </p>
-    <div class="mx-auto mt-8 flex max-w-md items-start gap-3 rounded-[3px] border border-line bg-ivory/70 p-4 text-left">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="mt-0.5 flex-none text-bronzeDeep"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-      <p class="text-[12px] leading-relaxed text-taupe">
-        アップロードされた<span class="text-ink">画像データは保存・蓄積されません。</span>診断後はサーバーに残らないため、安心してご利用いただけます。
-      </p>
-    </div>
-    <a href="https://kaomirucouple.netlify.app" target="_blank" rel="noopener"
-       class="group mt-9 inline-flex w-full items-center justify-center gap-3 rounded-full bg-bronze px-10 py-4 text-xs tracking-wide2 text-charcoal shadow-[0_18px_40px_-18px_rgba(197,163,91,.6)] transition-all duration-300 hover:bg-charcoal hover:text-cream sm:w-auto">
-      無料で相性診断を試す
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" class="transition-transform duration-300 group-hover:translate-x-1"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="8 7 17 7 17 16"/></svg>
-    </a>
-  </div>
-</section>
-
-<!-- ░░ READING / PRICING ░░ -->
-<section id="reading" class="bg-cream px-5 py-28 sm:px-8 lg:px-12 lg:py-40">
-  <div class="mx-auto max-w-7xl">
-    <div class="reveal mb-16 flex flex-col items-start justify-between gap-8 lg:flex-row lg:items-end">
-      <div>
-        <span class="text-[11px] tracking-luxe text-bronzeDeep">02 — PERSONAL READING</span>
-        <h2 class="mt-6 font-display text-5xl font-light leading-tight text-ink lg:text-6xl">個 人 鑑 定</h2>
-      </div>
-      <p class="max-w-sm font-mincho text-sm leading-loose tracking-wide text-taupe">
-        コンセプト：<span class="text-ink">良い顔は作れる</span> ―<br/>あなたの印象を、現実的に育てる。
-      </p>
-    </div>
-
-    <div class="grid grid-cols-1 gap-px overflow-hidden rounded-[3px] border border-line bg-line sm:grid-cols-2 lg:grid-cols-3">
-
-      <!-- ① -->
-      <article class="price-card flex flex-col border border-transparent bg-paper p-8 lg:p-9">
-        <div class="flex items-start justify-between">
-          <span class="font-display text-5xl italic text-line/0 text-bronze/30">01</span>
-          <span class="text-[10px] tracking-luxe text-bronzeDeep">FIRST IMPRESSION</span>
-        </div>
-        <h3 class="mt-5 font-mincho text-xl font-semibold text-ink">お試し鑑定</h3>
-        <p class="mt-2 font-display text-3xl text-ink">¥5,500</p>
-        <p class="mt-4 text-[13px] leading-relaxed text-taupe">顔写真1枚から、あなたの観相を鑑定します。</p>
-        <ul class="mt-6 space-y-3 text-[13px] text-taupe">
-          <li class="flex gap-3"><span class="mt-2 h-1 w-1 flex-none rounded-full bg-bronze"></span>全体の印象</li>
-          <li class="flex gap-3"><span class="mt-2 h-1 w-1 flex-none rounded-full bg-bronze"></span>活かすべきチャームポイント</li>
-          <li class="flex gap-3"><span class="mt-2 h-1 w-1 flex-none rounded-full bg-bronze"></span>今、伸ばしどきのポイント</li>
-        </ul>
-        <a href="#contact" class="btn-ink mt-8 inline-flex justify-center rounded-full border border-line px-6 py-3 text-[11px] tracking-wide2 text-ink">申し込む</a>
-      </article>
-
-      <!-- ② -->
-      <article class="price-card flex flex-col border border-transparent bg-paper p-8 lg:p-9">
-        <div class="flex items-start justify-between">
-          <span class="font-display text-5xl italic text-bronze/30">02</span>
-          <span class="text-[10px] tracking-luxe text-bronzeDeep">INNER &amp; OUTER</span>
-        </div>
-        <h3 class="mt-5 font-mincho text-xl font-semibold text-ink">印象鑑定</h3>
-        <p class="mt-2 font-display text-3xl text-ink">¥11,000</p>
-        <p class="mt-4 text-[13px] leading-relaxed text-taupe">正面・横顔の2枚から、対外的な印象と本質を読み解きます。</p>
-        <ul class="mt-6 space-y-3 text-[13px] text-taupe">
-          <li class="flex gap-3"><span class="mt-2 h-1 w-1 flex-none rounded-full bg-bronze"></span>お試しの全内容</li>
-          <li class="flex gap-3"><span class="mt-2 h-1 w-1 flex-none rounded-full bg-bronze"></span>対外印象（周囲に与えている効果）</li>
-          <li class="flex gap-3"><span class="mt-2 h-1 w-1 flex-none rounded-full bg-bronze"></span>本質</li>
-          <li class="flex gap-3"><span class="mt-2 h-1 w-1 flex-none rounded-full bg-bronze"></span>適職・活かすべき能力</li>
-          <li class="flex gap-3"><span class="mt-2 h-1 w-1 flex-none rounded-full bg-bronze"></span>気をつけたいクセ</li>
-        </ul>
-        <a href="#contact" class="btn-ink mt-8 inline-flex justify-center rounded-full border border-line px-6 py-3 text-[11px] tracking-wide2 text-ink">申し込む</a>
-      </article>
-
-      <!-- ③ -->
-      <article class="price-card flex flex-col border border-transparent bg-paper p-8 lg:p-9">
-        <div class="flex items-start justify-between">
-          <span class="font-display text-5xl italic text-bronze/30">03</span>
-          <span class="text-[10px] tracking-luxe text-bronzeDeep">DETAIL READING</span>
-        </div>
-        <h3 class="mt-5 font-mincho text-xl font-semibold text-ink">パーツ鑑定</h3>
-        <p class="mt-2 font-display text-3xl text-ink">¥22,000</p>
-        <p class="mt-4 text-[13px] leading-relaxed text-taupe">顔の各パーツと全体の佇まいを、緻密に読み解きます。</p>
-        <ul class="mt-6 space-y-3 text-[13px] text-taupe">
-          <li class="flex gap-3"><span class="mt-2 h-1 w-1 flex-none rounded-full bg-bronze"></span>印象鑑定の全内容</li>
-          <li class="flex gap-3"><span class="mt-2 h-1 w-1 flex-none rounded-full bg-bronze"></span>額・眉・目・鼻・口・輪郭・頬・顎の鑑定</li>
-          <li class="flex gap-3"><span class="mt-2 h-1 w-1 flex-none rounded-full bg-bronze"></span>肌質・髪質・体型・姿勢・ファッションの印象</li>
-        </ul>
-        <a href="#contact" class="btn-ink mt-8 inline-flex justify-center rounded-full border border-line px-6 py-3 text-[11px] tracking-wide2 text-ink">申し込む</a>
-      </article>
-
-      <!-- ④ featured -->
-      <article class="price-card relative flex flex-col border border-transparent bg-charcoal p-8 text-cream sm:col-span-2 lg:col-span-1 lg:p-9">
-        <span class="absolute right-6 top-6 rounded-full border border-bronze/60 px-3 py-1 text-[9px] tracking-luxe text-bronze">最上位 IMAGE</span>
-        <div class="flex items-start justify-between">
-          <span class="font-display text-5xl italic text-bronze/50">04</span>
-        </div>
-        <h3 class="mt-5 font-mincho text-xl font-semibold">総合鑑定</h3>
-        <p class="mt-1 text-[10px] tracking-luxe text-bronze">COMPLETE STYLING</p>
-        <p class="mt-2 font-display text-3xl">¥35,000</p>
-        <p class="mt-4 text-[13px] leading-relaxed text-cream/65">写真＋10秒以内の動画で、動きと表情まで読み取る最上位の画像鑑定。</p>
-        <ul class="mt-6 space-y-3 text-[13px] text-cream/75">
-          <li class="flex gap-3"><span class="mt-2 h-1 w-1 flex-none rounded-full bg-bronze"></span>パーツ鑑定の全内容</li>
-          <li class="flex gap-3"><span class="mt-2 h-1 w-1 flex-none rounded-full bg-bronze"></span>動画分析：表情の動き・話し方のクセを読み取る</li>
-          <li class="flex gap-3"><span class="mt-2 h-1 w-1 flex-none rounded-full bg-bronze"></span>現実的なメイクアドバイス（あなた専用）</li>
-        </ul>
-        <a href="#contact" class="mt-8 inline-flex justify-center rounded-full bg-bronze px-6 py-3 text-[11px] tracking-wide2 text-charcoal transition-colors duration-300 hover:bg-cream">申し込む</a>
-      </article>
-
-      <!-- ⑤ -->
-      <article class="price-card flex flex-col border border-transparent bg-paper p-8 sm:col-span-2 lg:col-span-2 lg:p-9">
-        <div class="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
-          <div class="lg:max-w-md">
-            <div class="flex items-start justify-between lg:justify-start lg:gap-6">
-              <span class="font-display text-5xl italic text-bronze/30">05</span>
-              <span class="self-center text-[10px] tracking-luxe text-bronzeDeep">IN-PERSON SESSION</span>
-            </div>
-            <h3 class="mt-5 font-mincho text-xl font-semibold text-ink">対面鑑定</h3>
-            <p class="mt-2 font-display text-3xl text-ink">¥38,000</p>
-            <p class="mt-4 text-[13px] leading-relaxed text-taupe">50分の対面セッション＋メイク実演アドバイス。その場で印象の変化を体感していただけます。</p>
-          </div>
-          <ul class="space-y-3 text-[13px] text-taupe lg:border-l lg:border-line lg:pl-8">
-            <li class="flex gap-3"><span class="mt-2 h-1 w-1 flex-none rounded-full bg-bronze"></span>総合鑑定（④）の全内容を含む鑑定書付き</li>
-            <li class="flex gap-3"><span class="mt-2 h-1 w-1 flex-none rounded-full bg-bronze"></span>50分の対面セッション</li>
-            <li class="flex gap-3"><span class="mt-2 h-1 w-1 flex-none rounded-full bg-bronze"></span>メイク実演アドバイス</li>
-            <li class="flex gap-3"><span class="mt-2 h-1 w-1 flex-none rounded-full bg-bronze"></span>その場で印象の変化を体感</li>
-          </ul>
-        </div>
-        <a href="#contact" class="btn-ink mt-8 inline-flex w-full justify-center rounded-full border border-line px-6 py-3 text-[11px] tracking-wide2 text-ink lg:w-auto lg:self-start">申し込む</a>
-      </article>
-
-    </div>
-
-    <!-- application flow -->
-    <div class="reveal mt-24">
-      <div class="hairline"></div>
-      <div class="mt-16 flex flex-col items-start justify-between gap-6 lg:flex-row lg:items-end">
-        <div>
-          <span class="text-[11px] tracking-luxe text-bronzeDeep">HOW TO APPLY</span>
-          <h3 class="mt-5 font-display text-4xl font-light leading-tight text-ink lg:text-5xl">個人鑑定お申し込みの流れ</h3>
-        </div>
-        <p class="max-w-sm font-mincho text-sm leading-loose tracking-wide text-taupe">
-          鑑定は全て<span class="text-ink">事前決済</span>です。<br class="hidden sm:block"/>まずはお問い合わせから、お気軽にご連絡ください。
-        </p>
-      </div>
-
-      <div class="mt-14 flex flex-col gap-3 lg:flex-row lg:items-stretch lg:gap-0">
-        <!-- STEP 01 -->
-        <div class="flex-1 rounded-[3px] border border-line bg-paper p-7">
-          <span class="font-display text-4xl italic text-bronze/30">01</span>
-          <p class="mt-3 text-[10px] tracking-luxe text-bronzeDeep">STEP 01</p>
-          <p class="mt-3 font-mincho text-[15px] font-semibold leading-relaxed text-ink">お問い合わせ</p>
-          <p class="mt-2 text-[13px] leading-relaxed text-taupe">メールにて、ご希望の鑑定名をお知らせください。</p>
-        </div>
-        <div class="flex items-center justify-center py-1 lg:px-3">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" class="rotate-90 text-bronze lg:rotate-0"><polyline points="9 6 15 12 9 18"/></svg>
-        </div>
-        <!-- STEP 02 -->
-        <div class="flex-1 rounded-[3px] border border-line bg-paper p-7">
-          <span class="font-display text-4xl italic text-bronze/30">02</span>
-          <p class="mt-3 text-[10px] tracking-luxe text-bronzeDeep">STEP 02</p>
-          <p class="mt-3 font-mincho text-[15px] font-semibold leading-relaxed text-ink">詳細をご返信</p>
-          <p class="mt-2 text-[13px] leading-relaxed text-taupe">画像・動画の送付方法、スケジュール、金額などを記載したメールをお送りします。</p>
-        </div>
-        <div class="flex items-center justify-center py-1 lg:px-3">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" class="rotate-90 text-bronze lg:rotate-0"><polyline points="9 6 15 12 9 18"/></svg>
-        </div>
-        <!-- STEP 03 -->
-        <div class="flex-1 rounded-[3px] border border-bronze/40 bg-charcoal p-7 text-cream">
-          <span class="font-display text-4xl italic text-bronze/60">03</span>
-          <p class="mt-3 text-[10px] tracking-luxe text-bronze">STEP 03</p>
-          <p class="mt-3 font-mincho text-[15px] font-semibold leading-relaxed">決済</p>
-          <p class="mt-2 text-[13px] leading-relaxed text-cream/70">決済の完了をもって、お申し込み成立となります。</p>
-        </div>
-        <div class="flex items-center justify-center py-1 lg:px-3">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" class="rotate-90 text-bronze lg:rotate-0"><polyline points="9 6 15 12 9 18"/></svg>
-        </div>
-        <!-- STEP 04 -->
-        <div class="flex-1 rounded-[3px] border border-line bg-paper p-7">
-          <span class="font-display text-4xl italic text-bronze/30">04</span>
-          <p class="mt-3 text-[10px] tracking-luxe text-bronzeDeep">STEP 04</p>
-          <p class="mt-3 font-mincho text-[15px] font-semibold leading-relaxed text-ink">鑑定実施</p>
-          <p class="mt-2 text-[13px] leading-relaxed text-taupe">ご希望の鑑定を実施し、鑑定結果をお届けします。</p>
-        </div>
-      </div>
-
-      <div class="mt-10 flex flex-col gap-6 rounded-[3px] border border-line bg-paper/60 p-6 sm:p-7 lg:flex-row lg:items-center lg:justify-between">
-        <ul class="space-y-3 text-[13px] leading-relaxed text-taupe">
-          <li class="flex gap-2.5"><span class="flex-none text-bronzeDeep">※</span>決済が完了するまでは正式なお申し込みとはなりません。ご不明な点がございましたら、お気軽にお問い合わせください。</li>
-          <li class="flex gap-2.5"><span class="flex-none text-bronzeDeep">※</span>鑑定は全て事前決済となりますことをご了承ください。</li>
-        </ul>
-        <a href="#contact" class="group inline-flex flex-none items-center justify-center gap-3 self-start rounded-full bg-bronze px-9 py-3.5 text-[11px] tracking-wide2 text-charcoal transition-colors duration-300 hover:bg-charcoal hover:text-cream lg:self-center">
-          お問い合わせはこちら
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="transition-transform duration-300 group-hover:translate-x-1"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg>
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ░░ ABOUT ░░ -->
-<section id="about" class="bg-ivory px-5 py-28 sm:px-8 lg:px-12 lg:py-40">
-  <div class="mx-auto max-w-7xl">
-    <div class="grid grid-cols-1 gap-14 lg:grid-cols-12 lg:gap-14">
-      <!-- portrait -->
-      <div class="reveal lg:col-span-5">
-        <figure class="relative">
-          <div class="portrait aspect-[4/5] w-full rounded-[2px] shadow-[0_50px_90px_-50px_rgba(20,20,26,.45)]">
-            <!-- 画像差し替え：images/tomoko.jpg を置くと表示されます（推奨 1000×1250px / 縦4:5） -->
-            <img src="images/tomoko.jpg" alt="現代観相学研究家・メイクアップアーティスト TOMOKO のポートレート" width="1199" height="1600" loading="lazy" decoding="async"
-                 class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'" />
-          </div>
-        </figure>
-      </div>
-
-      <!-- bio -->
-      <div class="reveal d1 lg:col-span-6 lg:col-start-7">
-        <span class="text-[11px] tracking-luxe text-bronzeDeep">03 — ABOUT</span>
-        <h2 class="mt-6 font-display text-5xl font-light leading-tight text-ink lg:text-6xl">TOMOKO</h2>
-        <p class="mt-3 text-xs tracking-wide2 text-taupe">現代観相学研究家 ／ メイクアップアーティスト</p>
-
-        <p class="mt-9 font-mincho text-[15px] leading-loose tracking-wide text-taupe">
-          HPをご覧くださり、ありがとうございます。<br />メイクアップアーティスト・眉技術講師として、人種・年齢・性別を超えた1万人以上の顔と向き合ってきました。その中で確信したのは、顔にはその人の内面が表れるということです。
-        </p>
-        <p class="mt-6 font-mincho text-[15px] leading-loose tracking-wide text-ink">
-          年齢を重ねるほどに、美形かどうかだけでは測れない内面が、顔に表れてきます。
-        </p>
-        <p class="mt-6 font-mincho text-[15px] leading-loose tracking-wide text-taupe">
-          私自身も50代を迎え、年齢による外見の変化さえも、その人の生き方の表れなのだと感じるようになりました。その理由を知りたくて、日本・中国・欧米の観相学を15年以上かけて学び、従来の人相占いとは違う、現代に合った「顔の読み解き」を探求してきました。
-        </p>
-        <p class="mt-6 font-mincho text-[15px] leading-loose tracking-wide text-taupe">
-          外見がこれまで以上に重視される現代。美醜とは異なる視点で外見を読み解くのが、現代観相学フィジオノミーです。
-        </p>
-        <p class="mt-6 font-mincho text-[15px] leading-loose tracking-wide text-ink">
-          あなたの顔には、何が表れているのか。世界にただ一人のあなたの魅力を、独自の理論で読み解いていきます。
-        </p>
-
-        <div class="mt-10 rounded-[2px] border border-line bg-cream/60 p-7">
-          <span class="text-[11px] tracking-luxe text-bronzeDeep">PROFILE</span>
-          <p class="mt-4 font-mincho text-[13px] leading-loose tracking-wide text-taupe">
-            ニューヨーク州立大学にて Communication Media Arts 専攻を修了後、ロンドン・パリのメイクスクールでメイクアップを学ぶ。2015年、一般社団法人ジャパンブロウアーティスト協会を創設。眉毛エクステンションを日本に初めて導入した第一人者として、NHK・AbemaTV をはじめ多数のメディアに出演。現在は同協会の代表理事として眉講座の監修を行うとともに、現代の観相学「Modern Physiognomy」の研究と分析セッションを展開している。
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ░░ FAQ ░░ -->
-<section id="faq" class="relative bg-ivory px-5 py-28 sm:px-8 lg:px-12 lg:py-40">
-  <div class="mx-auto max-w-3xl">
-    <div class="reveal text-center">
-      <span class="text-[11px] tracking-luxe text-bronzeDeep">FAQ — よくあるご質問</span>
-      <h2 class="mt-6 font-display text-5xl font-light leading-tight text-ink lg:text-6xl">人相・観相のご質問</h2>
-    </div>
-
-    <div class="reveal d1 mt-14 divide-y divide-line border-y border-line">
-      <details class="group">
-        <summary class="flex cursor-pointer items-center justify-between gap-6 py-6 font-mincho text-[15px] font-medium tracking-wide text-ink">
-          現代観相学は人相占いと何が違うのですか？
-          <svg class="h-5 w-5 shrink-0 text-bronze transition-transform duration-300 group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
-        </summary>
-        <p class="pb-7 font-mincho text-[14px] leading-loose tracking-wide text-taupe">
-          現代観相学は「口角が下がっていたら凶相」といった一面的な人相占いとは異なります。占いではなく、15年・国内外1万人以上の実践から生まれた外見分析メソッドとして、顔から内面と印象を立体的に読み解きます。
-        </p>
-      </details>
-      <details class="group">
-        <summary class="flex cursor-pointer items-center justify-between gap-6 py-6 font-mincho text-[15px] font-medium tracking-wide text-ink">
-          顔写真1枚だけでも鑑定できますか？
-          <svg class="h-5 w-5 shrink-0 text-bronze transition-transform duration-300 group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
-        </summary>
-        <p class="pb-7 font-mincho text-[14px] leading-loose tracking-wide text-taupe">
-          はい。お試し鑑定（5,500円）は顔写真1枚から、全体の印象・活かすべきチャームポイント・今伸ばしどきのポイントを鑑定します。より深く読み解きたい場合は、複数枚や動画を用いた上位メニューもご用意しています。
-        </p>
-      </details>
-      <details class="group">
-        <summary class="flex cursor-pointer items-center justify-between gap-6 py-6 font-mincho text-[15px] font-medium tracking-wide text-ink">
-          人相は生まれつきで決まっていますか？変えられますか？
-          <svg class="h-5 w-5 shrink-0 text-bronze transition-transform duration-300 group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
-        </summary>
-        <p class="pb-7 font-mincho text-[14px] leading-loose tracking-wide text-taupe">
-          顔は、あなたがどう生きてきたかの証であり、これからどう生きるかでまだ変わっていきます。良い顔は作れます。鑑定では、現実的なメイクや印象の育て方までご提案します。
-        </p>
-      </details>
-      <details class="group">
-        <summary class="flex cursor-pointer items-center justify-between gap-6 py-6 font-mincho text-[15px] font-medium tracking-wide text-ink">
-          オンラインで全国どこからでも受けられますか？
-          <svg class="h-5 w-5 shrink-0 text-bronze transition-transform duration-300 group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
-        </summary>
-        <p class="pb-7 font-mincho text-[14px] leading-loose tracking-wide text-taupe">
-          はい。お試し鑑定から総合鑑定までは、お写真や動画をお送りいただくオンライン鑑定として全国どこからでもご利用いただけます。対面鑑定のみ対面セッションとなります。
-        </p>
-      </details>
-      <details class="group">
-        <summary class="flex cursor-pointer items-center justify-between gap-6 py-6 font-mincho text-[15px] font-medium tracking-wide text-ink">
-          鑑定料金と申し込み方法を教えてください。
-          <svg class="h-5 w-5 shrink-0 text-bronze transition-transform duration-300 group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
-        </summary>
-        <p class="pb-7 font-mincho text-[14px] leading-loose tracking-wide text-taupe">
-          料金はお試し鑑定5,500円から対面鑑定38,000円までの5メニューです。お申し込みは、まずお問い合わせフォームよりご連絡いただき、詳細のご返信・事前決済を経て鑑定を実施します。
-        </p>
-      </details>
-    </div>
-  </div>
-</section>
-
-<!-- ░░ CONTACT ░░ -->
-<section id="contact" class="relative overflow-hidden bg-charcoal px-5 py-28 text-cream sm:px-8 lg:px-12 lg:py-40">
-  <div class="mx-auto max-w-5xl">
-    <div class="grid grid-cols-1 gap-14 lg:grid-cols-12 lg:gap-16">
-      <div class="reveal lg:col-span-5">
-        <span class="text-[11px] tracking-luxe text-bronze">04 — CONTACT</span>
-        <h2 class="mt-6 font-display text-5xl font-light leading-tight lg:text-6xl">お問い合わせ</h2>
-        <p class="mt-8 font-mincho text-sm leading-loose tracking-wide text-cream/65">
-          お問い合わせはこちらのフォームよりご連絡ください。通常2日以内に返信させていただいておりますが、稼働状況によりお時間をいただくこともございます。
-        </p>
-        <a href="mailto:info.physiognomy@gmail.com" class="link-underline mt-10 inline-block pb-1 font-display text-2xl italic text-bronze">info.physiognomy@gmail.com</a>
-
-        <div class="mt-12">
-          <p class="text-[11px] tracking-luxe text-bronze">FOLLOW ・ 観相学を発信中</p>
-          <div class="mt-5 flex flex-wrap items-center gap-3">
-            <a href="https://www.youtube.com/@modernphysiognomy" target="_blank" rel="noopener"
-               class="group inline-flex items-center gap-2.5 rounded-full bg-bronze px-6 py-3 text-[11px] tracking-wide2 text-charcoal shadow-[0_18px_40px_-18px_rgba(197,163,91,.6)] transition-colors duration-300 hover:bg-cream">
-              <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a3.02 3.02 0 0 0-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.51A3.02 3.02 0 0 0 .5 6.2 31.5 31.5 0 0 0 0 12a31.5 31.5 0 0 0 .5 5.8 3.02 3.02 0 0 0 2.12 2.14C4.5 20.45 12 20.45 12 20.45s7.5 0 9.38-.51a3.02 3.02 0 0 0 2.12-2.14A31.5 31.5 0 0 0 24 12a31.5 31.5 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.27 3.6Z"/></svg>
-              YouTube チャンネル
-            </a>
-            <a href="https://www.instagram.com/modernphysiognomy" target="_blank" rel="noopener" aria-label="Instagram"
-               class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-cream/25 text-cream transition-colors duration-300 hover:border-bronze hover:text-bronze">
-              <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="2" width="20" height="20" rx="5.5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.1" fill="currentColor" stroke="none"/></svg>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <form class="reveal d1 lg:col-span-7" id="contactForm" action="https://formsubmit.co/info.physiognomy@gmail.com" method="POST" novalidate>
-        <div class="grid grid-cols-1 gap-7">
-          <input type="hidden" name="_subject" value="【Modern Physiognomy】サイトからのお問い合わせ" />
-          <input type="hidden" name="_template" value="table" />
-          <input type="hidden" name="_captcha" value="false" />
-          <input type="text" name="_honey" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true" />
-          <div>
-            <label for="name" class="block text-[11px] tracking-wide2 text-cream/60">お名前 <span class="text-bronze">*</span></label>
-            <input id="name" name="name" type="text" required
-              class="mt-3 w-full border-0 border-b border-cream/25 bg-transparent pb-3 font-mincho text-cream placeholder-cream/30 focus:border-bronze focus:outline-none focus:ring-0" placeholder="山田 花子" />
-          </div>
-          <div>
-            <label for="email" class="block text-[11px] tracking-wide2 text-cream/60">メールアドレス <span class="text-bronze">*</span></label>
-            <input id="email" name="email" type="email" required
-              class="mt-3 w-full border-0 border-b border-cream/25 bg-transparent pb-3 font-mincho text-cream placeholder-cream/30 focus:border-bronze focus:outline-none focus:ring-0" placeholder="you@example.com" />
-          </div>
-          <div>
-            <label for="message" class="block text-[11px] tracking-wide2 text-cream/60">お問い合わせ内容</label>
-            <textarea id="message" name="message" rows="4"
-              class="mt-3 w-full resize-none border-0 border-b border-cream/25 bg-transparent pb-3 font-mincho text-cream placeholder-cream/30 focus:border-bronze focus:outline-none focus:ring-0" placeholder="ご希望の鑑定プランやご質問をご記入ください。"></textarea>
-          </div>
-          <label class="flex cursor-pointer items-start gap-3 text-[13px] text-cream/65">
-            <input type="checkbox" required class="mt-1 h-4 w-4 flex-none cursor-pointer accent-bronze" />
-            <span><button type="button" data-modal-open class="link-underline pb-0.5 text-bronze">プライバシーポリシー</button>に同意する</span>
-          </label>
-          <button type="submit"
-            class="group mt-2 inline-flex items-center justify-center gap-3 self-start rounded-full bg-bronze px-12 py-4 text-xs tracking-wide2 text-charcoal transition-all duration-300 hover:bg-cream">
-            送信する
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="transition-transform duration-300 group-hover:translate-x-1"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg>
-          </button>
-          <p id="formNote" class="hidden text-[13px] text-bronze">お問い合わせありがとうございます。通常2日以内にご返信いたします。</p>
-        </div>
-      </form>
-    </div>
-  </div>
-</section>
-
-</main>
-
-<!-- ░░ FOOTER ░░ -->
-<footer class="bg-ink px-5 py-16 text-cream/70 sm:px-8 lg:px-12">
-  <div class="mx-auto max-w-7xl">
-    <div class="flex flex-col items-start justify-between gap-10 border-b border-cream/10 pb-12 lg:flex-row lg:items-center">
-      <div>
-        <p class="font-display text-3xl tracking-wide2 text-cream">Modern Physiognomy</p>
-        <p class="mt-3 text-[11px] tracking-luxe text-cream/50">現 代 観 相 学</p>
-      </div>
-      <nav class="flex flex-wrap gap-x-8 gap-y-3 text-[11px] tracking-wide2">
-        <a href="#concept" class="link-underline pb-1">CONCEPT</a>
-        <a href="#reading" class="link-underline pb-1">READING</a>
-        <a href="#about" class="link-underline pb-1">ABOUT</a>
-        <a href="#faq" class="link-underline pb-1">FAQ</a>
-        <a href="#contact" class="link-underline pb-1">CONTACT</a>
-        <button type="button" data-modal-open class="link-underline cursor-pointer pb-1 text-left">PRIVACY POLICY</button>
-      </nav>
-    </div>
-    <div class="flex flex-col items-start justify-between gap-6 pt-8 text-[11px] tracking-wide2 text-cream/40 sm:flex-row sm:items-center">
-      <p>© <span id="year"></span> Modern Physiognomy</p>
-      <div class="flex items-center gap-5">
-        <a href="https://www.youtube.com/@modernphysiognomy" target="_blank" rel="noopener" aria-label="YouTube" class="text-cream/60 transition-colors duration-300 hover:text-bronze">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a3.02 3.02 0 0 0-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.51A3.02 3.02 0 0 0 .5 6.2 31.5 31.5 0 0 0 0 12a31.5 31.5 0 0 0 .5 5.8 3.02 3.02 0 0 0 2.12 2.14C4.5 20.45 12 20.45 12 20.45s7.5 0 9.38-.51a3.02 3.02 0 0 0 2.12-2.14A31.5 31.5 0 0 0 24 12a31.5 31.5 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.27 3.6Z"/></svg>
-        </a>
-        <a href="https://www.instagram.com/modernphysiognomy" target="_blank" rel="noopener" aria-label="Instagram" class="text-cream/60 transition-colors duration-300 hover:text-bronze">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="2" y="2" width="20" height="20" rx="5.5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.1" fill="currentColor" stroke="none"/></svg>
-        </a>
-        <span>info.physiognomy@gmail.com</span>
-      </div>
-    </div>
-  </div>
-</footer>
-
-<!-- ░░ PRIVACY MODAL ░░ -->
-<div id="modal" class="fixed inset-0 z-[60] hidden">
-  <div class="absolute inset-0 bg-ink/70 backdrop-blur-sm" data-modal-close></div>
-  <div class="absolute inset-x-4 top-[5vh] bottom-[5vh] mx-auto max-w-2xl overflow-hidden rounded-[3px] bg-paper shadow-2xl">
-    <div class="flex items-center justify-between border-b border-line px-7 py-5">
-      <div>
-        <span class="text-[10px] tracking-luxe text-bronzeDeep">PRIVACY POLICY</span>
-        <h3 class="mt-1 font-display text-2xl text-ink">個人情報の取り扱い</h3>
-      </div>
-      <button data-modal-close aria-label="閉じる" class="cursor-pointer p-2 text-taupe transition-colors hover:text-ink">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg>
-      </button>
-    </div>
-    <div class="h-[calc(100%-5.5rem)] overflow-y-auto px-7 py-7 text-[13px] leading-loose text-taupe">
-      <p>当社は、お客様の個人情報を適切に取り扱い、保護することが重要であると認識しております。本プライバシーポリシーは、当社がお客様から取得した個人情報の収集、使用、保護に関する方針を明示しています。お客様は、本プライバシーポリシーに同意することで、当社がお客様の個人情報を取り扱う方法について同意するものとします。</p>
-      <h4 class="mt-7 font-mincho font-semibold text-ink">1. 収集される個人情報</h4>
-      <p class="mt-2">当社は、お客さまの個人情報を正確かつ最新の状態に保ち、不正アクセス・紛失・破損・改ざん・漏洩などを防止するため、必要な措置を講じ、安全対策を実施し厳重な管理を行ないます。</p>
-      <ul class="mt-3 list-disc space-y-1 pl-5"><li>お名前、連絡先情報（電話番号、メールアドレスなど）</li><li>会社名、役職、所属部署などの職業関連情報</li><li>ウェブサイトの利用履歴、Cookie、IPアドレスなどのオンライン情報</li></ul>
-      <h4 class="mt-7 font-mincho font-semibold text-ink">2. 個人情報の利用目的</h4>
-      <ul class="mt-3 list-disc space-y-1 pl-5"><li>お問い合わせや要望への対応</li><li>サービスの提供や契約の履行</li><li>ニュースレターやプロモーション情報の提供</li><li>ウェブサイトの改善やカスタマイズ</li><li>法的要件や規制の遵守</li></ul>
-      <h4 class="mt-7 font-mincho font-semibold text-ink">3. 個人情報の第三者への提供</h4>
-      <p class="mt-2">当社は、お客様の個人情報を第三者に提供することはありません（法的要件や規制に基づく場合を除く）。</p>
-      <h4 class="mt-7 font-mincho font-semibold text-ink">4. 個人情報の保護とセキュリティ</h4>
-      <p class="mt-2">当社は、適切なセキュリティ対策を実施し、お客様の個人情報を保護するために合理的な措置を講じます。</p>
-      <h4 class="mt-7 font-mincho font-semibold text-ink">5. Cookieの使用</h4>
-      <p class="mt-2">当社のウェブサイトでは、Cookieを使用する場合があります。トラフィック解析・利用状況の測定、サイトのカスタマイズ、オンライン広告の配信や効果測定などの目的で使用することがあります。お客様は、ブラウザの設定を変更することで、Cookieの受け入れを拒否することができます。</p>
-      <h4 class="mt-7 font-mincho font-semibold text-ink">6. 個人情報の保持期間</h4>
-      <p class="mt-2">当社は、お客様の個人情報を必要な期間だけ保管し、利用目的を達成するために必要な範囲で保持します。不要となった場合には、適切に破棄または匿名化します。</p>
-      <h4 class="mt-7 font-mincho font-semibold text-ink">7. プライバシーポリシーの変更</h4>
-      <p class="mt-2">当社は、必要に応じて本プライバシーポリシーを変更することがあります。変更が行われた場合には、ウェブサイト上で通知いたします。</p>
-      <h4 class="mt-7 font-mincho font-semibold text-ink">8. お問い合わせ</h4>
-      <p class="mt-2">ご不明な点や個人情報に関するお問い合わせがある場合は、以下までご連絡ください。<br/>モダンフィジオノミー<br/>info.physiognomy@gmail.com</p>
-    </div>
-  </div>
-</div>
-
-<script>
-  // year
+</script><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"ProfessionalService","@id":"https://modernphysiognomy.com/#service","name":"現代観相学 Modern Physiognomy","description":"人相・人相占いの先にある、顔から内面と印象を読み解く外見分析メソッド。占いではなく、15年・国内外1万人以上の実践から生まれた現代の観相学。","url":"https://modernphysiognomy.com/","image":"https://modernphysiognomy.com/images/hero.jpg","email":"info.physiognomy@gmail.com","priceRange":"¥5,500〜¥38,000","areaServed":{"@type":"Country","name":"日本"},"availableLanguage":"ja","founder":{"@id":"https://modernphysiognomy.com/#tomoko"},"sameAs":["https://www.youtube.com/@modernphysiognomy","https://www.instagram.com/modernphysiognomy"],"hasOfferCatalog":{"@type":"OfferCatalog","name":"個人鑑定メニュー","itemListElement":[{"@type":"Offer","name":"お試し鑑定 ／ First Impression","description":"顔写真1枚から、あなたの観相を鑑定します。","price":"5500","priceCurrency":"JPY"},{"@type":"Offer","name":"印象鑑定 ／ Inner & Outer","description":"正面・横顔の2枚から、対外的な印象と本質を読み解きます。","price":"11000","priceCurrency":"JPY"},{"@type":"Offer","name":"パーツ鑑定 ／ Detail Reading","description":"額・眉・目・鼻・口・輪郭・頬・顎まで、各パーツを詳細に鑑定します。","price":"22000","priceCurrency":"JPY"},{"@type":"Offer","name":"総合鑑定 ／ Complete Styling","description":"写真＋10秒以内の動画で、動きと表情まで読み取る最上位の画像鑑定。","price":"35000","priceCurrency":"JPY"},{"@type":"Offer","name":"対面鑑定 ／ In-Person Session","description":"50分の対面セッション＋メイク実演アドバイス。鑑定書付き。","price":"38000","priceCurrency":"JPY"}]}},{"@type":"Person","@id":"https://modernphysiognomy.com/#tomoko","name":"TOMOKO","jobTitle":"現代観相学研究家／メイクアップアーティスト","description":"ニューヨーク州立大学にてCommunication Media Arts専攻を修了後、ロンドン・パリのメイクスクールでメイクアップを学ぶ。15年・国内外1万人以上の顔と向き合い、現代の観相学「Modern Physiognomy」の研究と分析セッションを展開。","image":"https://modernphysiognomy.com/images/tomoko.jpg","knowsAbout":["人相","人相占い","観相学","Physiognomy","顔分析","印象分析","メイクアップ"],"worksFor":{"@id":"https://modernphysiognomy.com/#service"},"url":"https://modernphysiognomy.com/"},{"@type":"WebSite","@id":"https://modernphysiognomy.com/#website","url":"https://modernphysiognomy.com/","name":"現代観相学 Modern Physiognomy","inLanguage":"ja","publisher":{"@id":"https://modernphysiognomy.com/#service"}},{"@type":"FAQPage","@id":"https://modernphysiognomy.com/#faq","mainEntity":[{"@type":"Question","name":"現代観相学は人相占いと何が違うのですか？","acceptedAnswer":{"@type":"Answer","text":"現代観相学は「口角が下がっていたら凶相」といった一面的な人相占いとは異なります。占いではなく、15年・国内外1万人以上の実践から生まれた外見分析メソッドとして、顔から内面と印象を立体的に読み解きます。"}},{"@type":"Question","name":"顔写真1枚だけでも鑑定できますか？","acceptedAnswer":{"@type":"Answer","text":"はい。お試し鑑定（5,500円）は顔写真1枚から、全体の印象・活かすべきチャームポイント・今伸ばしどきのポイントを鑑定します。より深く読み解きたい場合は、複数枚や動画を用いた上位メニューもご用意しています。"}},{"@type":"Question","name":"人相は生まれつきで決まっていますか？変えられますか？","acceptedAnswer":{"@type":"Answer","text":"顔は、あなたがどう生きてきたかの証であり、これからどう生きるかでまだ変わっていきます。良い顔は作れます。鑑定では、現実的なメイクや印象の育て方までご提案します。"}},{"@type":"Question","name":"オンラインで全国どこからでも受けられますか？","acceptedAnswer":{"@type":"Answer","text":"はい。お試し鑑定から総合鑑定までは、お写真や動画をお送りいただくオンライン鑑定として全国どこからでもご利用いただけます。対面鑑定のみ対面セッションとなります。"}},{"@type":"Question","name":"鑑定料金と申し込み方法を教えてください。","acceptedAnswer":{"@type":"Answer","text":"料金はお試し鑑定5,500円から対面鑑定38,000円までの5メニューです。お申し込みは、まずお問い合わせフォームよりご連絡いただき、詳細のご返信・事前決済を経て鑑定を実施します。"}}]}]}</script><style>html{scroll-behavior:smooth}body{background:#f4f4f2;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}[data-astro-cid-j7pv25f6]::selection{background:#c5a35b;color:#14141a}.grain[data-astro-cid-j7pv25f6]:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:1;opacity:.035;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}.portrait[data-astro-cid-j7pv25f6]{position:relative;overflow:hidden;background:radial-gradient(120% 90% at 70% 15%,rgba(197,163,91,.18),transparent 55%),linear-gradient(160deg,#eaeae8,#dbdbda 45%,#cacac9)}.portrait[data-astro-cid-j7pv25f6]:after{content:"";position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)' opacity='.5'/%3E%3C/svg%3E");opacity:.06;mix-blend-mode:multiply}.face-line[data-astro-cid-j7pv25f6]{stroke:#c5a35b;fill:none;opacity:.34}.reveal[data-astro-cid-j7pv25f6]{opacity:0;transform:translateY(26px);transition:opacity 1s cubic-bezier(.22,1,.36,1),transform 1s cubic-bezier(.22,1,.36,1)}.reveal[data-astro-cid-j7pv25f6].in{opacity:1;transform:none}.reveal[data-astro-cid-j7pv25f6].d1{transition-delay:.08s}.reveal[data-astro-cid-j7pv25f6].d2{transition-delay:.16s}.reveal[data-astro-cid-j7pv25f6].d3{transition-delay:.24s}.reveal[data-astro-cid-j7pv25f6].d4{transition-delay:.32s}.hairline[data-astro-cid-j7pv25f6]{height:1px;background:linear-gradient(90deg,transparent,#CFCFCB,transparent)}.vrule[data-astro-cid-j7pv25f6]{width:1px;background:linear-gradient(180deg,transparent,#CFCFCB 30%,#CFCFCB 70%,transparent)}.link-underline[data-astro-cid-j7pv25f6]{background-image:linear-gradient(#c5a35b,#c5a35b);background-size:0% 1px;background-repeat:no-repeat;background-position:0 100%;transition:background-size .4s ease}.link-underline[data-astro-cid-j7pv25f6]:hover{background-size:100% 1px}.price-card[data-astro-cid-j7pv25f6]{transition:transform .5s cubic-bezier(.22,1,.36,1),box-shadow .5s ease,border-color .5s ease}.price-card[data-astro-cid-j7pv25f6]:hover{transform:translateY(-6px);box-shadow:0 30px 60px -30px #14141a40;border-color:#c5a35b}.btn-ink[data-astro-cid-j7pv25f6]{transition:background-color .4s ease,color .4s ease,letter-spacing .4s ease}.btn-ink[data-astro-cid-j7pv25f6]:hover{background:#1a1a1a;color:#fafaf8;letter-spacing:.18em}[data-astro-cid-j7pv25f6]:focus-visible{outline:2px solid #C5A35B;outline-offset:3px;border-radius:2px}@keyframes drift{0%{transform:translate(0)}to{transform:translate(-50%)}}.marquee[data-astro-cid-j7pv25f6]{display:flex;width:max-content;animation:drift 38s linear infinite}summary[data-astro-cid-j7pv25f6]::-webkit-details-marker{display:none}summary[data-astro-cid-j7pv25f6]{list-style:none}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal[data-astro-cid-j7pv25f6]{opacity:1!important;transform:none!important;transition:none}.marquee[data-astro-cid-j7pv25f6]{animation:none}}
+</style></head> <body class="grain font-mincho text-ink antialiased" data-astro-cid-j7pv25f6> <!-- ░░ NAV ░░ --> <header id="nav" class="fixed inset-x-0 top-0 z-50 transition-all duration-500" data-astro-cid-j7pv25f6> <div class="mx-auto flex max-w-7xl items-center justify-between px-5 py-5 sm:px-8 lg:px-12" data-astro-cid-j7pv25f6> <a href="#top" class="flex flex-col leading-none" data-astro-cid-j7pv25f6> <span class="font-display text-xl tracking-wide2 text-ink sm:text-2xl" data-astro-cid-j7pv25f6>Modern Physiognomy</span> <span class="mt-1 text-[10px] tracking-luxe text-taupe" data-astro-cid-j7pv25f6>現 代 観 相 学</span> </a> <nav class="hidden items-center gap-9 text-xs tracking-wide2 text-taupe md:flex" data-astro-cid-j7pv25f6> <a href="#concept" class="link-underline pb-1" data-astro-cid-j7pv25f6>CONCEPT</a> <a href="#reading" class="link-underline pb-1" data-astro-cid-j7pv25f6>READING</a> <a href="#about" class="link-underline pb-1" data-astro-cid-j7pv25f6>ABOUT</a> <a href="/column" class="link-underline pb-1" data-astro-cid-j7pv25f6>COLUMN</a> <a href="#faq" class="link-underline pb-1" data-astro-cid-j7pv25f6>FAQ</a> <a href="#contact" class="btn-ink rounded-full border border-ink px-6 py-2.5 text-ink" data-astro-cid-j7pv25f6>CONTACT</a> </nav> <button id="menuBtn" aria-label="メニューを開く" aria-expanded="false" class="md:hidden cursor-pointer p-2 text-ink" data-astro-cid-j7pv25f6> <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" data-astro-cid-j7pv25f6><line x1="3" y1="8" x2="21" y2="8" data-astro-cid-j7pv25f6></line><line x1="3" y1="16" x2="21" y2="16" data-astro-cid-j7pv25f6></line></svg> </button> </div> <div class="hairline opacity-0 transition-opacity duration-500" id="navline" data-astro-cid-j7pv25f6></div> </header> <!-- mobile menu --> <div id="mobileMenu" class="fixed inset-0 z-50 hidden bg-cream/98 backdrop-blur-sm" data-astro-cid-j7pv25f6> <div class="flex items-center justify-between px-6 py-5" data-astro-cid-j7pv25f6> <span class="font-display text-xl tracking-wide2" data-astro-cid-j7pv25f6>Modern Physiognomy</span> <button id="menuClose" aria-label="メニューを閉じる" class="cursor-pointer p-2" data-astro-cid-j7pv25f6> <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" data-astro-cid-j7pv25f6><line x1="5" y1="5" x2="19" y2="19" data-astro-cid-j7pv25f6></line><line x1="19" y1="5" x2="5" y2="19" data-astro-cid-j7pv25f6></line></svg> </button> </div> <nav class="mt-10 flex flex-col items-center gap-8 font-display text-3xl text-ink" data-astro-cid-j7pv25f6> <a href="#concept" class="mm-link" data-astro-cid-j7pv25f6>Concept</a> <a href="#reading" class="mm-link" data-astro-cid-j7pv25f6>Reading</a> <a href="#about" class="mm-link" data-astro-cid-j7pv25f6>About</a> <a href="/column" class="mm-link" data-astro-cid-j7pv25f6>Column</a> <a href="#faq" class="mm-link" data-astro-cid-j7pv25f6>FAQ</a> <a href="#contact" class="mm-link" data-astro-cid-j7pv25f6>Contact</a> </nav> </div> <main id="top" data-astro-cid-j7pv25f6> <!-- ░░ HERO ░░ --> <section class="relative min-h-screen overflow-hidden bg-ivory" data-astro-cid-j7pv25f6> <div class="mx-auto grid min-h-screen max-w-7xl grid-cols-1 items-center gap-10 px-5 pb-16 pt-32 sm:px-8 lg:grid-cols-12 lg:gap-6 lg:px-12 lg:pt-28" data-astro-cid-j7pv25f6> <div class="lg:col-span-6 lg:pr-6" data-astro-cid-j7pv25f6> <div class="reveal mb-8 flex items-center gap-4" data-astro-cid-j7pv25f6> <span class="h-px w-12 bg-bronze" data-astro-cid-j7pv25f6></span> <span class="text-[11px] tracking-luxe text-bronzeDeep" data-astro-cid-j7pv25f6>EXTERIOR ANALYSIS METHOD</span> </div> <h1 class="reveal d1 font-display text-[15vw] font-light leading-[0.92] text-ink sm:text-7xl lg:text-[5.6rem]" data-astro-cid-j7pv25f6>
+YOUR&nbsp;FACE.<br data-astro-cid-j7pv25f6><em class="italic text-bronzeDeep" data-astro-cid-j7pv25f6>Your Story.</em> </h1> <p class="reveal d2 mt-9 max-w-md font-mincho text-base leading-loose tracking-wide text-taupe" data-astro-cid-j7pv25f6>
+顔は、“内面の情報”である。<br data-astro-cid-j7pv25f6>
+外見から人間と自己理解を読み解く、外見分析メソッド。
+</p> <div class="reveal d3 mt-11 flex flex-col gap-4 sm:flex-row sm:items-center" data-astro-cid-j7pv25f6> <a href="#reading" class="btn-ink inline-flex items-center justify-center rounded-full border border-ink px-9 py-4 text-xs tracking-wide2 text-ink" data-astro-cid-j7pv25f6>個人鑑定を見る</a> <a href="#concept" class="link-underline inline-flex items-center gap-2 self-start pb-1 text-xs tracking-wide2 text-taupe sm:self-auto" data-astro-cid-j7pv25f6>
+現代の観相学とは
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" data-astro-cid-j7pv25f6><line x1="5" y1="12" x2="19" y2="12" data-astro-cid-j7pv25f6></line><polyline points="13 6 19 12 13 18" data-astro-cid-j7pv25f6></polyline></svg> </a> </div> </div> <div class="reveal d2 lg:col-span-6" data-astro-cid-j7pv25f6> <figure class="relative ml-auto w-full max-w-md lg:max-w-none" data-astro-cid-j7pv25f6> <div class="portrait aspect-[3/4] w-full rounded-[2px] shadow-[0_50px_90px_-50px_rgba(20,20,26,.5)]" data-astro-cid-j7pv25f6> <img src="/images/hero.jpg" alt="現代観相学 Modern Physiognomy ― 人相・観相からあなたの印象を読み解くポートレート" width="1232" height="928" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'" data-astro-cid-j7pv25f6> <svg viewBox="0 0 300 400" class="absolute inset-0 h-full w-full" preserveAspectRatio="xMidYMid slice" aria-hidden="true" data-astro-cid-j7pv25f6> <g class="face-line" stroke-width="1" data-astro-cid-j7pv25f6> <path d="M150 70 C100 70 92 140 95 195 C98 255 120 320 150 330 C180 320 202 255 205 195 C208 140 200 70 150 70 Z" data-astro-cid-j7pv25f6></path> <line x1="150" y1="70" x2="150" y2="330" data-astro-cid-j7pv25f6></line> <line x1="80" y1="140" x2="220" y2="140" data-astro-cid-j7pv25f6></line> <line x1="80" y1="205" x2="220" y2="205" data-astro-cid-j7pv25f6></line> <line x1="80" y1="270" x2="220" y2="270" data-astro-cid-j7pv25f6></line> <circle cx="123" cy="170" r="10" data-astro-cid-j7pv25f6></circle><circle cx="177" cy="170" r="10" data-astro-cid-j7pv25f6></circle> <path d="M138 235 q12 12 24 0" data-astro-cid-j7pv25f6></path> </g> </svg> </div> <span class="absolute -right-4 bottom-16 hidden rotate-90 text-[10px] tracking-luxe text-bronzeDeep lg:block" data-astro-cid-j7pv25f6>EST. 観相</span> </figure> </div> </div> <a href="#concept" class="absolute bottom-7 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 text-[10px] tracking-luxe text-taupe lg:flex" data-astro-cid-j7pv25f6>
+SCROLL
+<span class="h-10 w-px bg-gradient-to-b from-bronze to-transparent" data-astro-cid-j7pv25f6></span> </a> </section> <!-- ░░ MARQUEE ░░ --> <div class="overflow-hidden border-y border-line bg-cream py-5" data-astro-cid-j7pv25f6> <div class="marquee items-center text-bronzeDeep" data-astro-cid-j7pv25f6> <span class="flex items-center" data-astro-cid-j7pv25f6> <span class="px-8 font-display text-2xl italic" data-astro-cid-j7pv25f6>Modern Physiognomy</span><span class="text-bronze" data-astro-cid-j7pv25f6>✦</span> <span class="px-8 font-mincho text-sm tracking-wide2" data-astro-cid-j7pv25f6>生きてきた深さ</span><span class="text-bronze" data-astro-cid-j7pv25f6>✦</span> <span class="px-8 font-display text-2xl italic" data-astro-cid-j7pv25f6>Your Face, Your Story</span><span class="text-bronze" data-astro-cid-j7pv25f6>✦</span> <span class="px-8 font-mincho text-sm tracking-wide2" data-astro-cid-j7pv25f6>積み重ねてきた経験</span><span class="text-bronze" data-astro-cid-j7pv25f6>✦</span> </span> <span class="flex items-center" aria-hidden="true" data-astro-cid-j7pv25f6> <span class="px-8 font-display text-2xl italic" data-astro-cid-j7pv25f6>Modern Physiognomy</span><span class="text-bronze" data-astro-cid-j7pv25f6>✦</span> <span class="px-8 font-mincho text-sm tracking-wide2" data-astro-cid-j7pv25f6>生きてきた深さ</span><span class="text-bronze" data-astro-cid-j7pv25f6>✦</span> <span class="px-8 font-display text-2xl italic" data-astro-cid-j7pv25f6>Your Face, Your Story</span><span class="text-bronze" data-astro-cid-j7pv25f6>✦</span> <span class="px-8 font-mincho text-sm tracking-wide2" data-astro-cid-j7pv25f6>積み重ねてきた経験</span><span class="text-bronze" data-astro-cid-j7pv25f6>✦</span> </span> </div> </div> <!-- ░░ CONCEPT ░░ --> <section id="concept" class="bg-ivory px-5 py-28 sm:px-8 lg:px-12 lg:py-40" data-astro-cid-j7pv25f6> <div class="mx-auto max-w-7xl" data-astro-cid-j7pv25f6> <div class="grid grid-cols-1 gap-14 lg:grid-cols-12 lg:gap-12" data-astro-cid-j7pv25f6> <div class="reveal lg:col-span-4" data-astro-cid-j7pv25f6> <span class="text-[11px] tracking-luxe text-bronzeDeep" data-astro-cid-j7pv25f6>01 — CONCEPT</span> <h2 class="mt-6 font-display text-5xl font-light leading-tight text-ink lg:text-6xl" data-astro-cid-j7pv25f6>
+現代の<br data-astro-cid-j7pv25f6>観相学
+</h2> <p class="mt-4 font-display text-xl italic text-taupe" data-astro-cid-j7pv25f6>Modern Physiognomy</p> </div> <div class="reveal d1 lg:col-span-7 lg:col-start-6" data-astro-cid-j7pv25f6> <p class="font-mincho text-lg font-medium leading-loose tracking-wide text-ink lg:text-xl" data-astro-cid-j7pv25f6>
+Modern Physiognomy は、古い人相占いではありません。
+</p> <p class="mt-7 font-mincho text-[15px] leading-loose tracking-wide text-taupe" data-astro-cid-j7pv25f6>
+本来、顔はもっと豊かな情報を持っています。生きてきた深さ、積み重ねてきた経験、内側から滲み出る人柄——それらはすべて、顔つきとなって現れます。
+</p> <p class="mt-6 font-mincho text-[15px] leading-loose tracking-wide text-taupe" data-astro-cid-j7pv25f6>
+あなたの顔は、あなたがどう生きてきたかの証です。そしてこれからどう生きるかで、まだ変わっていきます。
+</p> <div class="mt-10 hairline" data-astro-cid-j7pv25f6></div> <div class="mt-10 rounded-[3px] border border-line bg-paper/70 p-7 sm:p-8" data-astro-cid-j7pv25f6> <p class="text-[11px] tracking-luxe text-bronzeDeep" data-astro-cid-j7pv25f6>PHYSIOGNOMY COURSE</p> <p class="mt-3 font-mincho text-base leading-relaxed text-ink" data-astro-cid-j7pv25f6>現代観相学を学びたい方へ。<br class="hidden sm:block" data-astro-cid-j7pv25f6>セブンビューティーアカデミーで動画講座開催中。</p> <a href="https://7beauty-academy.com/GoodsDetail.jsp?salesGoodsCode=11874" target="_blank" rel="noopener" class="group mt-6 inline-flex w-full items-center justify-center gap-3 rounded-full bg-bronze px-10 py-4 text-xs tracking-wide2 text-charcoal shadow-[0_18px_40px_-18px_rgba(197,163,91,.6)] transition-all duration-300 hover:bg-charcoal hover:text-cream sm:w-auto" data-astro-cid-j7pv25f6>
+フィジオノミー講座はこちら
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" class="transition-transform duration-300 group-hover:translate-x-1" data-astro-cid-j7pv25f6><line x1="7" y1="17" x2="17" y2="7" data-astro-cid-j7pv25f6></line><polyline points="8 7 17 7 17 16" data-astro-cid-j7pv25f6></polyline></svg> </a> </div> </div> </div> </div> </section> <!-- ░░ PHILOSOPHY band ░░ --> <section class="relative overflow-hidden bg-charcoal px-5 py-28 text-cream sm:px-8 lg:px-12 lg:py-40" data-astro-cid-j7pv25f6> <div class="mx-auto max-w-5xl text-center" data-astro-cid-j7pv25f6> <span class="reveal text-[11px] tracking-luxe text-bronze" data-astro-cid-j7pv25f6>PHILOSOPHY</span> <p class="reveal d1 mx-auto mt-10 max-w-3xl font-display text-3xl font-light leading-snug text-cream sm:text-4xl lg:text-[2.9rem] lg:leading-[1.35]" data-astro-cid-j7pv25f6>
+美醜と魅力は、<em class="italic text-bronze" data-astro-cid-j7pv25f6>まったく別のもの</em>。<br class="hidden sm:block" data-astro-cid-j7pv25f6>
+外見には、内面が現れる。
+</p> <p class="reveal d2 mx-auto mt-9 max-w-xl font-mincho text-sm leading-loose tracking-wide text-cream/65" data-astro-cid-j7pv25f6>
+「口角が下がっていたら凶相」——そんな一面的な解釈には収まりません。15年の研究と1万人以上との実践から生まれた、外見への新しい視点。
+</p> </div> </section> <!-- ░░ FREE APP ░░ --> <section id="app" class="bg-ivory px-5 py-24 sm:px-8 lg:px-12 lg:py-32" data-astro-cid-j7pv25f6> <div class="reveal mx-auto max-w-3xl overflow-hidden rounded-[4px] border border-line bg-paper p-9 text-center sm:p-14" data-astro-cid-j7pv25f6> <span class="text-[11px] tracking-luxe text-bronzeDeep" data-astro-cid-j7pv25f6>FREE WEB APP ・ お試し無料</span> <h2 class="mt-6 font-display text-4xl font-light leading-tight text-ink sm:text-5xl" data-astro-cid-j7pv25f6>
+気になるあの人と、<br class="hidden sm:block" data-astro-cid-j7pv25f6><em class="italic text-bronze" data-astro-cid-j7pv25f6>顔の相性</em>診断。
+</h2> <p class="mx-auto mt-6 max-w-xl font-mincho text-[15px] leading-loose tracking-wide text-taupe" data-astro-cid-j7pv25f6>
+2人の顔写真から、観相学の視点で相性を読み解く無料Webアプリ。登録不要、その場ですぐにお試しいただけます。
+</p> <div class="mx-auto mt-8 flex max-w-md items-start gap-3 rounded-[3px] border border-line bg-ivory/70 p-4 text-left" data-astro-cid-j7pv25f6> <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="mt-0.5 flex-none text-bronzeDeep" data-astro-cid-j7pv25f6><rect x="3" y="11" width="18" height="11" rx="2" data-astro-cid-j7pv25f6></rect><path d="M7 11V7a5 5 0 0 1 10 0v4" data-astro-cid-j7pv25f6></path></svg> <p class="text-[12px] leading-relaxed text-taupe" data-astro-cid-j7pv25f6>
+アップロードされた<span class="text-ink" data-astro-cid-j7pv25f6>画像データは保存・蓄積されません。</span>診断後はサーバーに残らないため、安心してご利用いただけます。
+</p> </div> <a href="https://kaomirucouple.netlify.app" target="_blank" rel="noopener" class="group mt-9 inline-flex w-full items-center justify-center gap-3 rounded-full bg-bronze px-10 py-4 text-xs tracking-wide2 text-charcoal shadow-[0_18px_40px_-18px_rgba(197,163,91,.6)] transition-all duration-300 hover:bg-charcoal hover:text-cream sm:w-auto" data-astro-cid-j7pv25f6>
+無料で相性診断を試す
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" class="transition-transform duration-300 group-hover:translate-x-1" data-astro-cid-j7pv25f6><line x1="7" y1="17" x2="17" y2="7" data-astro-cid-j7pv25f6></line><polyline points="8 7 17 7 17 16" data-astro-cid-j7pv25f6></polyline></svg> </a> </div> </section> <!-- ░░ READING / PRICING ░░ --> <section id="reading" class="bg-cream px-5 py-28 sm:px-8 lg:px-12 lg:py-40" data-astro-cid-j7pv25f6> <div class="mx-auto max-w-7xl" data-astro-cid-j7pv25f6> <div class="reveal mb-16 flex flex-col items-start justify-between gap-8 lg:flex-row lg:items-end" data-astro-cid-j7pv25f6> <div data-astro-cid-j7pv25f6> <span class="text-[11px] tracking-luxe text-bronzeDeep" data-astro-cid-j7pv25f6>02 — PERSONAL READING</span> <h2 class="mt-6 font-display text-5xl font-light leading-tight text-ink lg:text-6xl" data-astro-cid-j7pv25f6>個 人 鑑 定</h2> </div> <p class="max-w-sm font-mincho text-sm leading-loose tracking-wide text-taupe" data-astro-cid-j7pv25f6>
+コンセプト：<span class="text-ink" data-astro-cid-j7pv25f6>良い顔は作れる</span> ―<br data-astro-cid-j7pv25f6>あなたの印象を、現実的に育てる。
+</p> </div> <div class="grid grid-cols-1 gap-px overflow-hidden rounded-[3px] border border-line bg-line sm:grid-cols-2 lg:grid-cols-3" data-astro-cid-j7pv25f6> <article class="price-card flex flex-col border border-transparent bg-paper p-8 lg:p-9" data-astro-cid-j7pv25f6> <div class="flex items-start justify-between" data-astro-cid-j7pv25f6> <span class="font-display text-5xl italic text-line/0 text-bronze/30" data-astro-cid-j7pv25f6>01</span> <span class="text-[10px] tracking-luxe text-bronzeDeep" data-astro-cid-j7pv25f6>FIRST IMPRESSION</span> </div> <h3 class="mt-5 font-mincho text-xl font-semibold text-ink" data-astro-cid-j7pv25f6>お試し鑑定</h3> <p class="mt-2 font-display text-3xl text-ink" data-astro-cid-j7pv25f6>¥5,500</p> <p class="mt-4 text-[13px] leading-relaxed text-taupe" data-astro-cid-j7pv25f6>顔写真1枚から、あなたの観相を鑑定します。</p> <ul class="mt-6 space-y-3 text-[13px] text-taupe" data-astro-cid-j7pv25f6> <li class="flex gap-3" data-astro-cid-j7pv25f6><span class="mt-2 h-1 w-1 flex-none rounded-full bg-bronze" data-astro-cid-j7pv25f6></span>全体の印象</li> <li class="flex gap-3" data-astro-cid-j7pv25f6><span class="mt-2 h-1 w-1 flex-none rounded-full bg-bronze" data-astro-cid-j7pv25f6></span>活かすべきチャームポイント</li> <li class="flex gap-3" data-astro-cid-j7pv25f6><span class="mt-2 h-1 w-1 flex-none rounded-full bg-bronze" data-astro-cid-j7pv25f6></span>今、伸ばしどきのポイント</li> </ul> <a href="#contact" class="btn-ink mt-8 inline-flex justify-center rounded-full border border-line px-6 py-3 text-[11px] tracking-wide2 text-ink" data-astro-cid-j7pv25f6>申し込む</a> </article> <article class="price-card flex flex-col border border-transparent bg-paper p-8 lg:p-9" data-astro-cid-j7pv25f6> <div class="flex items-start justify-between" data-astro-cid-j7pv25f6> <span class="font-display text-5xl italic text-bronze/30" data-astro-cid-j7pv25f6>02</span> <span class="text-[10px] tracking-luxe text-bronzeDeep" data-astro-cid-j7pv25f6>INNER &amp; OUTER</span> </div> <h3 class="mt-5 font-mincho text-xl font-semibold text-ink" data-astro-cid-j7pv25f6>印象鑑定</h3> <p class="mt-2 font-display text-3xl text-ink" data-astro-cid-j7pv25f6>¥11,000</p> <p class="mt-4 text-[13px] leading-relaxed text-taupe" data-astro-cid-j7pv25f6>正面・横顔の2枚から、対外的な印象と本質を読み解きます。</p> <ul class="mt-6 space-y-3 text-[13px] text-taupe" data-astro-cid-j7pv25f6> <li class="flex gap-3" data-astro-cid-j7pv25f6><span class="mt-2 h-1 w-1 flex-none rounded-full bg-bronze" data-astro-cid-j7pv25f6></span>お試しの全内容</li> <li class="flex gap-3" data-astro-cid-j7pv25f6><span class="mt-2 h-1 w-1 flex-none rounded-full bg-bronze" data-astro-cid-j7pv25f6></span>対外印象（周囲に与えている効果）</li> <li class="flex gap-3" data-astro-cid-j7pv25f6><span class="mt-2 h-1 w-1 flex-none rounded-full bg-bronze" data-astro-cid-j7pv25f6></span>本質</li> <li class="flex gap-3" data-astro-cid-j7pv25f6><span class="mt-2 h-1 w-1 flex-none rounded-full bg-bronze" data-astro-cid-j7pv25f6></span>適職・活かすべき能力</li> <li class="flex gap-3" data-astro-cid-j7pv25f6><span class="mt-2 h-1 w-1 flex-none rounded-full bg-bronze" data-astro-cid-j7pv25f6></span>気をつけたいクセ</li> </ul> <a href="#contact" class="btn-ink mt-8 inline-flex justify-center rounded-full border border-line px-6 py-3 text-[11px] tracking-wide2 text-ink" data-astro-cid-j7pv25f6>申し込む</a> </article> <article class="price-card flex flex-col border border-transparent bg-paper p-8 lg:p-9" data-astro-cid-j7pv25f6> <div class="flex items-start justify-between" data-astro-cid-j7pv25f6> <span class="font-display text-5xl italic text-bronze/30" data-astro-cid-j7pv25f6>03</span> <span class="text-[10px] tracking-luxe text-bronzeDeep" data-astro-cid-j7pv25f6>DETAIL READING</span> </div> <h3 class="mt-5 font-mincho text-xl font-semibold text-ink" data-astro-cid-j7pv25f6>パーツ鑑定</h3> <p class="mt-2 font-display text-3xl text-ink" data-astro-cid-j7pv25f6>¥22,000</p> <p class="mt-4 text-[13px] leading-relaxed text-taupe" data-astro-cid-j7pv25f6>顔の各パーツと全体の佇まいを、緻密に読み解きます。</p> <ul class="mt-6 space-y-3 text-[13px] text-taupe" data-astro-cid-j7pv25f6> <li class="flex gap-3" data-astro-cid-j7pv25f6><span class="mt-2 h-1 w-1 flex-none rounded-full bg-bronze" data-astro-cid-j7pv25f6></span>印象鑑定の全内容</li> <li class="flex gap-3" data-astro-cid-j7pv25f6><span class="mt-2 h-1 w-1 flex-none rounded-full bg-bronze" data-astro-cid-j7pv25f6></span>額・眉・目・鼻・口・輪郭・頬・顎の鑑定</li> <li class="flex gap-3" data-astro-cid-j7pv25f6><span class="mt-2 h-1 w-1 flex-none rounded-full bg-bronze" data-astro-cid-j7pv25f6></span>肌質・髪質・体型・姿勢・ファッションの印象</li> </ul> <a href="#contact" class="btn-ink mt-8 inline-flex justify-center rounded-full border border-line px-6 py-3 text-[11px] tracking-wide2 text-ink" data-astro-cid-j7pv25f6>申し込む</a> </article> <article class="price-card relative flex flex-col border border-transparent bg-charcoal p-8 text-cream sm:col-span-2 lg:col-span-1 lg:p-9" data-astro-cid-j7pv25f6> <span class="absolute right-6 top-6 rounded-full border border-bronze/60 px-3 py-1 text-[9px] tracking-luxe text-bronze" data-astro-cid-j7pv25f6>最上位 IMAGE</span> <div class="flex items-start justify-between" data-astro-cid-j7pv25f6> <span class="font-display text-5xl italic text-bronze/50" data-astro-cid-j7pv25f6>04</span> </div> <h3 class="mt-5 font-mincho text-xl font-semibold" data-astro-cid-j7pv25f6>総合鑑定</h3> <p class="mt-1 text-[10px] tracking-luxe text-bronze" data-astro-cid-j7pv25f6>COMPLETE STYLING</p> <p class="mt-2 font-display text-3xl" data-astro-cid-j7pv25f6>¥35,000</p> <p class="mt-4 text-[13px] leading-relaxed text-cream/65" data-astro-cid-j7pv25f6>写真＋10秒以内の動画で、動きと表情まで読み取る最上位の画像鑑定。</p> <ul class="mt-6 space-y-3 text-[13px] text-cream/75" data-astro-cid-j7pv25f6> <li class="flex gap-3" data-astro-cid-j7pv25f6><span class="mt-2 h-1 w-1 flex-none rounded-full bg-bronze" data-astro-cid-j7pv25f6></span>パーツ鑑定の全内容</li> <li class="flex gap-3" data-astro-cid-j7pv25f6><span class="mt-2 h-1 w-1 flex-none rounded-full bg-bronze" data-astro-cid-j7pv25f6></span>動画分析：表情の動き・話し方のクセを読み取る</li> <li class="flex gap-3" data-astro-cid-j7pv25f6><span class="mt-2 h-1 w-1 flex-none rounded-full bg-bronze" data-astro-cid-j7pv25f6></span>現実的なメイクアドバイス（あなた専用）</li> </ul> <a href="#contact" class="mt-8 inline-flex justify-center rounded-full bg-bronze px-6 py-3 text-[11px] tracking-wide2 text-charcoal transition-colors duration-300 hover:bg-cream" data-astro-cid-j7pv25f6>申し込む</a> </article> <article class="price-card flex flex-col border border-transparent bg-paper p-8 sm:col-span-2 lg:col-span-2 lg:p-9" data-astro-cid-j7pv25f6> <div class="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between" data-astro-cid-j7pv25f6> <div class="lg:max-w-md" data-astro-cid-j7pv25f6> <div class="flex items-start justify-between lg:justify-start lg:gap-6" data-astro-cid-j7pv25f6> <span class="font-display text-5xl italic text-bronze/30" data-astro-cid-j7pv25f6>05</span> <span class="self-center text-[10px] tracking-luxe text-bronzeDeep" data-astro-cid-j7pv25f6>IN-PERSON SESSION</span> </div> <h3 class="mt-5 font-mincho text-xl font-semibold text-ink" data-astro-cid-j7pv25f6>対面鑑定</h3> <p class="mt-2 font-display text-3xl text-ink" data-astro-cid-j7pv25f6>¥38,000</p> <p class="mt-4 text-[13px] leading-relaxed text-taupe" data-astro-cid-j7pv25f6>50分の対面セッション＋メイク実演アドバイス。その場で印象の変化を体感していただけます。</p> </div> <ul class="space-y-3 text-[13px] text-taupe lg:border-l lg:border-line lg:pl-8" data-astro-cid-j7pv25f6> <li class="flex gap-3" data-astro-cid-j7pv25f6><span class="mt-2 h-1 w-1 flex-none rounded-full bg-bronze" data-astro-cid-j7pv25f6></span>総合鑑定（④）の全内容を含む鑑定書付き</li> <li class="flex gap-3" data-astro-cid-j7pv25f6><span class="mt-2 h-1 w-1 flex-none rounded-full bg-bronze" data-astro-cid-j7pv25f6></span>50分の対面セッション</li> <li class="flex gap-3" data-astro-cid-j7pv25f6><span class="mt-2 h-1 w-1 flex-none rounded-full bg-bronze" data-astro-cid-j7pv25f6></span>メイク実演アドバイス</li> <li class="flex gap-3" data-astro-cid-j7pv25f6><span class="mt-2 h-1 w-1 flex-none rounded-full bg-bronze" data-astro-cid-j7pv25f6></span>その場で印象の変化を体感</li> </ul> </div> <a href="#contact" class="btn-ink mt-8 inline-flex w-full justify-center rounded-full border border-line px-6 py-3 text-[11px] tracking-wide2 text-ink lg:w-auto lg:self-start" data-astro-cid-j7pv25f6>申し込む</a> </article> </div> <div class="reveal mt-24" data-astro-cid-j7pv25f6> <div class="hairline" data-astro-cid-j7pv25f6></div> <div class="mt-16 flex flex-col items-start justify-between gap-6 lg:flex-row lg:items-end" data-astro-cid-j7pv25f6> <div data-astro-cid-j7pv25f6> <span class="text-[11px] tracking-luxe text-bronzeDeep" data-astro-cid-j7pv25f6>HOW TO APPLY</span> <h3 class="mt-5 font-display text-4xl font-light leading-tight text-ink lg:text-5xl" data-astro-cid-j7pv25f6>個人鑑定お申し込みの流れ</h3> </div> <p class="max-w-sm font-mincho text-sm leading-loose tracking-wide text-taupe" data-astro-cid-j7pv25f6>
+鑑定は全て<span class="text-ink" data-astro-cid-j7pv25f6>事前決済</span>です。<br class="hidden sm:block" data-astro-cid-j7pv25f6>まずはお問い合わせから、お気軽にご連絡ください。
+</p> </div> <div class="mt-14 flex flex-col gap-3 lg:flex-row lg:items-stretch lg:gap-0" data-astro-cid-j7pv25f6> <div class="flex-1 rounded-[3px] border border-line bg-paper p-7" data-astro-cid-j7pv25f6> <span class="font-display text-4xl italic text-bronze/30" data-astro-cid-j7pv25f6>01</span> <p class="mt-3 text-[10px] tracking-luxe text-bronzeDeep" data-astro-cid-j7pv25f6>STEP 01</p> <p class="mt-3 font-mincho text-[15px] font-semibold leading-relaxed text-ink" data-astro-cid-j7pv25f6>お問い合わせ</p> <p class="mt-2 text-[13px] leading-relaxed text-taupe" data-astro-cid-j7pv25f6>メールにて、ご希望の鑑定名をお知らせください。</p> </div> <div class="flex items-center justify-center py-1 lg:px-3" data-astro-cid-j7pv25f6> <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" class="rotate-90 text-bronze lg:rotate-0" data-astro-cid-j7pv25f6><polyline points="9 6 15 12 9 18" data-astro-cid-j7pv25f6></polyline></svg> </div> <div class="flex-1 rounded-[3px] border border-line bg-paper p-7" data-astro-cid-j7pv25f6> <span class="font-display text-4xl italic text-bronze/30" data-astro-cid-j7pv25f6>02</span> <p class="mt-3 text-[10px] tracking-luxe text-bronzeDeep" data-astro-cid-j7pv25f6>STEP 02</p> <p class="mt-3 font-mincho text-[15px] font-semibold leading-relaxed text-ink" data-astro-cid-j7pv25f6>詳細をご返信</p> <p class="mt-2 text-[13px] leading-relaxed text-taupe" data-astro-cid-j7pv25f6>画像・動画の送付方法、スケジュール、金額などを記載したメールをお送りします。</p> </div> <div class="flex items-center justify-center py-1 lg:px-3" data-astro-cid-j7pv25f6> <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" class="rotate-90 text-bronze lg:rotate-0" data-astro-cid-j7pv25f6><polyline points="9 6 15 12 9 18" data-astro-cid-j7pv25f6></polyline></svg> </div> <div class="flex-1 rounded-[3px] border border-bronze/40 bg-charcoal p-7 text-cream" data-astro-cid-j7pv25f6> <span class="font-display text-4xl italic text-bronze/60" data-astro-cid-j7pv25f6>03</span> <p class="mt-3 text-[10px] tracking-luxe text-bronze" data-astro-cid-j7pv25f6>STEP 03</p> <p class="mt-3 font-mincho text-[15px] font-semibold leading-relaxed" data-astro-cid-j7pv25f6>決済</p> <p class="mt-2 text-[13px] leading-relaxed text-cream/70" data-astro-cid-j7pv25f6>決済の完了をもって、お申し込み成立となります。</p> </div> <div class="flex items-center justify-center py-1 lg:px-3" data-astro-cid-j7pv25f6> <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" class="rotate-90 text-bronze lg:rotate-0" data-astro-cid-j7pv25f6><polyline points="9 6 15 12 9 18" data-astro-cid-j7pv25f6></polyline></svg> </div> <div class="flex-1 rounded-[3px] border border-line bg-paper p-7" data-astro-cid-j7pv25f6> <span class="font-display text-4xl italic text-bronze/30" data-astro-cid-j7pv25f6>04</span> <p class="mt-3 text-[10px] tracking-luxe text-bronzeDeep" data-astro-cid-j7pv25f6>STEP 04</p> <p class="mt-3 font-mincho text-[15px] font-semibold leading-relaxed text-ink" data-astro-cid-j7pv25f6>鑑定実施</p> <p class="mt-2 text-[13px] leading-relaxed text-taupe" data-astro-cid-j7pv25f6>ご希望の鑑定を実施し、鑑定結果をお届けします。</p> </div> </div> <div class="mt-10 flex flex-col gap-6 rounded-[3px] border border-line bg-paper/60 p-6 sm:p-7 lg:flex-row lg:items-center lg:justify-between" data-astro-cid-j7pv25f6> <ul class="space-y-3 text-[13px] leading-relaxed text-taupe" data-astro-cid-j7pv25f6> <li class="flex gap-2.5" data-astro-cid-j7pv25f6><span class="flex-none text-bronzeDeep" data-astro-cid-j7pv25f6>※</span>決済が完了するまでは正式なお申し込みとはなりません。ご不明な点がございましたら、お気軽にお問い合わせください。</li> <li class="flex gap-2.5" data-astro-cid-j7pv25f6><span class="flex-none text-bronzeDeep" data-astro-cid-j7pv25f6>※</span>鑑定は全て事前決済となりますことをご了承ください。</li> </ul> <a href="#contact" class="group inline-flex flex-none items-center justify-center gap-3 self-start rounded-full bg-bronze px-9 py-3.5 text-[11px] tracking-wide2 text-charcoal transition-colors duration-300 hover:bg-charcoal hover:text-cream lg:self-center" data-astro-cid-j7pv25f6>
+お問い合わせはこちら
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="transition-transform duration-300 group-hover:translate-x-1" data-astro-cid-j7pv25f6><line x1="5" y1="12" x2="19" y2="12" data-astro-cid-j7pv25f6></line><polyline points="13 6 19 12 13 18" data-astro-cid-j7pv25f6></polyline></svg> </a> </div> </div> </div> </section> <!-- ░░ ABOUT ░░ --> <section id="about" class="bg-ivory px-5 py-28 sm:px-8 lg:px-12 lg:py-40" data-astro-cid-j7pv25f6> <div class="mx-auto max-w-7xl" data-astro-cid-j7pv25f6> <div class="grid grid-cols-1 gap-14 lg:grid-cols-12 lg:gap-14" data-astro-cid-j7pv25f6> <div class="reveal lg:col-span-5" data-astro-cid-j7pv25f6> <figure class="relative" data-astro-cid-j7pv25f6> <div class="portrait aspect-[4/5] w-full rounded-[2px] shadow-[0_50px_90px_-50px_rgba(20,20,26,.45)]" data-astro-cid-j7pv25f6> <img src="/images/tomoko.jpg" alt="現代観相学研究家・メイクアップアーティスト TOMOKO のポートレート" width="1199" height="1600" loading="lazy" decoding="async" class="absolute inset-0 h-full w-full object-cover" onerror="this.style.display='none'" data-astro-cid-j7pv25f6> </div> </figure> </div> <div class="reveal d1 lg:col-span-6 lg:col-start-7" data-astro-cid-j7pv25f6> <span class="text-[11px] tracking-luxe text-bronzeDeep" data-astro-cid-j7pv25f6>03 — ABOUT</span> <h2 class="mt-6 font-display text-5xl font-light leading-tight text-ink lg:text-6xl" data-astro-cid-j7pv25f6>TOMOKO</h2> <p class="mt-3 text-xs tracking-wide2 text-taupe" data-astro-cid-j7pv25f6>現代観相学研究家 ／ メイクアップアーティスト</p> <p class="mt-9 font-mincho text-[15px] leading-loose tracking-wide text-taupe" data-astro-cid-j7pv25f6>
+HPをご覧くださり、ありがとうございます。<br data-astro-cid-j7pv25f6>メイクアップアーティスト・眉技術講師として、人種・年齢・性別を超えた1万人以上の顔と向き合ってきました。その中で確信したのは、顔にはその人の内面が表れるということです。
+</p> <p class="mt-6 font-mincho text-[15px] leading-loose tracking-wide text-ink" data-astro-cid-j7pv25f6>
+年齢を重ねるほどに、美形かどうかだけでは測れない内面が、顔に表れてきます。
+</p> <p class="mt-6 font-mincho text-[15px] leading-loose tracking-wide text-taupe" data-astro-cid-j7pv25f6>
+私自身も50代を迎え、年齢による外見の変化さえも、その人の生き方の表れなのだと感じるようになりました。その理由を知りたくて、日本・中国・欧米の観相学を15年以上かけて学び、従来の人相占いとは違う、現代に合った「顔の読み解き」を探求してきました。
+</p> <p class="mt-6 font-mincho text-[15px] leading-loose tracking-wide text-taupe" data-astro-cid-j7pv25f6>
+外見がこれまで以上に重視される現代。美醜とは異なる視点で外見を読み解くのが、現代観相学フィジオノミーです。
+</p> <p class="mt-6 font-mincho text-[15px] leading-loose tracking-wide text-ink" data-astro-cid-j7pv25f6>
+あなたの顔には、何が表れているのか。世界にただ一人のあなたの魅力を、独自の理論で読み解いていきます。
+</p> <div class="mt-10 rounded-[2px] border border-line bg-cream/60 p-7" data-astro-cid-j7pv25f6> <span class="text-[11px] tracking-luxe text-bronzeDeep" data-astro-cid-j7pv25f6>PROFILE</span> <p class="mt-4 font-mincho text-[13px] leading-loose tracking-wide text-taupe" data-astro-cid-j7pv25f6>
+ニューヨーク州立大学にて Communication Media Arts 専攻を修了後、ロンドン・パリのメイクスクールでメイクアップを学ぶ。2015年、一般社団法人ジャパンブロウアーティスト協会を創設。眉毛エクステンションを日本に初めて導入した第一人者として、NHK・AbemaTV をはじめ多数のメディアに出演。現在は同協会の代表理事として眉講座の監修を行うとともに、現代の観相学「Modern Physiognomy」の研究と分析セッションを展開している。
+</p> </div> </div> </div> </div> </section> <!-- ░░ FAQ ░░ --> <section id="faq" class="relative bg-ivory px-5 py-28 sm:px-8 lg:px-12 lg:py-40" data-astro-cid-j7pv25f6> <div class="mx-auto max-w-3xl" data-astro-cid-j7pv25f6> <div class="reveal text-center" data-astro-cid-j7pv25f6> <span class="text-[11px] tracking-luxe text-bronzeDeep" data-astro-cid-j7pv25f6>FAQ — よくあるご質問</span> <h2 class="mt-6 font-display text-5xl font-light leading-tight text-ink lg:text-6xl" data-astro-cid-j7pv25f6>人相・観相のご質問</h2> </div> <div class="reveal d1 mt-14 divide-y divide-line border-y border-line" data-astro-cid-j7pv25f6> <details class="group" data-astro-cid-j7pv25f6> <summary class="flex cursor-pointer items-center justify-between gap-6 py-6 font-mincho text-[15px] font-medium tracking-wide text-ink" data-astro-cid-j7pv25f6>
+現代観相学は人相占いと何が違うのですか？
+<svg class="h-5 w-5 shrink-0 text-bronze transition-transform duration-300 group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" data-astro-cid-j7pv25f6><polyline points="6 9 12 15 18 9" data-astro-cid-j7pv25f6></polyline></svg> </summary> <p class="pb-7 font-mincho text-[14px] leading-loose tracking-wide text-taupe" data-astro-cid-j7pv25f6>
+現代観相学は「口角が下がっていたら凶相」といった一面的な人相占いとは異なります。占いではなく、15年・国内外1万人以上の実践から生まれた外見分析メソッドとして、顔から内面と印象を立体的に読み解きます。
+</p> </details> <details class="group" data-astro-cid-j7pv25f6> <summary class="flex cursor-pointer items-center justify-between gap-6 py-6 font-mincho text-[15px] font-medium tracking-wide text-ink" data-astro-cid-j7pv25f6>
+顔写真1枚だけでも鑑定できますか？
+<svg class="h-5 w-5 shrink-0 text-bronze transition-transform duration-300 group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" data-astro-cid-j7pv25f6><polyline points="6 9 12 15 18 9" data-astro-cid-j7pv25f6></polyline></svg> </summary> <p class="pb-7 font-mincho text-[14px] leading-loose tracking-wide text-taupe" data-astro-cid-j7pv25f6>
+はい。お試し鑑定（5,500円）は顔写真1枚から、全体の印象・活かすべきチャームポイント・今伸ばしどきのポイントを鑑定します。より深く読み解きたい場合は、複数枚や動画を用いた上位メニューもご用意しています。
+</p> </details> <details class="group" data-astro-cid-j7pv25f6> <summary class="flex cursor-pointer items-center justify-between gap-6 py-6 font-mincho text-[15px] font-medium tracking-wide text-ink" data-astro-cid-j7pv25f6>
+人相は生まれつきで決まっていますか？変えられますか？
+<svg class="h-5 w-5 shrink-0 text-bronze transition-transform duration-300 group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" data-astro-cid-j7pv25f6><polyline points="6 9 12 15 18 9" data-astro-cid-j7pv25f6></polyline></svg> </summary> <p class="pb-7 font-mincho text-[14px] leading-loose tracking-wide text-taupe" data-astro-cid-j7pv25f6>
+顔は、あなたがどう生きてきたかの証であり、これからどう生きるかでまだ変わっていきます。良い顔は作れます。鑑定では、現実的なメイクや印象の育て方までご提案します。
+</p> </details> <details class="group" data-astro-cid-j7pv25f6> <summary class="flex cursor-pointer items-center justify-between gap-6 py-6 font-mincho text-[15px] font-medium tracking-wide text-ink" data-astro-cid-j7pv25f6>
+オンラインで全国どこからでも受けられますか？
+<svg class="h-5 w-5 shrink-0 text-bronze transition-transform duration-300 group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" data-astro-cid-j7pv25f6><polyline points="6 9 12 15 18 9" data-astro-cid-j7pv25f6></polyline></svg> </summary> <p class="pb-7 font-mincho text-[14px] leading-loose tracking-wide text-taupe" data-astro-cid-j7pv25f6>
+はい。お試し鑑定から総合鑑定までは、お写真や動画をお送りいただくオンライン鑑定として全国どこからでもご利用いただけます。対面鑑定のみ対面セッションとなります。
+</p> </details> <details class="group" data-astro-cid-j7pv25f6> <summary class="flex cursor-pointer items-center justify-between gap-6 py-6 font-mincho text-[15px] font-medium tracking-wide text-ink" data-astro-cid-j7pv25f6>
+鑑定料金と申し込み方法を教えてください。
+<svg class="h-5 w-5 shrink-0 text-bronze transition-transform duration-300 group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" data-astro-cid-j7pv25f6><polyline points="6 9 12 15 18 9" data-astro-cid-j7pv25f6></polyline></svg> </summary> <p class="pb-7 font-mincho text-[14px] leading-loose tracking-wide text-taupe" data-astro-cid-j7pv25f6>
+料金はお試し鑑定5,500円から対面鑑定38,000円までの5メニューです。お申し込みは、まずお問い合わせフォームよりご連絡いただき、詳細のご返信・事前決済を経て鑑定を実施します。
+</p> </details> </div> </div> </section> <!-- ░░ CONTACT ░░ --> <section id="contact" class="relative overflow-hidden bg-charcoal px-5 py-28 text-cream sm:px-8 lg:px-12 lg:py-40" data-astro-cid-j7pv25f6> <div class="mx-auto max-w-5xl" data-astro-cid-j7pv25f6> <div class="grid grid-cols-1 gap-14 lg:grid-cols-12 lg:gap-16" data-astro-cid-j7pv25f6> <div class="reveal lg:col-span-5" data-astro-cid-j7pv25f6> <span class="text-[11px] tracking-luxe text-bronze" data-astro-cid-j7pv25f6>04 — CONTACT</span> <h2 class="mt-6 font-display text-5xl font-light leading-tight lg:text-6xl" data-astro-cid-j7pv25f6>お問い合わせ</h2> <p class="mt-8 font-mincho text-sm leading-loose tracking-wide text-cream/65" data-astro-cid-j7pv25f6>
+お問い合わせはこちらのフォームよりご連絡ください。通常2日以内に返信させていただいておりますが、稼働状況によりお時間をいただくこともございます。
+</p> <a href="mailto:info.physiognomy@gmail.com" class="link-underline mt-10 inline-block pb-1 font-display text-2xl italic text-bronze" data-astro-cid-j7pv25f6>info.physiognomy@gmail.com</a> <div class="mt-12" data-astro-cid-j7pv25f6> <p class="text-[11px] tracking-luxe text-bronze" data-astro-cid-j7pv25f6>FOLLOW ・ 観相学を発信中</p> <div class="mt-5 flex flex-wrap items-center gap-3" data-astro-cid-j7pv25f6> <a href="https://www.youtube.com/@modernphysiognomy" target="_blank" rel="noopener" class="group inline-flex items-center gap-2.5 rounded-full bg-bronze px-6 py-3 text-[11px] tracking-wide2 text-charcoal shadow-[0_18px_40px_-18px_rgba(197,163,91,.6)] transition-colors duration-300 hover:bg-cream" data-astro-cid-j7pv25f6> <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" data-astro-cid-j7pv25f6><path d="M23.5 6.2a3.02 3.02 0 0 0-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.51A3.02 3.02 0 0 0 .5 6.2 31.5 31.5 0 0 0 0 12a31.5 31.5 0 0 0 .5 5.8 3.02 3.02 0 0 0 2.12 2.14C4.5 20.45 12 20.45 12 20.45s7.5 0 9.38-.51a3.02 3.02 0 0 0 2.12-2.14A31.5 31.5 0 0 0 24 12a31.5 31.5 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.27 3.6Z" data-astro-cid-j7pv25f6></path></svg>
+YouTube チャンネル
+</a> <a href="https://www.instagram.com/modernphysiognomy" target="_blank" rel="noopener" aria-label="Instagram" class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-cream/25 text-cream transition-colors duration-300 hover:border-bronze hover:text-bronze" data-astro-cid-j7pv25f6> <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" data-astro-cid-j7pv25f6><rect x="2" y="2" width="20" height="20" rx="5.5" data-astro-cid-j7pv25f6></rect><circle cx="12" cy="12" r="4" data-astro-cid-j7pv25f6></circle><circle cx="17.5" cy="6.5" r="1.1" fill="currentColor" stroke="none" data-astro-cid-j7pv25f6></circle></svg> </a> </div> </div> </div> <form class="reveal d1 lg:col-span-7" id="contactForm" action="https://formsubmit.co/info.physiognomy@gmail.com" method="POST" novalidate data-astro-cid-j7pv25f6> <div class="grid grid-cols-1 gap-7" data-astro-cid-j7pv25f6> <input type="hidden" name="_subject" value="【Modern Physiognomy】サイトからのお問い合わせ" data-astro-cid-j7pv25f6> <input type="hidden" name="_template" value="table" data-astro-cid-j7pv25f6> <input type="hidden" name="_captcha" value="false" data-astro-cid-j7pv25f6> <input type="text" name="_honey" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true" data-astro-cid-j7pv25f6> <div data-astro-cid-j7pv25f6> <label for="name" class="block text-[11px] tracking-wide2 text-cream/60" data-astro-cid-j7pv25f6>お名前 <span class="text-bronze" data-astro-cid-j7pv25f6>*</span></label> <input id="name" name="name" type="text" required class="mt-3 w-full border-0 border-b border-cream/25 bg-transparent pb-3 font-mincho text-cream placeholder-cream/30 focus:border-bronze focus:outline-none focus:ring-0" placeholder="山田 花子" data-astro-cid-j7pv25f6> </div> <div data-astro-cid-j7pv25f6> <label for="email" class="block text-[11px] tracking-wide2 text-cream/60" data-astro-cid-j7pv25f6>メールアドレス <span class="text-bronze" data-astro-cid-j7pv25f6>*</span></label> <input id="email" name="email" type="email" required class="mt-3 w-full border-0 border-b border-cream/25 bg-transparent pb-3 font-mincho text-cream placeholder-cream/30 focus:border-bronze focus:outline-none focus:ring-0" placeholder="you@example.com" data-astro-cid-j7pv25f6> </div> <div data-astro-cid-j7pv25f6> <label for="message" class="block text-[11px] tracking-wide2 text-cream/60" data-astro-cid-j7pv25f6>お問い合わせ内容</label> <textarea id="message" name="message" rows="4" class="mt-3 w-full resize-none border-0 border-b border-cream/25 bg-transparent pb-3 font-mincho text-cream placeholder-cream/30 focus:border-bronze focus:outline-none focus:ring-0" placeholder="ご希望の鑑定プランやご質問をご記入ください。" data-astro-cid-j7pv25f6></textarea> </div> <label class="flex cursor-pointer items-start gap-3 text-[13px] text-cream/65" data-astro-cid-j7pv25f6> <input type="checkbox" required class="mt-1 h-4 w-4 flex-none cursor-pointer accent-bronze" data-astro-cid-j7pv25f6> <span data-astro-cid-j7pv25f6><button type="button" data-modal-open class="link-underline pb-0.5 text-bronze" data-astro-cid-j7pv25f6>プライバシーポリシー</button>に同意する</span> </label> <button type="submit" class="group mt-2 inline-flex items-center justify-center gap-3 self-start rounded-full bg-bronze px-12 py-4 text-xs tracking-wide2 text-charcoal transition-all duration-300 hover:bg-cream" data-astro-cid-j7pv25f6>
+送信する
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="transition-transform duration-300 group-hover:translate-x-1" data-astro-cid-j7pv25f6><line x1="5" y1="12" x2="19" y2="12" data-astro-cid-j7pv25f6></line><polyline points="13 6 19 12 13 18" data-astro-cid-j7pv25f6></polyline></svg> </button> <p id="formNote" class="hidden text-[13px] text-bronze" data-astro-cid-j7pv25f6>お問い合わせありがとうございます。通常2日以内にご返信いたします。</p> </div> </form> </div> </div> </section> </main> <!-- ░░ FOOTER ░░ --> <footer class="bg-ink px-5 py-16 text-cream/70 sm:px-8 lg:px-12" data-astro-cid-j7pv25f6> <div class="mx-auto max-w-7xl" data-astro-cid-j7pv25f6> <div class="flex flex-col items-start justify-between gap-10 border-b border-cream/10 pb-12 lg:flex-row lg:items-center" data-astro-cid-j7pv25f6> <div data-astro-cid-j7pv25f6> <p class="font-display text-3xl tracking-wide2 text-cream" data-astro-cid-j7pv25f6>Modern Physiognomy</p> <p class="mt-3 text-[11px] tracking-luxe text-cream/50" data-astro-cid-j7pv25f6>現 代 観 相 学</p> </div> <nav class="flex flex-wrap gap-x-8 gap-y-3 text-[11px] tracking-wide2" data-astro-cid-j7pv25f6> <a href="/#concept" class="link-underline pb-1" data-astro-cid-j7pv25f6>CONCEPT</a> <a href="/#reading" class="link-underline pb-1" data-astro-cid-j7pv25f6>READING</a> <a href="/#about" class="link-underline pb-1" data-astro-cid-j7pv25f6>ABOUT</a> <a href="/column" class="link-underline pb-1" data-astro-cid-j7pv25f6>COLUMN</a> <a href="/#faq" class="link-underline pb-1" data-astro-cid-j7pv25f6>FAQ</a> <a href="/#contact" class="link-underline pb-1" data-astro-cid-j7pv25f6>CONTACT</a> <button type="button" data-modal-open class="link-underline cursor-pointer pb-1 text-left" data-astro-cid-j7pv25f6>PRIVACY POLICY</button> </nav> </div> <div class="flex flex-col items-start justify-between gap-6 pt-8 text-[11px] tracking-wide2 text-cream/40 sm:flex-row sm:items-center" data-astro-cid-j7pv25f6> <p data-astro-cid-j7pv25f6>© <span id="year" data-astro-cid-j7pv25f6></span> Modern Physiognomy</p> <div class="flex items-center gap-5" data-astro-cid-j7pv25f6> <a href="https://www.youtube.com/@modernphysiognomy" target="_blank" rel="noopener" aria-label="YouTube" class="text-cream/60 transition-colors duration-300 hover:text-bronze" data-astro-cid-j7pv25f6> <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" data-astro-cid-j7pv25f6><path d="M23.5 6.2a3.02 3.02 0 0 0-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.51A3.02 3.02 0 0 0 .5 6.2 31.5 31.5 0 0 0 0 12a31.5 31.5 0 0 0 .5 5.8 3.02 3.02 0 0 0 2.12 2.14C4.5 20.45 12 20.45 12 20.45s7.5 0 9.38-.51a3.02 3.02 0 0 0 2.12-2.14A31.5 31.5 0 0 0 24 12a31.5 31.5 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.27 3.6Z" data-astro-cid-j7pv25f6></path></svg> </a> <a href="https://www.instagram.com/modernphysiognomy" target="_blank" rel="noopener" aria-label="Instagram" class="text-cream/60 transition-colors duration-300 hover:text-bronze" data-astro-cid-j7pv25f6> <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" data-astro-cid-j7pv25f6><rect x="2" y="2" width="20" height="20" rx="5.5" data-astro-cid-j7pv25f6></rect><circle cx="12" cy="12" r="4" data-astro-cid-j7pv25f6></circle><circle cx="17.5" cy="6.5" r="1.1" fill="currentColor" stroke="none" data-astro-cid-j7pv25f6></circle></svg> </a> <span data-astro-cid-j7pv25f6>info.physiognomy@gmail.com</span> </div> </div> </div> </footer> <!-- ░░ PRIVACY MODAL ░░ --> <div id="modal" class="fixed inset-0 z-[60] hidden" data-astro-cid-j7pv25f6> <div class="absolute inset-0 bg-ink/70 backdrop-blur-sm" data-modal-close data-astro-cid-j7pv25f6></div> <div class="absolute inset-x-4 top-[5vh] bottom-[5vh] mx-auto max-w-2xl overflow-hidden rounded-[3px] bg-paper shadow-2xl" data-astro-cid-j7pv25f6> <div class="flex items-center justify-between border-b border-line px-7 py-5" data-astro-cid-j7pv25f6> <div data-astro-cid-j7pv25f6> <span class="text-[10px] tracking-luxe text-bronzeDeep" data-astro-cid-j7pv25f6>PRIVACY POLICY</span> <h3 class="mt-1 font-display text-2xl text-ink" data-astro-cid-j7pv25f6>個人情報の取り扱い</h3> </div> <button data-modal-close aria-label="閉じる" class="cursor-pointer p-2 text-taupe transition-colors hover:text-ink" data-astro-cid-j7pv25f6> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" data-astro-cid-j7pv25f6><line x1="5" y1="5" x2="19" y2="19" data-astro-cid-j7pv25f6></line><line x1="19" y1="5" x2="5" y2="19" data-astro-cid-j7pv25f6></line></svg> </button> </div> <div class="h-[calc(100%-5.5rem)] overflow-y-auto px-7 py-7 text-[13px] leading-loose text-taupe" data-astro-cid-j7pv25f6> <p data-astro-cid-j7pv25f6>当社は、お客様の個人情報を適切に取り扱い、保護することが重要であると認識しております。本プライバシーポリシーは、当社がお客様から取得した個人情報の収集、使用、保護に関する方針を明示しています。お客様は、本プライバシーポリシーに同意することで、当社がお客様の個人情報を取り扱う方法について同意するものとします。</p> <h4 class="mt-7 font-mincho font-semibold text-ink" data-astro-cid-j7pv25f6>1. 収集される個人情報</h4> <p class="mt-2" data-astro-cid-j7pv25f6>当社は、お客さまの個人情報を正確かつ最新の状態に保ち、不正アクセス・紛失・破損・改ざん・漏洩などを防止するため、必要な措置を講じ、安全対策を実施し厳重な管理を行ないます。</p> <ul class="mt-3 list-disc space-y-1 pl-5" data-astro-cid-j7pv25f6><li data-astro-cid-j7pv25f6>お名前、連絡先情報（電話番号、メールアドレスなど）</li><li data-astro-cid-j7pv25f6>会社名、役職、所属部署などの職業関連情報</li><li data-astro-cid-j7pv25f6>ウェブサイトの利用履歴、Cookie、IPアドレスなどのオンライン情報</li></ul> <h4 class="mt-7 font-mincho font-semibold text-ink" data-astro-cid-j7pv25f6>2. 個人情報の利用目的</h4> <ul class="mt-3 list-disc space-y-1 pl-5" data-astro-cid-j7pv25f6><li data-astro-cid-j7pv25f6>お問い合わせや要望への対応</li><li data-astro-cid-j7pv25f6>サービスの提供や契約の履行</li><li data-astro-cid-j7pv25f6>ニュースレターやプロモーション情報の提供</li><li data-astro-cid-j7pv25f6>ウェブサイトの改善やカスタマイズ</li><li data-astro-cid-j7pv25f6>法的要件や規制の遵守</li></ul> <h4 class="mt-7 font-mincho font-semibold text-ink" data-astro-cid-j7pv25f6>3. 個人情報の第三者への提供</h4> <p class="mt-2" data-astro-cid-j7pv25f6>当社は、お客様の個人情報を第三者に提供することはありません（法的要件や規制に基づく場合を除く）。</p> <h4 class="mt-7 font-mincho font-semibold text-ink" data-astro-cid-j7pv25f6>4. 個人情報の保護とセキュリティ</h4> <p class="mt-2" data-astro-cid-j7pv25f6>当社は、適切なセキュリティ対策を実施し、お客様の個人情報を保護するために合理的な措置を講じます。</p> <h4 class="mt-7 font-mincho font-semibold text-ink" data-astro-cid-j7pv25f6>5. Cookieの使用</h4> <p class="mt-2" data-astro-cid-j7pv25f6>当社のウェブサイトでは、Cookieを使用する場合があります。トラフィック解析・利用状況の測定、サイトのカスタマイズ、オンライン広告の配信や効果測定などの目的で使用することがあります。お客様は、ブラウザの設定を変更することで、Cookieの受け入れを拒否することができます。</p> <h4 class="mt-7 font-mincho font-semibold text-ink" data-astro-cid-j7pv25f6>6. 個人情報の保持期間</h4> <p class="mt-2" data-astro-cid-j7pv25f6>当社は、お客様の個人情報を必要な期間だけ保管し、利用目的を達成するために必要な範囲で保持します。不要となった場合には、適切に破棄または匿名化します。</p> <h4 class="mt-7 font-mincho font-semibold text-ink" data-astro-cid-j7pv25f6>7. プライバシーポリシーの変更</h4> <p class="mt-2" data-astro-cid-j7pv25f6>当社は、必要に応じて本プライバシーポリシーを変更することがあります。変更が行われた場合には、ウェブサイト上で通知いたします。</p> <h4 class="mt-7 font-mincho font-semibold text-ink" data-astro-cid-j7pv25f6>8. お問い合わせ</h4> <p class="mt-2" data-astro-cid-j7pv25f6>ご不明な点や個人情報に関するお問い合わせがある場合は、以下までご連絡ください。<br data-astro-cid-j7pv25f6>モダンフィジオノミー<br data-astro-cid-j7pv25f6>info.physiognomy@gmail.com</p> </div> </div> </div> <script>
   document.getElementById('year').textContent = new Date().getFullYear();
-
-  // nav bg on scroll
   const nav = document.getElementById('nav');
   const navline = document.getElementById('navline');
   const onScroll = () => {
@@ -859,39 +111,31 @@
     else { nav.classList.remove('bg-ivory/90','backdrop-blur-md'); navline.classList.add('opacity-0'); }
   };
   onScroll(); window.addEventListener('scroll', onScroll, { passive:true });
-
-  // reveal on scroll
   const io = new IntersectionObserver((entries)=>{
     entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
   }, { threshold:0.12, rootMargin:'0px 0px -8% 0px' });
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-
-  // mobile menu
   const menu = document.getElementById('mobileMenu');
+  const menuBtn = document.getElementById('menuBtn');
   const open = ()=>{ menu.classList.remove('hidden'); document.body.style.overflow='hidden'; menuBtn.setAttribute('aria-expanded','true'); };
   const close = ()=>{ menu.classList.add('hidden'); document.body.style.overflow=''; menuBtn.setAttribute('aria-expanded','false'); };
-  const menuBtn = document.getElementById('menuBtn');
   menuBtn.addEventListener('click', open);
   document.getElementById('menuClose').addEventListener('click', close);
   document.querySelectorAll('.mm-link').forEach(a=>a.addEventListener('click', close));
-
-  // privacy modal
   const modal = document.getElementById('modal');
   const openModal = ()=>{ modal.classList.remove('hidden'); document.body.style.overflow='hidden'; };
   const closeModal = ()=>{ modal.classList.add('hidden'); document.body.style.overflow=''; };
   document.querySelectorAll('[data-modal-open]').forEach(b=>b.addEventListener('click', openModal));
   document.querySelectorAll('[data-modal-close]').forEach(b=>b.addEventListener('click', closeModal));
   document.addEventListener('keydown', e=>{ if(e.key==='Escape'){ closeModal(); close(); } });
-
-  // contact form -> FormSubmit (AJAX)
-  document.getElementById('contactForm').addEventListener('submit', async (e)=>{
+  const cf = document.getElementById('contactForm');
+  if(cf){ cf.addEventListener('submit', async (e)=>{
     e.preventDefault();
     const form = e.target;
     const note = document.getElementById('formNote');
     const btn = form.querySelector('button[type="submit"]');
     if(!form.checkValidity()){ form.reportValidity(); return; }
-    btn.disabled = true;
-    btn.textContent = '送信中…';
+    btn.disabled = true; btn.textContent = '送信中…';
     try{
       const res = await fetch('https://formsubmit.co/ajax/info.physiognomy@gmail.com', {
         method:'POST',
@@ -900,16 +144,10 @@
       });
       if(!res.ok) throw new Error('failed');
       note.textContent = 'お問い合わせありがとうございます。通常2日以内にご返信いたします。';
-      note.classList.remove('hidden');
-      btn.textContent = '送信しました';
-      form.reset();
+      note.classList.remove('hidden'); btn.textContent = '送信しました'; form.reset();
     }catch(err){
       note.textContent = '送信に失敗しました。お手数ですが info.physiognomy@gmail.com まで直接ご連絡ください。';
-      note.classList.remove('hidden');
-      btn.disabled = false;
-      btn.textContent = '送信する';
+      note.classList.remove('hidden'); btn.disabled = false; btn.textContent = '送信する';
     }
-  });
-</script>
-</body>
-</html>
+  }); }
+</script> </body> </html>
