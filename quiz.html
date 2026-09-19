@@ -3,356 +3,648 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="10問で今の自分のFACE STAGEを知る無料セルフ診断。">
-<title>FACE STAGE｜無料セルフ診断</title>
+<meta name="description" content="10の質問に答えて、今のあなたのFACE STAGEタイプを診断します。SEEKER・CREATOR・ANCHOR・MUSE・SWITCH・ICONの6タイプ。">
+<title>SELF FACE 診断 | FACE STAGE™</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=EB+Garamond:ital,wght@1,400&family=Noto+Sans+JP:wght@300;400;500&family=Noto+Serif+JP:wght@300;400;500&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=EB+Garamond:ital,wght@0,500;1,500&family=Noto+Sans+JP:wght@400;500;600&family=Noto+Serif+JP:wght@500;600&display=swap" rel="stylesheet">
 <style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+*{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --bg:#141210;--surface:#1E1A16;--text:#F0E8DC;
-  --muted:#8C7C6C;--gold:#C9AA78;--border:#2E2820;
-  --s01:#E8C4BC;--s02:#D8A498;--s03:#C4847A;
-  --s04:#B07890;--s05:#8C5878;--s06:#6B4068;
+  --bg:#F6F2EA;--ink:#1d1b19;--muted:#716B64;
+  --line:#D8D0C5;--paper:#FFFDFC;--dark:#161412;
+  --gold:#D2B06F;--gold-d:#a77839;--cream:#EFE8DC;
 }
-html,body{height:100%;background:var(--bg)}
-body{color:var(--text);font-family:'Noto Sans JP',sans-serif;font-weight:300;line-height:1.7;min-height:100%;display:flex;flex-direction:column}
-.home-link{position:fixed;z-index:20;top:20px;left:24px;color:var(--muted);font-family:'DM Sans',sans-serif;font-size:10px;letter-spacing:.2em;text-decoration:none;text-transform:uppercase;transition:color .2s}
-.home-link:hover{color:var(--gold)}
+@media(prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#18160E;--ink:#EDE7DC;--muted:#9A9088;
+    --line:#302C26;--paper:#211F18;--dark:#0F0D0A;
+    --cream:#211F18;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#18160E;--ink:#EDE7DC;--muted:#9A9088;
+  --line:#302C26;--paper:#211F18;--dark:#0F0D0A;
+  --cream:#211F18;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:'Noto Sans JP',sans-serif;line-height:1.8;min-height:100vh}
+a{text-decoration:none;color:inherit}
 
-/* SCREENS */
-.screen{display:none;flex-direction:column;align-items:center;justify-content:center;min-height:100svh;padding:40px 24px;text-align:center}
-.screen.active{display:flex}
+/* NAV */
+.site-nav{position:fixed;z-index:10;top:0;left:0;right:0;background:rgba(246,242,234,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+@media(prefers-color-scheme:dark){
+  :root:not([data-theme="light"]) .site-nav{background:rgba(24,22,14,.96)}
+}
+.nav-inner{height:64px;display:flex;align-items:center;justify-content:space-between;gap:16px;width:min(1080px,calc(100% - 40px));margin:auto}
+.site-brand{font:700 13px 'DM Sans';letter-spacing:.22em;color:var(--ink)}
+.site-links{display:flex;align-items:center;gap:16px;font:500 11px 'DM Sans';letter-spacing:.07em;color:var(--muted)}
+.site-links a:hover{color:var(--ink)}
+.nav-cta{background:var(--gold);color:#161412!important;padding:8px 14px;border-radius:999px;font-weight:600!important}
+.nav-cta:hover{opacity:.88}
+@media(max-width:560px){.site-links a:not(.nav-cta){display:none}}
+
+/* MAIN LAYOUT */
+.quiz-page{padding:80px 0 80px;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:flex-start}
+.container{width:min(620px,calc(100% - 40px));margin:auto}
 
 /* ── INTRO ── */
-.intro-wordmark{font-family:'DM Sans',sans-serif;font-size:10px;letter-spacing:.45em;text-transform:uppercase;color:var(--gold);margin-bottom:52px}
-.intro-title{font-family:'Noto Serif JP',serif;font-weight:300;font-size:clamp(22px,4.5vw,36px);line-height:1.7;text-wrap:balance;margin-bottom:20px;max-width:440px}
-.intro-lead{font-size:13px;color:var(--muted);line-height:2;max-width:380px;margin-bottom:48px;text-wrap:balance}
-.intro-meta{font-size:11px;color:var(--muted);letter-spacing:.1em;margin-bottom:28px;opacity:.7}
-.btn-start{display:inline-block;padding:16px 60px;background:var(--gold);color:#141210;font-family:'DM Sans',sans-serif;font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;border:none;cursor:pointer;transition:opacity .2s}
-.btn-start:hover{opacity:.84}
+.intro-screen{padding:60px 0;text-align:center}
+.intro-eyebrow{font:600 11px 'DM Sans';letter-spacing:.28em;text-transform:uppercase;color:var(--gold-d);margin-bottom:20px}
+.intro-title{font:500 clamp(28px,5vw,46px)/1.25 'Noto Serif JP';letter-spacing:.05em;margin-bottom:24px}
+.intro-sub{color:var(--muted);font-size:14px;line-height:2;margin-bottom:16px;max-width:440px;margin-left:auto;margin-right:auto}
+.intro-note{font:500 11px 'DM Sans';letter-spacing:.1em;color:var(--muted);margin-bottom:40px}
+.btn-start{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:16px 44px;background:var(--gold);color:#161412;
+  font:700 13px 'DM Sans';letter-spacing:.12em;
+  border:none;border-radius:3px;cursor:pointer;transition:opacity .2s;
+}
+.btn-start:hover{opacity:.85}
 
-/* ── QUIZ ── */
-.quiz-screen{align-items:stretch;text-align:left;padding:0}
-.quiz-progress{position:fixed;top:0;left:0;right:0;height:2px;background:var(--border);z-index:10}
-.quiz-progress-fill{height:100%;background:var(--gold);transition:width .4s ease}
-.quiz-inner{flex:1;display:flex;flex-direction:column;justify-content:center;max-width:600px;width:100%;margin:0 auto;padding:64px 24px 40px}
-.quiz-counter{font-family:'DM Sans',sans-serif;font-size:10px;letter-spacing:.4em;color:var(--gold);margin-bottom:20px;text-transform:uppercase}
-.quiz-question{font-family:'Noto Serif JP',serif;font-weight:300;font-size:clamp(17px,3.2vw,22px);line-height:1.75;text-wrap:balance;margin-bottom:32px;color:var(--text)}
-.quiz-options{display:flex;flex-direction:column;gap:8px;margin-bottom:32px}
-.opt-btn{background:transparent;border:1px solid var(--border);color:var(--text);padding:18px 20px;text-align:left;font-family:'Noto Sans JP',sans-serif;font-size:13px;font-weight:300;line-height:1.75;cursor:pointer;transition:border-color .18s,background .18s;display:flex;align-items:flex-start;gap:14px}
-.opt-letter{font-family:'DM Sans',sans-serif;font-size:10px;letter-spacing:.15em;color:var(--gold);flex-shrink:0;padding-top:3px;width:14px;opacity:.7}
-.opt-btn:hover{border-color:rgba(201,170,120,.4);background:rgba(201,170,120,.04)}
-.opt-btn.selected{border-color:var(--gold);background:rgba(201,170,120,.1)}
-.quiz-nav{display:flex;align-items:center;justify-content:space-between}
-.btn-back{background:none;border:none;color:var(--muted);font-size:11px;cursor:pointer;padding:8px 0;letter-spacing:.12em;font-family:'DM Sans',sans-serif;transition:color .2s;text-transform:uppercase}
-.btn-back:hover{color:var(--text)}
-.btn-back:disabled{opacity:.25;cursor:default}
-.btn-next{background:none;border:1px solid var(--border);color:var(--text);font-family:'DM Sans',sans-serif;font-size:10px;letter-spacing:.25em;padding:11px 28px;cursor:pointer;transition:border-color .18s,color .18s;text-transform:uppercase}
-.btn-next:hover:not(:disabled){border-color:var(--gold);color:var(--gold)}
-.btn-next:disabled{opacity:.25;cursor:default}
+/* ── PROGRESS ── */
+.progress-wrap{padding:32px 0 36px;width:100%}
+.progress-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.q-count{font:500 11px 'DM Sans';letter-spacing:.09em;color:var(--muted)}
+.progress-label{font-style:italic;font-family:'EB Garamond';font-size:14px;color:var(--muted)}
+.progress-track{height:2px;background:var(--line);border-radius:2px;overflow:hidden;margin-bottom:14px}
+.progress-fill{height:100%;background:var(--gold);border-radius:2px;transition:width .35s ease}
+
+/* ── BACK BUTTON ── */
+.btn-back{
+  display:inline-flex;align-items:center;gap:5px;
+  padding:0;background:none;border:none;
+  font:500 12px 'DM Sans';letter-spacing:.06em;color:var(--muted);
+  cursor:pointer;transition:.18s;
+  border-bottom:1px solid transparent;
+}
+.btn-back:hover{color:var(--gold-d);border-bottom-color:var(--gold-d)}
+.btn-back svg{width:12px;height:12px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+/* ── QUESTION ── */
+.q-screen{display:none;width:100%;animation:fadeIn .25s ease}
+.q-screen.active{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.q-label{font:600 11px 'DM Sans';letter-spacing:.22em;text-transform:uppercase;color:var(--gold-d);margin-bottom:16px}
+.q-text{font:500 clamp(17px,3vw,22px)/1.6 'Noto Serif JP';letter-spacing:.04em;margin-bottom:32px;text-wrap:balance}
+.opts{display:flex;flex-direction:column;gap:10px}
+.opt{
+  display:flex;align-items:flex-start;gap:16px;
+  padding:18px 22px;
+  background:var(--paper);border:1.5px solid var(--line);border-radius:4px;
+  cursor:pointer;font:400 14px/1.75 'Noto Sans JP';color:var(--ink);
+  text-align:left;width:100%;transition:border-color .18s,background .18s;
+}
+.opt:hover{border-color:var(--gold);background:var(--cream)}
+.opt.chosen{border-color:var(--gold);background:var(--cream)}
+.opt-mark{
+  font:italic 500 19px/1 'EB Garamond';
+  color:var(--gold);flex-shrink:0;padding-top:3px;min-width:16px;
+}
 
 /* ── RESULT ── */
-.result-screen{gap:0}
-.result-eyebrow{font-family:'DM Sans',sans-serif;font-size:10px;letter-spacing:.4em;text-transform:uppercase;color:var(--muted);margin-bottom:36px}
-.result-num{font-family:'DM Sans',sans-serif;font-size:clamp(88px,20vw,148px);font-weight:600;letter-spacing:-.06em;line-height:.88;color:var(--rc,var(--gold));margin-bottom:22px}
-.result-en{font-family:'DM Sans',sans-serif;font-size:10px;letter-spacing:.55em;text-transform:uppercase;color:var(--rc,var(--gold));margin-bottom:10px}
-.result-jp{font-family:'Noto Serif JP',serif;font-weight:400;font-size:18px;letter-spacing:.3em;color:var(--text);margin-bottom:32px}
-.result-divider{width:32px;height:1px;background:var(--border);margin:0 auto 32px}
-.result-desc{font-size:13.5px;line-height:2.1;color:rgba(240,232,220,.72);max-width:420px;margin-bottom:44px;text-wrap:balance;text-align:left;border-left:2px solid var(--rc,var(--gold));padding-left:18px}
-.result-gap-box{background:var(--surface);border:1px solid var(--border);padding:24px 28px;max-width:400px;margin-bottom:40px;text-align:left}
-.result-gap-label{font-family:'DM Sans',sans-serif;font-size:9px;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;display:block}
-.result-gap-text{font-size:12.5px;line-height:1.9;color:var(--muted)}
-.result-gap-text strong{color:var(--text);font-weight:400}
-.btn-book{display:inline-block;padding:16px 52px;background:var(--rc,var(--gold));color:#141210;font-family:'DM Sans',sans-serif;font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;border:none;cursor:pointer;text-decoration:none;transition:opacity .2s;margin-bottom:14px}
-.btn-book:hover{opacity:.84}
-.btn-retry{background:none;border:none;font-size:11px;color:var(--muted);cursor:pointer;font-family:'Noto Sans JP',sans-serif;text-decoration:underline;text-underline-offset:3px;transition:color .2s;margin-top:6px;display:block}
-.btn-retry:hover{color:var(--text)}
+.result-screen{display:none;width:100%;animation:fadeIn .35s ease}
+.result-screen.active{display:block}
 
-@media(max-width:480px){
-  .quiz-inner{padding:60px 20px 32px}
-  .opt-btn{padding:15px 16px;font-size:12px}
+.stage-card{border-radius:4px;overflow:hidden;margin-bottom:36px;position:relative}
+.stage-card-body{
+  padding:60px 52px 52px;
+  position:relative;overflow:hidden;
+}
+.stage-ghost-num{
+  position:absolute;top:20px;right:28px;
+  font:500 88px/1 'EB Garamond';
+  color:rgba(255,255,255,.09);
+  letter-spacing:.02em;
+  user-select:none;pointer-events:none;
+}
+.stage-eyebrow{
+  font:600 10px 'DM Sans';letter-spacing:.32em;text-transform:uppercase;
+  margin-bottom:28px;display:inline-block;
+}
+.stage-name-en{
+  font:italic 500 clamp(44px,8vw,72px)/1 'EB Garamond';
+  letter-spacing:.03em;color:#fff;
+  margin-bottom:10px;display:block;
+}
+.stage-name-jp{
+  font:500 13px 'Noto Serif JP';letter-spacing:.22em;
+  color:rgba(255,255,255,.6);margin-bottom:32px;display:block;
+}
+.stage-line{width:36px;height:1px;background:rgba(255,255,255,.22);margin-bottom:28px}
+.stage-icon{margin-bottom:24px}
+.stage-icon svg{width:54px;height:54px;display:block}
+.stage-tagline{
+  font:500 clamp(17px,3vw,22px)/1.55 'Noto Serif JP';
+  letter-spacing:.06em;color:#fff;
+  margin-bottom:28px;
+}
+.stage-desc{
+  font:400 13.5px/2.1 'Noto Sans JP';
+  color:rgba(255,255,255,.72);
+  margin-bottom:32px;
+}
+.stage-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:36px}
+.stage-tag{
+  font:500 11px 'DM Sans';letter-spacing:.07em;
+  padding:5px 13px;border:1px solid rgba(255,255,255,.22);
+  border-radius:999px;color:rgba(255,255,255,.6);
+}
+.stage-cursive{
+  font:italic 500 clamp(22px,4vw,30px)/1 'EB Garamond';
+  color:rgba(255,255,255,.88);
+  letter-spacing:.02em;
+}
+
+/* ── RESULT CTA ── */
+.result-cta{text-align:center}
+.result-cta p{color:var(--muted);font-size:13px;line-height:2;margin-bottom:28px}
+.result-btns{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-bottom:28px}
+.btn-gold{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:14px 28px;background:var(--gold);color:#161412;
+  font:700 12px 'DM Sans';letter-spacing:.1em;border-radius:3px;
+  transition:opacity .2s;
+}
+.btn-gold:hover{opacity:.85}
+.btn-ghost{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:13px 28px;border:1.5px solid var(--line);color:var(--muted);
+  font:600 12px 'DM Sans';letter-spacing:.1em;border-radius:3px;
+  transition:.2s;
+}
+.btn-ghost:hover{border-color:var(--gold-d);color:var(--gold-d)}
+.btn-retry{
+  font:500 11px 'DM Sans';letter-spacing:.09em;color:var(--muted);
+  border:none;border-bottom:1px solid var(--line);padding-bottom:2px;
+  background:none;cursor:pointer;transition:.2s;
+}
+.btn-retry:hover{color:var(--gold-d);border-color:var(--gold-d)}
+
+/* FOOTER */
+.site-footer{background:#0F0D0B;color:#524740;padding:32px 0;font:400 11px 'DM Sans';letter-spacing:.08em}
+.foot-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;width:min(1080px,calc(100% - 40px));margin:auto}
+.foot-brand{font-weight:700;color:#9a9088;font-size:13px;letter-spacing:.18em}
+
+@media(max-width:600px){
+  .stage-card-body{padding:44px 28px 40px}
+  .result-btns{flex-direction:column;align-items:center}
+  .opt{padding:15px 16px;gap:12px}
 }
 </style>
 </head>
 <body>
 
-<a class="home-link" href="index.html">← Face Stage</a>
-
-<!-- INTRO -->
-<div id="screen-intro" class="screen active">
-  <div class="intro-wordmark">Face Stage™ — Self Diagnosis</div>
-  <h1 class="intro-title">あなたの顔は今、<br>どのSTAGEにいますか？</h1>
-  <p class="intro-lead">年齢ではなく、今の自分がどのように感じているか。10問の質問に答えて、あなたのFACE STAGEを見つけてください。</p>
-  <p class="intro-meta">全10問 ／ 所要時間 約5分</p>
-  <button class="btn-start" onclick="startQuiz()">診断をはじめる</button>
-</div>
-
-<!-- QUIZ -->
-<div id="screen-quiz" class="screen quiz-screen">
-  <div class="quiz-progress"><div class="quiz-progress-fill" id="progress-fill"></div></div>
-  <div class="quiz-inner">
-    <div class="quiz-counter" id="q-counter"></div>
-    <div class="quiz-question" id="q-text"></div>
-    <div class="quiz-options" id="q-options"></div>
-    <div class="quiz-nav">
-      <button class="btn-back" id="btn-back" onclick="prevQuestion()">← 戻る</button>
-      <button class="btn-next" id="btn-next" onclick="nextQuestion()" disabled>次へ →</button>
+<nav class="site-nav" aria-label="サイトナビ">
+  <div class="nav-inner">
+    <a class="site-brand" href="index.html">FACE STAGE™</a>
+    <div class="site-links">
+      <a href="index.html#stages">6つのステージ</a>
+      <a href="menu.html">個人鑑定</a>
+      <a class="nav-cta" href="menu.html">鑑定を申し込む</a>
     </div>
   </div>
-</div>
+</nav>
 
-<!-- RESULT -->
-<div id="screen-result" class="screen result-screen">
-  <div class="result-eyebrow">あなたのFACE STAGEは</div>
-  <div class="result-num" id="r-num"></div>
-  <div class="result-en" id="r-en"></div>
-  <div class="result-jp" id="r-jp"></div>
-  <div class="result-divider"></div>
-  <div class="result-desc" id="r-desc"></div>
-  <div class="result-gap-box">
-    <span class="result-gap-label">Stage Gap について</span>
-    <p class="result-gap-text">これはあなた<strong>自身が見た</strong>自分のステージです。<br>顔を読む専門家の目には、<strong>違うものが見えているかもしれません</strong>。そのギャップの中に、まだ見えていないあなたの魅力があります。</p>
+<main class="quiz-page">
+  <div class="container" style="width:100%;max-width:620px">
+
+    <!-- ═══ INTRO ═══ -->
+    <div class="intro-screen" id="intro">
+      <p class="intro-eyebrow">Self Face</p>
+      <h1 class="intro-title">今のあなたは、<br>どのFACE STAGE？</h1>
+      <p class="intro-sub">
+        10の質問に答えて、今のあなたが属するFACE STAGEタイプを診断します。<br>
+        直感で選んでください。正解はありません。
+      </p>
+      <p class="intro-note">所要時間：約3分 &nbsp;·&nbsp; 全10問</p>
+      <button class="btn-start" id="start-btn">診断をはじめる &thinsp;→</button>
+    </div>
+
+    <!-- ═══ QUIZ ═══ -->
+    <div id="quiz-wrap" style="display:none;width:100%">
+      <div class="progress-wrap">
+        <div class="progress-top">
+          <span class="q-count" id="q-count">1 / 10</span>
+          <span class="progress-label">Self Face</span>
+        </div>
+        <div class="progress-track">
+          <div class="progress-fill" id="progress-fill" style="width:10%"></div>
+        </div>
+        <button class="btn-back" id="back-btn" style="visibility:hidden" aria-label="前の質問に戻る">
+          <svg viewBox="0 0 12 12"><polyline points="8,2 4,6 8,10"/></svg>
+          前の質問へ戻る
+        </button>
+      </div>
+      <div id="q-container"></div>
+    </div>
+
+    <!-- ═══ RESULT ═══ -->
+    <div class="result-screen" id="result-screen">
+      <div class="stage-card" id="stage-card">
+        <div class="stage-card-body" id="stage-card-body">
+          <div class="stage-ghost-num" id="stage-ghost-num"></div>
+          <span class="stage-eyebrow" id="stage-eyebrow">Your Face Stage</span>
+          <span class="stage-name-en" id="stage-name-en"></span>
+          <span class="stage-name-jp" id="stage-name-jp"></span>
+          <div class="stage-line"></div>
+          <div class="stage-icon" id="stage-icon"></div>
+          <div class="stage-tagline" id="stage-tagline"></div>
+          <p class="stage-desc" id="stage-desc"></p>
+          <div class="stage-tags" id="stage-tags"></div>
+          <div class="stage-cursive" id="stage-cursive"></div>
+        </div>
+      </div>
+      <div class="result-cta">
+        <p>個人鑑定では、あなたの顔をより深く読み解きます。<br>専門家の目で、自分だけの魅力を発見しませんか？</p>
+        <div class="result-btns">
+          <a href="menu.html" class="btn-gold">鑑定メニューを見る &thinsp;→</a>
+          <a href="index.html#stages" class="btn-ghost">6つのステージを見る</a>
+        </div>
+        <button class="btn-retry" id="retry-btn">← もう一度診断する</button>
+      </div>
+    </div>
+
   </div>
-  <a href="menu.html" class="btn-book" id="r-cta">専門家の鑑定を受ける</a>
-  <button class="btn-retry" onclick="retryQuiz()">もう一度診断する</button>
-</div>
+</main>
+
+<footer class="site-footer">
+  <div class="foot-inner">
+    <span class="foot-brand">FACE STAGE™</span>
+    <span>Modern Physiognomy Method &nbsp;·&nbsp; by Tomo &nbsp;·&nbsp; © 2026</span>
+  </div>
+</footer>
 
 <script>
-// ── DATA ──────────────────────────────────────────
-// Scores array: [S01, S02, S03, S04, S05, S06]
-const questions = [
+/* ════════════════════════════════════
+   FACE STAGE TYPE DATA
+   s[] index: [SEEKER, CREATOR, ANCHOR, MUSE, SWITCH, ICON]
+════════════════════════════════════ */
+const TYPES = [
   {
-    q: "今の自分の顔を見て、一番近い感覚はどれですか？",
-    opts: [
-      { t: "まだよくわからない。なんとなく気になっている", s: [3,1,0,0,0,0] },
-      { t: "もっとうまくできるはず、試している途中", s: [0,3,1,0,0,0] },
-      { t: "「これが私」という感覚が落ち着いてきた", s: [0,0,2,1,0,0] },
-      { t: "変化の予感、または変わりたいという気持ちがある", s: [0,0,0,0,2,1] }
-    ]
+    key:'SEEKER', num:'01', en:'Seeker', jp:'シーカー',
+    tagline:'まだ見ぬ、わたしに出会う。',
+    desc:'好奇心があなたの原動力。新しい世界や可能性をいつも探している、フレッシュな感性の持ち主です。迷いながらも一歩踏み出す勇気と、未知への開放性があなただけの魅力。自分自身についてまだ発見が続いている、これからが楽しみな時期です。',
+    tags:['#好奇心','#発見','#可能性','#挑戦','#成長','#フレッシュ'],
+    cursive:'Find a new you.',
+    bg:'#1E3D60', accent:'#7ABDE0',
+    icon:`<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="30" cy="30" r="17"/>
+  <line x1="42" y1="42" x2="56" y2="56"/>
+  <line x1="30" y1="13" x2="30" y2="18"/>
+  <line x1="30" y1="42" x2="30" y2="47"/>
+  <line x1="13" y1="30" x2="18" y2="30"/>
+  <line x1="42" y1="30" x2="47" y2="30"/>
+  <polygon points="30,18 34,30 30,27 26,30" fill="currentColor" stroke="none" opacity="0.75"/>
+  <circle cx="30" cy="30" r="2.5" fill="currentColor" stroke="none"/>
+</svg>`
   },
   {
-    q: "美容やメイクへの今の向き合い方に、一番近いのは？",
-    opts: [
-      { t: "何から始めればいいか、わからない", s: [3,0,0,0,0,0] },
-      { t: "自分に合うものを探し中、または試すのが楽しい", s: [0,3,0,0,0,0] },
-      { t: "多くのものを試し、自分の定番が決まっている", s: [0,0,2,1,0,0] },
-      { t: "今まで合っていたものが合わなくなったと感じる", s: [0,0,0,0,2,1] }
-    ]
+    key:'CREATOR', num:'02', en:'Creator', jp:'クリエイター',
+    tagline:'わたしらしさを、描いていく。',
+    desc:'試しながら、整えながら、自分だけのスタイルを作り上げている最中。迷いも工夫も全て、あなたの個性です。創造性と表現力が輝き始めていて、独自の美学が少しずつ確立されています。そのプロセスそのものが、あなたの魅力になっています。',
+    tags:['#創造性','#表現','#試行錯誤','#個性','#スタイル'],
+    cursive:'Create your own style.',
+    bg:'#6A3010', accent:'#E8925A',
+    icon:`<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+  <path d="M46 10L16 40l-4 14 14-4 30-30-6-6z"/>
+  <path d="M40 16l8 8"/>
+  <circle cx="15" cy="51" r="1.5" fill="currentColor" stroke="none" opacity="0.5"/>
+</svg>`
   },
   {
-    q: "自分の「魅力」について、今どんな感覚がありますか？",
-    opts: [
-      { t: "自分の魅力がよくわからない", s: [3,0,0,0,0,0] },
-      { t: "魅力はある気がするが、まだうまく引き出せていない", s: [1,3,0,0,0,0] },
-      { t: "自分の魅力を把握していて、活かせている", s: [0,0,2,1,0,0] },
-      { t: "今の魅力より、まだ先があるという感覚", s: [0,0,0,1,1,2] }
-    ]
+    key:'ANCHOR', num:'03', en:'Anchor', jp:'アンカー',
+    tagline:'ぶれない私を、育てていく。',
+    desc:'軸が少しずつ定まり、顔にも安定感が生まれています。流されず、自分らしさを支える強さがあります。周囲から信頼され、その落ち着いた存在感がひとつの魅力です。自分自身の根を深く張りながら、丁寧に自分を育てている段階です。',
+    tags:['#安定感','#自分軸','#信頼感','#落ち着き','#誠実'],
+    cursive:'Stand in your center.',
+    bg:'#163A2C', accent:'#5CA882',
+    icon:`<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="32" cy="20" r="6"/>
+  <line x1="32" y1="26" x2="32" y2="56"/>
+  <path d="M18 38c0 11 6.3 18 14 18s14-7 14-18"/>
+  <line x1="20" y1="28" x2="44" y2="28"/>
+</svg>`
   },
   {
-    q: "他の人から、自分の「印象」について言われるとしたら？",
-    opts: [
-      { t: "意外な指摘や、予想外のことを言われることが多い", s: [2,1,0,0,1,0] },
-      { t: "「変わったね」と言われることがある", s: [1,2,0,0,2,0] },
-      { t: "「変わらないね」「安定してるね」と言われる", s: [0,0,3,1,0,0] },
-      { t: "「雰囲気がある」「存在感がある」と言われる", s: [0,0,0,2,0,3] }
-    ]
+    key:'MUSE', num:'04', en:'Muse', jp:'ミューズ',
+    tagline:'変えるより、活かしていく。',
+    desc:'今の自分を否定せず、持っている魅力を自然に使いこなせる人。受け入れることが美しさになる段階です。力まず、飾らず、それでも輝く。あなたの自然体そのものが、周囲を引きつける魅力の源です。',
+    tags:['#自己受容','#魅力','#自然体','#ありのまま','#凛'],
+    cursive:'Own your glow.',
+    bg:'#50162A', accent:'#D47090',
+    icon:`<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" xmlns="http://www.w3.org/2000/svg">
+  <ellipse cx="32" cy="15" rx="5" ry="8"/>
+  <ellipse cx="32" cy="15" rx="5" ry="8" transform="rotate(60 32 32)"/>
+  <ellipse cx="32" cy="15" rx="5" ry="8" transform="rotate(120 32 32)"/>
+  <ellipse cx="32" cy="15" rx="5" ry="8" transform="rotate(180 32 32)"/>
+  <ellipse cx="32" cy="15" rx="5" ry="8" transform="rotate(240 32 32)"/>
+  <ellipse cx="32" cy="15" rx="5" ry="8" transform="rotate(300 32 32)"/>
+  <circle cx="32" cy="32" r="5" fill="currentColor" opacity="0.35" stroke="currentColor"/>
+</svg>`
   },
   {
-    q: "朝の支度をするとき、気持ちに一番近いのは？",
-    opts: [
-      { t: "面倒くさい", s: [3,1,0,0,0,0] },
-      { t: "新しいものを試すのが楽しい、実験中", s: [0,3,0,0,1,0] },
-      { t: "いつものルーティンがあって、それが心地よい", s: [0,0,2,1,0,0] },
-      { t: "最近、いつものやり方が物足りなく感じる", s: [0,0,0,0,3,1] }
-    ]
+    key:'SWITCH', num:'05', en:'Switch', jp:'スイッチ',
+    tagline:'次の私へ、切り替わる。',
+    desc:'今の自分を更新したくなる、変化の入口に立っています。迷いや違和感さえも、次のステージへ進むサインです。何かを手放して、新しい自分へとシフトする準備ができているとき。変化を恐れず、切り替える力がこれからの魅力になります。',
+    tags:['#変化','#転換','#再設計','#進化','#勇気'],
+    cursive:'Turn to your next stage.',
+    bg:'#281A52', accent:'#9B88E8',
+    icon:`<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+  <path d="M12 22h30a8 8 0 0 1 0 16h-4"/>
+  <polyline points="38,14 46,22 38,30"/>
+  <path d="M52 42H22a8 8 0 0 1 0-16h4"/>
+  <polyline points="26,50 18,42 26,34"/>
+</svg>`
   },
   {
-    q: "外見についてアドバイスされることは？",
-    opts: [
-      { t: "積極的に聞きたい", s: [2,2,0,0,0,0] },
-      { t: "参考にして、試したい", s: [0,2,2,0,0,0] },
-      { t: "一つの意見として聞くが、必ずしも受け入れるかはわからない", s: [0,0,1,3,0,0] },
-      { t: "特に必要だと思わない", s: [0,0,0,2,0,2] }
-    ]
+    key:'ICON', num:'06', en:'Icon', jp:'アイコン',
+    tagline:'生き方が、そのまま魅力になる。',
+    desc:'積み重ねた経験・価値観が存在感として自然ににじみ出ています。飾らなくても、その人らしさが印象に残る。生き方そのものがスタイルになっている段階です。年齢を重ねるほど深まる、唯一無二の魅力の持ち主です。',
+    tags:['#存在感','#個性','#品格','#経験','#シグネチャー'],
+    cursive:'Become your signature.',
+    bg:'#3E2E06', accent:'#D4A83C',
+    icon:`<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+  <path d="M8 48V28l12 14 12-22 12 22 12-14v20z"/>
+  <line x1="8" y1="54" x2="56" y2="54"/>
+  <circle cx="32" cy="21" r="2" fill="currentColor" stroke="none"/>
+  <circle cx="20" cy="42" r="2" fill="currentColor" stroke="none"/>
+  <circle cx="44" cy="42" r="2" fill="currentColor" stroke="none"/>
+</svg>`
   },
-  {
-    q: "外見や自分らしさについて、近い感覚は？",
-    opts: [
-      { t: "自分も他人も美醜を無意識にジャッジしてしまう", s: [2,2,0,0,0,0] },
-      { t: "他人からの評価が気になる", s: [0,3,1,0,0,0] },
-      { t: "経験や年齢と共に自分らしさが出てきた", s: [0,0,2,2,0,0] },
-      { t: "常に自分が自分をどう思うかを大切にしている", s: [0,0,0,2,0,2] }
-    ]
-  },
-  {
-    q: "憧れる人は？",
-    opts: [
-      { t: "美人でスタイルの良い人", s: [3,1,0,0,0,0] },
-      { t: "幸せな家庭を築いている人", s: [0,2,2,0,0,0] },
-      { t: "バランス感覚のある人", s: [0,0,1,2,1,0] },
-      { t: "自立していて知的な人", s: [0,0,0,1,0,3] }
-    ]
-  },
-  {
-    q: "自分の顔に「これまでの人生」が出てきていると感じますか？",
-    opts: [
-      { t: "まだそういう実感はない", s: [2,2,0,0,0,0] },
-      { t: "少し感じ始めているかもしれない", s: [0,1,2,1,0,0] },
-      { t: "感じる。昔の方が良かったかも、と思う", s: [0,0,0,1,2,0] },
-      { t: "強く感じる。良くも悪くも自分の顔に対して肯定感がある", s: [0,0,0,2,0,2] }
-    ]
-  },
-  {
-    q: "最後に、今の自分を直感で一言で表すなら？",
-    opts: [
-      { t: "「模索」——まだ、答えを探している途中", s: [2,1,0,0,0,0] },
-      { t: "「前進」——試して、つくって、前に進んでいる", s: [0,2,1,0,1,0] },
-      { t: "「内観」——自分と向き合い、観察している", s: [0,0,1,2,0,0] },
-      { t: "「変容」——変化してきたし、これからも変化すると思う", s: [0,0,0,0,2,2] }
-    ]
-  }
 ];
 
-const stages = [
+/* ════════════════════════════════════
+   QUESTION DATA
+   Original 10 questions.
+   s[] = [SEEKER, CREATOR, ANCHOR, MUSE, SWITCH, ICON]
+════════════════════════════════════ */
+const QS = [
   {
-    num:"01", en:"AWAKENING", jp:"発 見 期",
-    color:"var(--s01)",
-    desc:"あなたの顔は、今まさに目覚めようとしています。自分の顔に気づき始めたこの瞬間こそが、変化のスタート地点。あなたの中に眠る魅力は、まだ言葉になっていません。その直感を信じてください。"
+    q: '今の自分の顔を見て、一番近い感覚はどれですか？',
+    opts: [
+      { t: 'まだよくわからない。なんとなく気になっている',          s: [3,1,0,0,0,0] },
+      { t: 'もっとうまくできるはず、試している途中',                s: [0,3,1,0,0,0] },
+      { t: '「これが私」という感覚が落ち着いてきた',                s: [0,0,2,1,0,0] },
+      { t: '変化の予感、または変わりたいという気持ちがある',        s: [0,0,0,0,2,1] },
+    ]
   },
   {
-    num:"02", en:"BUILDING", jp:"構 築 期",
-    color:"var(--s02)",
-    desc:"あなたは今、自分の顔を手でつくっている真っ最中。試行錯誤の中にこそ、あなた固有の美しさが宿っています。その探求心と行動力は、変化を生み出す最大の武器です。"
+    q: '美容やメイクへの今の向き合い方に、一番近いのは？',
+    opts: [
+      { t: '何から始めればいいか、わからない',                      s: [3,0,0,0,0,0] },
+      { t: '自分に合うものを探し中、または試すのが楽しい',          s: [0,3,0,0,0,0] },
+      { t: '多くのものを試し、自分の定番が決まっている',            s: [0,0,2,1,0,0] },
+      { t: '今まで合っていたものが合わなくなったと感じる',          s: [0,0,0,0,2,1] },
+    ]
   },
   {
-    num:"03", en:"GROUNDING", jp:"確 立 期",
-    color:"var(--s03)",
-    desc:"あなたは「これが私」という揺るぎない軸を持っています。自分のスタイルに安定感がある。ただ、その先に何かを感じ始めているかもしれません。その感覚は、次の扉が開こうとしているサインかもしれません。"
+    q: '自分の「魅力」について、今どんな感覚がありますか？',
+    opts: [
+      { t: '自分の魅力がよくわからない',                            s: [3,0,0,0,0,0] },
+      { t: '魅力はある気がするが、まだうまく引き出せていない',      s: [1,3,0,0,0,0] },
+      { t: '自分の魅力を把握していて、活かせている',                s: [0,0,2,1,0,0] },
+      { t: '今の魅力より、まだ先があるという感覚',                  s: [0,0,0,1,1,2] },
+    ]
   },
   {
-    num:"04", en:"OWNING", jp:"肯 定 期",
-    color:"var(--s04)",
-    desc:"あなたは今の自分の顔を、まるごと受け入れています。焦りでも諦めでもなく、「これが私だ」という静かな確信がある。その深い自己受容こそが、あなたの顔の最大の魅力です。"
+    q: '他の人から、自分の「印象」について言われるとしたら？',
+    opts: [
+      { t: '意外な指摘や、予想外のことを言われることが多い',        s: [2,1,0,0,1,0] },
+      { t: '「変わったね」と言われることがある',                    s: [1,2,0,0,2,0] },
+      { t: '「変わらないね」「安定してるね」と言われる',            s: [0,0,3,1,0,0] },
+      { t: '「雰囲気がある」「存在感がある」と言われる',            s: [0,0,0,2,0,3] },
+    ]
   },
   {
-    num:"05", en:"TURNING", jp:"転 換 期",
-    color:"var(--s05)",
-    desc:"あなたは今、変化の予感の中にいます。今の自分と、なりたい自分がゆれている。そのゆらぎは弱さではありません。次のステージへの入口に立っているのです。"
+    q: '朝の支度をするとき、気持ちに一番近いのは？',
+    opts: [
+      { t: '面倒くさい',                                            s: [3,1,0,0,0,0] },
+      { t: '新しいものを試すのが楽しい、実験中',                    s: [0,3,0,0,1,0] },
+      { t: 'いつものルーティンがあって、それが心地よい',            s: [0,0,2,1,0,0] },
+      { t: '最近、いつものやり方が物足りなく感じる',                s: [0,0,0,0,3,1] },
+    ]
   },
   {
-    num:"06", en:"BLOOMING", jp:"昇 華 期",
-    color:"var(--s06)",
-    desc:"あなたの顔は、人生を語り始めています。積み重ねてきたものが、美しさになっています。努力しなくても存在感がある。その輝きをまだ言葉にできていないとしたら、それがTOMOの鑑定の出番です。"
-  }
+    q: '外見についてアドバイスされることは？',
+    opts: [
+      { t: '積極的に聞きたい',                                      s: [2,2,0,0,0,0] },
+      { t: '参考にして、試したい',                                  s: [0,2,2,0,0,0] },
+      { t: '一つの意見として聞くが、必ずしも受け入れるかはわからない', s: [0,0,1,3,0,0] },
+      { t: '特に必要だと思わない',                                  s: [0,0,0,2,0,2] },
+    ]
+  },
+  {
+    q: '外見や自分らしさについて、近い感覚は？',
+    opts: [
+      { t: '自分も他人も美醜を無意識にジャッジしてしまう',          s: [2,2,0,0,0,0] },
+      { t: '他人からの評価が気になる',                              s: [0,3,1,0,0,0] },
+      { t: '経験や年齢と共に自分らしさが出てきた',                  s: [0,0,2,2,0,0] },
+      { t: '常に自分が自分をどう思うかを大切にしている',            s: [0,0,0,2,0,2] },
+    ]
+  },
+  {
+    q: '憧れる人は？',
+    opts: [
+      { t: '美人でスタイルの良い人',                                s: [3,1,0,0,0,0] },
+      { t: '幸せな家庭を築いている人',                              s: [0,2,2,0,0,0] },
+      { t: 'バランス感覚のある人',                                  s: [0,0,1,2,1,0] },
+      { t: '自立していて知的な人',                                  s: [0,0,0,1,0,3] },
+    ]
+  },
+  {
+    q: '自分の顔に「これまでの人生」が出てきていると感じますか？',
+    opts: [
+      { t: 'まだそういう実感はない',                                s: [2,2,0,0,0,0] },
+      { t: '少し感じ始めているかもしれない',                        s: [0,1,2,1,0,0] },
+      { t: '感じる。昔の方が良かったかも、と思う',                  s: [0,0,0,1,2,0] },
+      { t: '強く感じる。良くも悪くも自分の顔に対して肯定感がある',  s: [0,0,0,2,0,2] },
+    ]
+  },
+  {
+    q: '最後に、今の自分を直感で一言で表すなら？',
+    opts: [
+      { t: '「模索」——まだ、答えを探している途中',                  s: [2,1,0,0,0,0] },
+      { t: '「前進」——試して、つくって、前に進んでいる',            s: [0,2,1,0,1,0] },
+      { t: '「内観」——自分と向き合い、観察している',                s: [0,0,1,2,0,0] },
+      { t: '「変容」——変化してきたし、これからも変化すると思う',    s: [0,0,0,0,2,2] },
+    ]
+  },
 ];
 
-// ── STATE ─────────────────────────────────────────
-let current = 0;
-let answers = new Array(questions.length).fill(null);
+/* ════════════════════════════════════
+   STATE
+════════════════════════════════════ */
+let totals  = [0,0,0,0,0,0]; // [SEEKER,CREATOR,ANCHOR,MUSE,SWITCH,ICON]
+let answers = {};             // answers[qi] = option-index chosen
+let currentQ = 0;
 
-// ── SCREENS ──────────────────────────────────────
-function showScreen(id) {
-  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
-  window.scrollTo(0,0);
-}
-
-// ── QUIZ LOGIC ────────────────────────────────────
-function startQuiz() {
-  current = 0;
-  answers = new Array(questions.length).fill(null);
-  renderQuestion();
-  showScreen('screen-quiz');
-}
-
-function renderQuestion() {
-  const q = questions[current];
-  const total = questions.length;
-
-  document.getElementById('q-counter').textContent = `Question ${current+1} / ${total}`;
-  document.getElementById('q-text').textContent = q.q;
-
-  const fill = document.getElementById('progress-fill');
-  fill.style.width = ((current / total) * 100) + '%';
-
-  const opts = document.getElementById('q-options');
-  opts.innerHTML = '';
-  const letters = ['A','B','C','D'];
-
-  q.opts.forEach((opt, i) => {
-    const btn = document.createElement('button');
-    btn.className = 'opt-btn' + (answers[current] === i ? ' selected' : '');
-    btn.innerHTML = `<span class="opt-letter">${letters[i]}</span><span>${opt.t}</span>`;
-    btn.onclick = () => selectAnswer(i);
-    opts.appendChild(btn);
+/* ════════════════════════════════════
+   BUILD QUESTIONS
+════════════════════════════════════ */
+function buildQuestions(){
+  const wrap = document.getElementById('q-container');
+  wrap.innerHTML = '';
+  const marks = ['a','b','c','d'];
+  QS.forEach((q, qi) => {
+    const div = document.createElement('div');
+    div.className = 'q-screen' + (qi === 0 ? ' active' : '');
+    div.id = 'q' + qi;
+    div.innerHTML = `
+      <p class="q-label">Q ${qi+1}</p>
+      <h2 class="q-text">${q.q}</h2>
+      <div class="opts">
+        ${q.opts.map((o, oi) => `
+          <button class="opt" data-qi="${qi}" data-oi="${oi}">
+            <span class="opt-mark">${marks[oi]}</span>
+            <span>${o.t}</span>
+          </button>`).join('')}
+      </div>`;
+    wrap.appendChild(div);
   });
 
-  document.getElementById('btn-back').disabled = (current === 0);
-  document.getElementById('btn-next').disabled = (answers[current] === null);
-
-  const nextBtn = document.getElementById('btn-next');
-  nextBtn.textContent = (current === total - 1) ? '結果を見る →' : '次へ →';
-}
-
-function selectAnswer(idx) {
-  answers[current] = idx;
-  document.querySelectorAll('.opt-btn').forEach((btn, i) => {
-    btn.classList.toggle('selected', i === idx);
+  wrap.querySelectorAll('.opt').forEach(btn => {
+    btn.addEventListener('click', () => pick(btn));
   });
-  document.getElementById('btn-next').disabled = false;
 }
 
-function nextQuestion() {
-  if (answers[current] === null) return;
-  if (current < questions.length - 1) {
-    current++;
-    renderQuestion();
-  } else {
-    showResult();
+/* ════════════════════════════════════
+   PICK ANSWER
+════════════════════════════════════ */
+function pick(btn){
+  const qi = +btn.dataset.qi;
+  const oi = +btn.dataset.oi;
+  const s  = QS[qi].opts[oi].s;
+
+  // visual feedback
+  document.querySelectorAll(`#q${qi} .opt`).forEach(b => b.classList.remove('chosen'));
+  btn.classList.add('chosen');
+
+  // add scores
+  s.forEach((v, i) => { totals[i] += v; });
+  // record answer
+  answers[qi] = oi;
+
+  setTimeout(() => {
+    if (qi < QS.length - 1) { goTo(qi + 1); }
+    else { showResult(); }
+  }, 280);
+}
+
+/* ════════════════════════════════════
+   BACK
+════════════════════════════════════ */
+function back(){
+  if (currentQ <= 0) return;
+  const prevQ = currentQ - 1;
+
+  // undo the score from the previous question's answer
+  if (answers[prevQ] !== undefined) {
+    const s = QS[prevQ].opts[answers[prevQ]].s;
+    s.forEach((v, i) => { totals[i] -= v; });
+    delete answers[prevQ];
   }
+  goTo(prevQ);
 }
 
-function prevQuestion() {
-  if (current > 0) {
-    current--;
-    renderQuestion();
+/* ════════════════════════════════════
+   NAVIGATE
+════════════════════════════════════ */
+function goTo(n){
+  document.querySelectorAll('.q-screen').forEach(s => s.classList.remove('active'));
+  const screen = document.getElementById('q' + n);
+  if (screen) {
+    screen.classList.add('active');
+    // restore chosen state if user already answered this question before
+    const btns = screen.querySelectorAll('.opt');
+    btns.forEach((b, i) => {
+      b.classList.toggle('chosen', answers[n] !== undefined && i === answers[n]);
+    });
   }
+  currentQ = n;
+  setProgress(n + 1);
+  updateBackBtn();
+  window.scrollTo({top:0, behavior:'smooth'});
 }
 
-// ── SCORING ───────────────────────────────────────
-function showResult() {
-  const totals = [0,0,0,0,0,0];
-  answers.forEach((ans, qi) => {
-    if (ans === null) return;
-    const s = questions[qi].opts[ans].s;
-    s.forEach((v, si) => { totals[si] += v; });
-  });
-
-  // Find winning stage (highest score, ties go to earlier stage)
-  let maxIdx = 0;
-  for (let i = 1; i < 6; i++) {
-    if (totals[i] > totals[maxIdx]) maxIdx = i;
-  }
-
-  const st = stages[maxIdx];
-  document.getElementById('r-num').textContent  = st.num;
-  document.getElementById('r-en').textContent   = st.en;
-  document.getElementById('r-jp').textContent   = st.jp;
-  document.getElementById('r-desc').textContent = st.desc;
-
-  // Apply stage color as CSS variable on result screen
-  const el = document.getElementById('screen-result');
-  el.style.setProperty('--rc', st.color);
-
-  document.getElementById('progress-fill').style.width = '100%';
-  showScreen('screen-result');
+function setProgress(n){
+  const pct = Math.round((n / QS.length) * 100);
+  document.getElementById('progress-fill').style.width = pct + '%';
+  document.getElementById('q-count').textContent = n + ' / ' + QS.length;
 }
 
-function retryQuiz() {
+function updateBackBtn(){
+  document.getElementById('back-btn').style.visibility =
+    currentQ > 0 ? 'visible' : 'hidden';
+}
+
+/* ════════════════════════════════════
+   SHOW RESULT
+════════════════════════════════════ */
+function showResult(){
+  // find highest index
+  let best = -1, winIdx = 0;
+  totals.forEach((v, i) => { if (v > best){ best = v; winIdx = i; } });
+  const T = TYPES[winIdx];
+
+  // populate card
+  document.getElementById('stage-ghost-num').textContent = T.num;
+  document.getElementById('stage-name-en').textContent   = T.en;
+  document.getElementById('stage-name-jp').textContent   = T.jp;
+  document.getElementById('stage-tagline').textContent   = T.tagline;
+  document.getElementById('stage-desc').textContent      = T.desc;
+  document.getElementById('stage-cursive').textContent   = T.cursive;
+  document.getElementById('stage-tags').innerHTML =
+    T.tags.map(t => `<span class="stage-tag">${t}</span>`).join('');
+
+  // icon
+  const iconEl = document.getElementById('stage-icon');
+  iconEl.innerHTML = T.icon;
+  const svg = iconEl.querySelector('svg');
+  if (svg) svg.style.color = T.accent;
+
+  // colors
+  const body = document.getElementById('stage-card-body');
+  body.style.background  = T.bg;
+  body.style.borderTop   = `3px solid ${T.accent}`;
+  document.getElementById('stage-eyebrow').style.color = T.accent;
+
+  // swap screens
+  document.getElementById('quiz-wrap').style.display = 'none';
+  const rs = document.getElementById('result-screen');
+  rs.style.display = 'block';
+  rs.classList.add('active');
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+
+/* ════════════════════════════════════
+   START / RETRY
+════════════════════════════════════ */
+function startQuiz(){
+  totals   = [0,0,0,0,0,0];
+  answers  = {};
+  currentQ = 0;
+
+  buildQuestions();
+  document.getElementById('intro').style.display          = 'none';
+  document.getElementById('result-screen').style.display  = 'none';
+  document.getElementById('result-screen').classList.remove('active');
+  document.getElementById('quiz-wrap').style.display      = 'block';
+  setProgress(1);
+  goTo(0);
+}
+
+/* ════════════════════════════════════
+   INIT
+════════════════════════════════════ */
+document.getElementById('start-btn').addEventListener('click', startQuiz);
+document.getElementById('back-btn').addEventListener('click', back);
+document.getElementById('retry-btn').addEventListener('click', () => {
+  document.getElementById('result-screen').style.display = 'none';
+  document.getElementById('result-screen').classList.remove('active');
   startQuiz();
-}
+});
 </script>
+
 </body>
 </html>
