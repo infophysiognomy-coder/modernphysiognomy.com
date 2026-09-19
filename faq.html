@@ -72,12 +72,15 @@ a{text-decoration:none;color:inherit}
   display:flex;align-items:flex-start;gap:16px;
   font:600 15px/1.6 'Noto Sans JP';color:var(--ink);
   cursor:pointer;
+  /* button reset — prevents iOS dark-mode from overriding text color */
+  width:100%;background:none;border:none;text-align:left;padding:0;
+  -webkit-appearance:none;appearance:none;
 }
+.faq-q-text{flex:1;color:var(--ink)}
 .faq-q-mark{
   font-family:'EB Garamond',serif;font-style:italic;font-size:22px;
   color:var(--gold);flex-shrink:0;line-height:1.35;margin-top:1px;
 }
-.faq-q-text{flex:1}
 .faq-chevron{margin-left:auto;flex-shrink:0;color:var(--muted);font-size:18px;line-height:1;transition:transform .25s;padding-left:8px}
 .faq-item.open .faq-chevron{transform:rotate(180deg)}
 .faq-a{
@@ -100,6 +103,31 @@ a{text-decoration:none;color:inherit}
 .btn-gold:hover{opacity:.85}
 .btn-ghost{display:inline-flex;align-items:center;gap:6px;padding:13px 28px;border:1.5px solid #4a4540;color:#c8c2bb;font:600 12px 'DM Sans';letter-spacing:.1em;border-radius:3px;transition:.2s}
 .btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
+
+/* FLOW SECTION */
+.flow-block{background:var(--cream);border-radius:12px;padding:48px 40px 44px;margin-top:56px;margin-bottom:20px}
+.flow-block-head{display:flex;align-items:baseline;gap:20px;margin-bottom:36px;border-bottom:2px solid var(--gold-d);padding-bottom:16px}
+.flow-block-en{font:700 10px 'DM Sans';letter-spacing:.28em;text-transform:uppercase;color:var(--gold-d)}
+.flow-block-title{font:500 clamp(20px,3vw,28px)/1.2 'Noto Serif JP';color:var(--ink)}
+.flow-steps-faq{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.flow-step-faq{
+  background:var(--paper);border:1px solid var(--line);
+  border-top:3px solid var(--gold);border-radius:4px;
+  padding:22px 18px 24px;
+}
+.flow-step-num{font:700 10px 'DM Sans';letter-spacing:.22em;color:var(--gold-d);margin-bottom:10px}
+.flow-step-faq h4{font:600 14px/1.4 'Noto Sans JP';color:var(--ink);margin-bottom:8px}
+.flow-step-faq p{font-size:12px;line-height:1.9;color:var(--muted)}
+.flow-step-note{display:block;margin-top:8px;font-size:11px;color:var(--gold-d);line-height:1.7;border-top:1px solid var(--line);padding-top:8px;margin-top:10px}
+.flow-cta{text-align:center;margin-top:28px}
+@media(max-width:700px){
+  .flow-block{padding:36px 24px 32px}
+  .flow-steps-faq{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:440px){
+  .flow-steps-faq{grid-template-columns:1fr}
+  .flow-block-head{flex-direction:column;gap:6px}
+}
 
 /* FOOTER */
 .site-footer{background:#0F0D0B;color:#524740;padding:32px 0;font:400 11px 'DM Sans';letter-spacing:.08em}
@@ -243,8 +271,43 @@ a{text-decoration:none;color:inherit}
       </ul>
     </div>
 
+    <!-- 鑑定の流れ -->
+    <div class="flow-block">
+      <div class="flow-block-head">
+        <span class="flow-block-en">HOW IT WORKS</span>
+        <span class="flow-block-title">鑑定の流れ</span>
+      </div>
+      <div class="flow-steps-faq">
+        <article class="flow-step-faq">
+          <div class="flow-step-num">01 / REQUEST</div>
+          <h4>お申し込み</h4>
+          <p>鑑定メニューページのフォームより、ご希望のメニューをお知らせください。生年月日は任意ですが、ご記載いただくと追加情報をお伝えできます。</p>
+        </article>
+        <article class="flow-step-faq">
+          <div class="flow-step-num">02 / DETAILS</div>
+          <h4>詳細メールの確認</h4>
+          <p>２営業日以内に、鑑定日程・写真の準備方法・お支払い方法などの詳細をご案内するメールをお送りします。</p>
+          <span class="flow-step-note">FACE STAGE SESSIONは、Zoomの日程調整も含まれます。</span>
+        </article>
+        <article class="flow-step-faq">
+          <div class="flow-step-num">03 / PAYMENT</div>
+          <h4>ご入金・正式申込み</h4>
+          <p>メール内容にご同意いただき、指定の方法でご入金ください。ご入金の確認をもって正式なお申し込みとなります。</p>
+          <span class="flow-step-note">ご入金がない場合、予約は成立しません。</span>
+        </article>
+        <article class="flow-step-faq">
+          <div class="flow-step-num">04 / READING</div>
+          <h4>鑑定・鑑定書お届け</h4>
+          <p>写真鑑定（FACE GAP READING）は鑑定書をPDFデータでお届け。Zoom鑑定（FACE STAGE SESSION）は当日のセッション後、8ページの鑑定書をPDFデータでお送りします。</p>
+        </article>
+      </div>
+      <div class="flow-cta">
+        <a href="menu.html#contact" class="btn-gold">鑑定を申し込む →</a>
+      </div>
+    </div>
+
     <div class="cta-box">
-      <p>こちらに掲載のないご質問は、お問い合わせフォームよりお気軽にどうぞ。<br>通常3営業日以内にご返信いたします。</p>
+      <p>こちらに掲載のないご質問は、お問い合わせフォームよりお気軽にどうぞ。<br>通常２営業日以内にご返信いたします。</p>
       <div class="cta-box-btns">
         <a href="menu.html#contact" class="btn-gold">鑑定を申し込む →</a>
         <a href="index.html#contact" class="btn-ghost">その他のお問い合わせ</a>
