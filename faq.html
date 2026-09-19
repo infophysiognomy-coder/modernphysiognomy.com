@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="FACE STAGE個人鑑定に関するよくあるご質問。鑑定内容・対象者・画像の準備・支払い方法などをまとめました。">
+<title>よくあるご質問 | FACE STAGE™</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=EB+Garamond:ital,wght@0,500;1,500&family=Noto+Sans+JP:wght@400;500;600&family=Noto+Serif+JP:wght@500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#F6F2EA;--ink:#1d1b19;--muted:#716B64;
+  --line:#D8D0C5;--paper:#FFFDFC;--dark:#161412;
+  --gold:#D2B06F;--gold-d:#a77839;--cream:#EFE8DC;
+}
+@media(prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#18160E;--ink:#EDE7DC;--muted:#9A9088;
+    --line:#302C26;--paper:#211F18;--dark:#0F0D0A;
+    --cream:#211F18;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#18160E;--ink:#EDE7DC;--muted:#9A9088;
+  --line:#302C26;--paper:#211F18;--dark:#0F0D0A;
+  --cream:#211F18;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:'Noto Sans JP',sans-serif;line-height:1.8}
+a{text-decoration:none;color:inherit}
+
+.container{width:min(840px,calc(100% - 40px));margin:auto}
+
+/* NAV */
+.site-nav{position:fixed;z-index:10;top:0;left:0;right:0;background:rgba(246,242,234,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+@media(prefers-color-scheme:dark){
+  :root:not([data-theme="light"]) .site-nav{background:rgba(24,22,14,.96)}
+}
+.nav-inner{height:64px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.site-brand{font:700 13px 'DM Sans';letter-spacing:.22em;color:var(--ink)}
+.site-links{display:flex;align-items:center;gap:16px;font:500 11px 'DM Sans';letter-spacing:.07em;color:var(--muted)}
+.site-links a:hover{color:var(--ink)}
+.nav-cta{background:var(--gold);color:#161412!important;padding:8px 14px;border-radius:999px;font-weight:600!important}
+.nav-cta:hover{opacity:.88}
+@media(max-width:560px){.site-links a:not(.nav-cta){display:none}}
+
+/* PAGE HEADER */
+.page-header{
+  padding:130px 0 72px;
+  background:linear-gradient(180deg, var(--paper), var(--bg));
+  border-bottom:1px solid var(--line);
+  text-align:center;
+}
+.eyebrow{font:600 11px 'DM Sans';letter-spacing:.28em;text-transform:uppercase;color:var(--gold-d);margin-bottom:18px}
+.page-header h1{font:500 clamp(32px,5vw,56px)/1.2 'Noto Serif JP';letter-spacing:.05em;margin-bottom:20px}
+.page-header .lead{color:var(--muted);font-size:15px;line-height:1.9;max-width:560px;margin:0 auto}
+
+/* BACK LINK */
+.back-link{display:inline-flex;align-items:center;gap:8px;margin-top:24px;font:500 11px 'DM Sans';letter-spacing:.08em;color:var(--muted);border-bottom:1px solid transparent;transition:.2s}
+.back-link:hover{color:var(--gold-d);border-color:var(--gold-d)}
+
+/* FAQ SECTION */
+.faq-section{padding:80px 0 120px}
+.faq-group{margin-bottom:64px}
+.group-title{font:600 11px 'DM Sans';letter-spacing:.22em;text-transform:uppercase;color:var(--gold-d);padding-bottom:16px;border-bottom:2px solid var(--gold-d);margin-bottom:0;display:inline-block}
+.faq-list{margin-top:0}
+.faq-item{border-bottom:1px solid var(--line);padding:28px 0}
+.faq-item:first-child{border-top:1px solid var(--line);margin-top:24px}
+.faq-q{
+  display:flex;align-items:flex-start;gap:16px;
+  font:600 15px/1.6 'Noto Sans JP';color:var(--ink);
+  cursor:pointer;
+}
+.faq-q-mark{
+  font-family:'EB Garamond',serif;font-style:italic;font-size:22px;
+  color:var(--gold);flex-shrink:0;line-height:1.35;margin-top:1px;
+}
+.faq-q-text{flex:1}
+.faq-chevron{margin-left:auto;flex-shrink:0;color:var(--muted);font-size:18px;line-height:1;transition:transform .25s;padding-left:8px}
+.faq-item.open .faq-chevron{transform:rotate(180deg)}
+.faq-a{
+  display:none;
+  padding:14px 0 4px 38px;
+  font:400 14px/2 'Noto Sans JP';
+  color:var(--muted);
+}
+.faq-item.open .faq-a{display:block}
+
+/* CTA BOX */
+.cta-box{
+  background:var(--dark);color:#fff;
+  padding:60px 48px;text-align:center;
+  border-radius:4px;margin-top:20px;
+}
+.cta-box p{color:#948d86;font-size:13px;line-height:1.9;margin-bottom:28px}
+.cta-box-btns{display:flex;justify-content:center;flex-wrap:wrap;gap:12px}
+.btn-gold{display:inline-flex;align-items:center;gap:6px;padding:14px 28px;background:var(--gold);color:#161412;font:700 12px 'DM Sans';letter-spacing:.1em;border-radius:3px;transition:opacity .2s}
+.btn-gold:hover{opacity:.85}
+.btn-ghost{display:inline-flex;align-items:center;gap:6px;padding:13px 28px;border:1.5px solid #4a4540;color:#c8c2bb;font:600 12px 'DM Sans';letter-spacing:.1em;border-radius:3px;transition:.2s}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
+
+/* FOOTER */
+.site-footer{background:#0F0D0B;color:#524740;padding:32px 0;font:400 11px 'DM Sans';letter-spacing:.08em}
+.foot-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.foot-brand{font-weight:700;color:#9a9088;font-size:13px;letter-spacing:.18em}
+
+@media(max-width:600px){
+  .page-header{padding:110px 0 56px}
+  .faq-a{padding-left:0}
+  .cta-box{padding:40px 24px}
+}
+</style>
+</head>
+<body>
+
+<nav class="site-nav" aria-label="サイトナビ">
+  <div class="container nav-inner">
+    <a class="site-brand" href="index.html">FACE STAGE™</a>
+    <div class="site-links">
+      <a href="index.html#stages">6つのステージ</a>
+      <a href="quiz.html">無料診断</a>
+      <a class="nav-cta" href="menu.html">鑑定を申し込む</a>
+    </div>
+  </div>
+</nav>
+
+<header class="page-header">
+  <div class="container">
+    <p class="eyebrow">FAQ</p>
+    <h1>よくあるご質問</h1>
+    <p class="lead">個人鑑定についてよくいただくご質問をまとめました。<br>こちらに掲載のない場合はお問い合わせください。</p>
+    <a href="menu.html" class="back-link">← 鑑定メニューに戻る</a>
+  </div>
+</header>
+
+<section class="faq-section">
+  <div class="container">
+
+    <div class="faq-group">
+      <span class="group-title">鑑定について</span>
+      <ul class="faq-list" role="list">
+
+        <li class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            <span class="faq-q-mark">Q</span>
+            <span class="faq-q-text">個人鑑定はどういうものですか？</span>
+            <span class="faq-chevron">▾</span>
+          </button>
+          <div class="faq-a">
+            一言で言えば、「現代の人相・観相鑑定」です。<br>
+            古い人相学のように、性格や運命の決めつけではなく、顔に表れているあなたの特徴や印象を現実的に読み解いていきます。
+          </div>
+        </li>
+
+        <li class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            <span class="faq-q-mark">Q</span>
+            <span class="faq-q-text">男性も鑑定してもらえますか？</span>
+            <span class="faq-chevron">▾</span>
+          </button>
+          <div class="faq-a">
+            男性はFACE GAP READING（画像鑑定）のみ承っております。<br>
+            Zoom鑑定（FACE STAGE SESSION）は、女性限定となっております。
+          </div>
+        </li>
+
+        <li class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            <span class="faq-q-mark">Q</span>
+            <span class="faq-q-text">整形していますが、鑑定してもらえますか？</span>
+            <span class="faq-chevron">▾</span>
+          </button>
+          <div class="faq-a">
+            恐れ入りますが、整形している方、加工した画像では正しい鑑定が行えませんので、お断りしております。<br>
+            整形を否定するものではなく、鑑定上の理由です。
+          </div>
+        </li>
+
+        <li class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            <span class="faq-q-mark">Q</span>
+            <span class="faq-q-text">鑑定の年齢制限はありますか？</span>
+            <span class="faq-chevron">▾</span>
+          </button>
+          <div class="faq-a">
+            成人であれば制限はございません。<br>
+            実際に人相が確立されるのは40代以降ですので、45歳以上の方は人生の履歴が表れます。<br>
+            若い方は、今の自分を客観的に把握して人と比べず、自分の長所を活かすことにおいて意味がある鑑定になると思います。
+          </div>
+        </li>
+
+      </ul>
+    </div>
+
+    <div class="faq-group">
+      <span class="group-title">画像・準備について</span>
+      <ul class="faq-list" role="list">
+
+        <li class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            <span class="faq-q-mark">Q</span>
+            <span class="faq-q-text">画像はどのようなものを提出すればいいですか？</span>
+            <span class="faq-chevron">▾</span>
+          </button>
+          <div class="faq-a">
+            正面から顔全体がはっきり見える画像と、耳・頭部の形状が分かる横顔の2枚をお願いいたします。<br>
+            前髪で額が隠れている場合は、前髪を上げた状態で撮影したものをお願いします。
+          </div>
+        </li>
+
+        <li class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            <span class="faq-q-mark">Q</span>
+            <span class="faq-q-text">鑑定時のメイクや服装は？</span>
+            <span class="faq-chevron">▾</span>
+          </button>
+          <div class="faq-a">
+            観相鑑定は、美醜やセンスの判定ではありませんので、最も自分らしい、いつものメイクや服装でお願いします。
+          </div>
+        </li>
+
+      </ul>
+    </div>
+
+    <div class="faq-group">
+      <span class="group-title">お支払いについて</span>
+      <ul class="faq-list" role="list">
+
+        <li class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            <span class="faq-q-mark">Q</span>
+            <span class="faq-q-text">支払いはどうすればいいですか？</span>
+            <span class="faq-chevron">▾</span>
+          </button>
+          <div class="faq-a">
+            銀行振込とクレジットカード決済をお選びいただけます。<br>
+            クレジットカード決済は、住所・氏名・電話番号の個人情報が必要になります。
+          </div>
+        </li>
+
+      </ul>
+    </div>
+
+    <div class="cta-box">
+      <p>こちらに掲載のないご質問は、お問い合わせフォームよりお気軽にどうぞ。<br>通常3営業日以内にご返信いたします。</p>
+      <div class="cta-box-btns">
+        <a href="menu.html#contact" class="btn-gold">鑑定を申し込む →</a>
+        <a href="index.html#contact" class="btn-ghost">その他のお問い合わせ</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container foot-inner">
+    <span class="foot-brand">FACE STAGE™</span>
+    <span class="foot-copy">Modern Physiognomy Method &nbsp;·&nbsp; by Tomo &nbsp;·&nbsp; © 2026</span>
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll('.faq-q').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    // close all
+    document.querySelectorAll('.faq-item.open').forEach(el => {
+      el.classList.remove('open');
+      el.querySelector('.faq-q').setAttribute('aria-expanded','false');
+    });
+    if (!isOpen) {
+      item.classList.add('open');
+      btn.setAttribute('aria-expanded','true');
+    }
+  });
+});
+</script>
+
+</body>
+</html>
