@@ -617,7 +617,7 @@ img{display:block;max-width:100%}
       </div>
       <div class="form-group">
         <label class="form-label" for="idx-subject">お問い合わせ項目</label>
-        <select class="form-select" id="idx-subject" name="subject" required>
+        <select class="form-select" id="idx-subject" name="inquiry_type" required>
           <option value="" disabled selected>選択してください</option>
           <option value="FACE GAP READING 画像鑑定 ¥11,000">FACE GAP READING 画像鑑定 ¥11,000</option>
           <option value="FACE STAGE SESSION Zoom鑑定 ¥33,000">FACE STAGE SESSION Zoom鑑定 ¥33,000</option>
@@ -693,7 +693,7 @@ if (idxForm) {
  const emailLink = document.getElementById('idx-email-fallback');
  const syncEmail = () => {
   const lines = [];
-  const fields = [['name','氏名'],['email','メールアドレス'],['subject','お問い合わせ項目'],['birthday','生年月日'],['card_reading','カードからのメッセージ'],['message','ご質問・ご相談']];
+  const fields = [['name','氏名'],['email','メールアドレス'],['inquiry_type','ご希望のメニュー・お問い合わせ'],['birthday','生年月日'],['card_reading','カードからのメッセージ'],['message','ご質問・ご相談']];
   for (const [key,label] of fields) {
    const field = idxForm.elements.namedItem(key);
    if (!field || field.disabled) continue;
