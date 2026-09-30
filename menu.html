@@ -449,7 +449,7 @@ a:focus-visible,button:focus-visible{outline-color:#796020}
 <p class="before-submit">送信後、内容とお支払い方法をメールでご案内します。<br>ご入金をもって正式なお申し込みとなります。</p>
 <button type="submit" class="form-submit-m">この内容で送信する →</button><p id="menu-error" role="alert" hidden></p>
           <p class="form-success-m" id="menu-success" role="status">送信が完了しました。1営業日以内にご連絡いたします。</p>
-        </form>
+        </form><p style="margin-top:20px;line-height:1.8">メールでのお問い合わせ：<a id="menu-email-fallback" href="mailto:info.physiognomy@gmail.com">info.physiognomy@gmail.com</a><br><small>送信できない場合は、こちらからご連絡ください。入力内容をメールに引き継げます。</small></p>
         <p class="form-note-m">
           返信が届かない場合は、迷惑メールフォルダをご確認ください。<br>メールでのお問い合わせ：<a href="mailto:info.physiognomy@gmail.com">info.physiognomy@gmail.com</a><br><br>※ 生年月日をご記載いただくと、鑑定の際にプラスの情報をお伝えできます。<br>
           ※ ご入金をもって正式なお申し込みとなります。
@@ -499,38 +499,42 @@ document.querySelectorAll('[data-menu]').forEach(link => link.addEventListener('
  const select = document.getElementById('m-subject');
  select.value = link.dataset.menu === 'photo' ? 'FACE GAP READING 画像鑑定 ¥11,000' : 'FACE STAGE SESSION Zoom鑑定 ¥33,000';
 }));
-// Existing FormSubmit delivery service
+// Submit and retain a usable email alternative during service failures.
 const menuForm = document.getElementById('menu-contact-form');
 if (menuForm) {
-  menuForm.addEventListener('submit', async e => {
-    e.preventDefault();
-    const btn = menuForm.querySelector('.form-submit-m');
-    document.getElementById('menu-success').style.display = 'none';
-    document.getElementById('menu-error').hidden = true;
-    btn.textContent = '送信中...';
-    btn.disabled = true;
-    try {
-      const res = await fetch('https://formsubmit.co/ajax/info.physiognomy@gmail.com', {
-        method: 'POST',
-        body: new FormData(menuForm),
-        headers: {Accept: 'application/json'}
-      });
-      const result = await res.json();
-      if (res.ok && (result.success === true || result.success === 'true')) {
-        menuForm.reset();
-        document.getElementById('menu-success').style.display = 'block';
-        btn.textContent = '送信しました';
-      } else {
-        throw new Error('Submission failed');
-      }
-    } catch {
-      const error = document.getElementById('menu-error');
-      error.textContent = '送信できませんでした。時間をおいて再度お試しいただくか、下記メールアドレスへご連絡ください。';
-      error.hidden = false;
-      btn.textContent = 'もう一度送信する →';
-      btn.disabled = false;
-    }
-  });
+ const emailLink = document.getElementById('menu-email-fallback');
+ const syncEmail = () => {
+  const lines = [];
+  for (const [key,value] of new FormData(menuForm)) {
+   if (!key.startsWith('_') && value) lines.push(key + ': ' + value);
+  }
+  emailLink.href = 'mailto:info.physiognomy@gmail.com?subject=' + encodeURIComponent('【現代観相学研究所】お問い合わせ') + '&body=' + encodeURIComponent(lines.join('\n'));
+ };
+ menuForm.addEventListener('input', syncEmail);
+ menuForm.addEventListener('change', syncEmail);
+ emailLink.addEventListener('click', syncEmail);
+ menuForm.addEventListener('submit', async e => {
+  e.preventDefault();
+  const btn = menuForm.querySelector('.form-submit-m');
+  const error = document.getElementById('menu-error');
+  const success = document.getElementById('menu-success');
+  error.hidden = true; success.style.display = 'none';
+  btn.textContent = '送信中...'; btn.disabled = true;
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 20000);
+  try {
+   const res = await fetch(menuForm.action, {method:'POST', body:new FormData(menuForm), headers:{Accept:'application/json'}, signal:controller.signal});
+   if (!res.ok) throw new Error('Delivery service unavailable');
+   const result = await res.json();
+   if (result.success !== true && result.success !== 'true') throw new Error('Delivery not confirmed');
+   menuForm.reset(); syncEmail(); success.style.display = 'block';
+   btn.textContent = '送信しました';
+  } catch {
+   error.textContent = '送信完了を確認できませんでした。入力内容は残っています。下のメールリンクからお問い合わせください。';
+   error.hidden = false; syncEmail();
+   btn.textContent = 'もう一度送信する →'; btn.disabled = false;
+  } finally {clearTimeout(timeout);}
+ });
 }
 </script>
 <button class="back-to-top" type="button" aria-label="ページ上部へ戻る" title="ページ上部へ戻る" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 12 6-6 6 6M12 6v13"/></svg></button>

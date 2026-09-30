@@ -632,8 +632,8 @@ img{display:block;max-width:100%}
         <input class="form-input" type="date" id="idx-dob" name="birthday">
       </div>
       <button type="submit" class="form-submit">送信する →</button>
-      <p class="form-success" id="idx-success">送信が完了しました。1営業日以内にご連絡いたします。</p>
-    </form>
+      <p id="idx-error" role="alert" hidden></p><p class="form-success" id="idx-success">送信が完了しました。1営業日以内にご連絡いたします。</p>
+    </form><p style="margin-top:20px;line-height:1.8">メールでのお問い合わせ：<a id="idx-email-fallback" href="mailto:info.physiognomy@gmail.com">info.physiognomy@gmail.com</a><br><small>送信できない場合は、こちらからご連絡ください。入力内容をメールに引き継げます。</small></p>
     <p class="contact-note">
       ※ 生年月日をご記載いただくと、鑑定の際にプラスの情報をお伝えできます。
     </p>
@@ -689,34 +689,42 @@ document.querySelectorAll('.faq-q').forEach(btn => {
   });
 });
 
-// Existing FormSubmit delivery service
+// Submit and retain a usable email alternative during service failures.
 const idxForm = document.getElementById('index-contact-form');
 if (idxForm) {
-  idxForm.addEventListener('submit', async e => {
-    e.preventDefault();
-    const btn = idxForm.querySelector('.form-submit');
-    btn.textContent = '送信中...';
-    btn.disabled = true;
-    try {
-      const res = await fetch('https://formsubmit.co/ajax/info.physiognomy@gmail.com', {
-        method: 'POST',
-        body: new FormData(idxForm),
-        headers: {Accept: 'application/json'}
-      });
-      const result = await res.json();
-      if (res.ok && (result.success === true || result.success === 'true')) {
-        idxForm.reset();
-        document.getElementById('idx-success').style.display = 'block';
-        btn.textContent = '送信しました';
-      } else {
-        btn.textContent = 'エラーが発生しました。再度お試しください。';
-        btn.disabled = false;
-      }
-    } catch {
-      btn.textContent = '送信に失敗しました。再度お試しください。';
-      btn.disabled = false;
-    }
-  });
+ const emailLink = document.getElementById('idx-email-fallback');
+ const syncEmail = () => {
+  const lines = [];
+  for (const [key,value] of new FormData(idxForm)) {
+   if (!key.startsWith('_') && value) lines.push(key + ': ' + value);
+  }
+  emailLink.href = 'mailto:info.physiognomy@gmail.com?subject=' + encodeURIComponent('【現代観相学研究所】お問い合わせ') + '&body=' + encodeURIComponent(lines.join('\n'));
+ };
+ idxForm.addEventListener('input', syncEmail);
+ idxForm.addEventListener('change', syncEmail);
+ emailLink.addEventListener('click', syncEmail);
+ idxForm.addEventListener('submit', async e => {
+  e.preventDefault();
+  const btn = idxForm.querySelector('.form-submit');
+  const error = document.getElementById('idx-error');
+  const success = document.getElementById('idx-success');
+  error.hidden = true; success.style.display = 'none';
+  btn.textContent = '送信中...'; btn.disabled = true;
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 20000);
+  try {
+   const res = await fetch(idxForm.action, {method:'POST', body:new FormData(idxForm), headers:{Accept:'application/json'}, signal:controller.signal});
+   if (!res.ok) throw new Error('Delivery service unavailable');
+   const result = await res.json();
+   if (result.success !== true && result.success !== 'true') throw new Error('Delivery not confirmed');
+   idxForm.reset(); syncEmail(); success.style.display = 'block';
+   btn.textContent = '送信しました';
+  } catch {
+   error.textContent = '送信完了を確認できませんでした。入力内容は残っています。下のメールリンクからお問い合わせください。';
+   error.hidden = false; syncEmail();
+   btn.textContent = 'もう一度送信する →'; btn.disabled = false;
+  } finally {clearTimeout(timeout);}
+ });
 }
 </script>
 <button class="back-to-top" type="button" aria-label="ページ上部へ戻る" title="ページ上部へ戻る" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 12 6-6 6 6M12 6v13"/></svg></button>
