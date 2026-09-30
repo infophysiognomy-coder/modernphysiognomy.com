@@ -419,10 +419,8 @@ a:focus-visible,button:focus-visible{outline-color:#796020}
           通常1営業日以内にご返信いたします。
         </p>
 
-        <form class="contact-form-m" method="POST" action="https://formsubmit.co/ajax/info.physiognomy@gmail.com" id="menu-contact-form">
+        <form class="contact-form-m" method="POST" action="https://formspree.io/f/mgavddao" id="menu-contact-form">
           <input type="hidden" name="_subject" value="【現代観相学研究所】鑑定お申し込み">
-          <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_template" value="table">
           <div class="form-group-m">
             <label class="form-label-m" for="m-name">氏名 <span class="required">必須</span></label>
             <input class="form-input-m" type="text" id="m-name" name="name" autocomplete="name" required placeholder="山田 花子">
@@ -449,7 +447,7 @@ a:focus-visible,button:focus-visible{outline-color:#796020}
 <p class="before-submit">送信後、内容とお支払い方法をメールでご案内します。<br>ご入金をもって正式なお申し込みとなります。</p>
 <button type="submit" class="form-submit-m">この内容で送信する →</button><p id="menu-error" role="alert" hidden></p>
           <p class="form-success-m" id="menu-success" role="status">送信が完了しました。1営業日以内にご連絡いたします。</p>
-        </form><p style="margin-top:20px;line-height:1.8">メールでのお問い合わせ：<a id="menu-email-fallback" href="mailto:info.physiognomy@gmail.com">info.physiognomy@gmail.com</a><br><small>送信できない場合は、こちらからご連絡ください。入力内容をメールに引き継げます。</small></p>
+        </form><p style="margin-top:20px;line-height:1.8;overflow-wrap:anywhere">メールでのお問い合わせ：<a id="menu-email-fallback" style="color:#d2b16e;text-decoration:underline;text-underline-offset:4px" href="mailto:info.physiognomy@gmail.com">info.physiognomy@gmail.com</a><br><small>送信できない場合は、上のメールアドレスをクリックしてください（スマホではタップ）。メールアプリが開き、入力した内容が本文に入ります。内容をご確認のうえ、メールを送信してください。</small></p>
         <p class="form-note-m">
           返信が届かない場合は、迷惑メールフォルダをご確認ください。<br>メールでのお問い合わせ：<a href="mailto:info.physiognomy@gmail.com">info.physiognomy@gmail.com</a><br><br>※ 生年月日をご記載いただくと、鑑定の際にプラスの情報をお伝えできます。<br>
           ※ ご入金をもって正式なお申し込みとなります。
@@ -505,10 +503,15 @@ if (menuForm) {
  const emailLink = document.getElementById('menu-email-fallback');
  const syncEmail = () => {
   const lines = [];
-  for (const [key,value] of new FormData(menuForm)) {
-   if (!key.startsWith('_') && value) lines.push(key + ': ' + value);
+  const fields = [['name','氏名'],['email','メールアドレス'],['subject','お問い合わせ項目'],['birthday','生年月日'],['card_reading','カードからのメッセージ'],['message','ご質問・ご相談']];
+  for (const [key,label] of fields) {
+   const field = menuForm.elements.namedItem(key);
+   if (!field || field.disabled) continue;
+   let value = field.value.trim();
+   if (key === 'birthday' && value) value = value.replace(/-/g, '/');
+   lines.push(label + '：' + (value || '未記入'));
   }
-  emailLink.href = 'mailto:info.physiognomy@gmail.com?subject=' + encodeURIComponent('【現代観相学研究所】お問い合わせ') + '&body=' + encodeURIComponent(lines.join('\n'));
+  emailLink.href = 'mailto:info.physiognomy@gmail.com?subject=' + encodeURIComponent('【現代観相学研究所】お問い合わせ') + '&body=' + encodeURIComponent(lines.join('\r\n'));
  };
  menuForm.addEventListener('input', syncEmail);
  menuForm.addEventListener('change', syncEmail);
@@ -526,11 +529,11 @@ if (menuForm) {
    const res = await fetch(menuForm.action, {method:'POST', body:new FormData(menuForm), headers:{Accept:'application/json'}, signal:controller.signal});
    if (!res.ok) throw new Error('Delivery service unavailable');
    const result = await res.json();
-   if (result.success !== true && result.success !== 'true') throw new Error('Delivery not confirmed');
+   if (result.errors || result.ok === false) throw new Error('Delivery not confirmed');
    menuForm.reset(); syncEmail(); success.style.display = 'block';
    btn.textContent = '送信しました';
   } catch {
-   error.textContent = '送信完了を確認できませんでした。入力内容は残っています。下のメールリンクからお問い合わせください。';
+   error.textContent = '送信完了を確認できませんでした。入力内容は残っています。下のメールアドレスをクリック（スマホではタップ）して、メールでお問い合わせください。';
    error.hidden = false; syncEmail();
    btn.textContent = 'もう一度送信する →'; btn.disabled = false;
   } finally {clearTimeout(timeout);}
