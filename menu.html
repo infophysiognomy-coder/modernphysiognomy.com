@@ -355,6 +355,8 @@ html{scroll-padding-top:86px}body{background:#fff;color:#242424}a,button{transit
 .advisor-profile-link a:hover{background:#F06436;color:#fff}
 .advisor-profile-link a:focus-visible{outline:3px solid #F06436;outline-offset:3px}
 @media(max-width:520px){.advisor-profile-link{margin-top:40px}.advisor-profile-link a{width:100%}}
+
+#menu-contact-form textarea.form-input-m{display:block;min-height:132px;resize:vertical;line-height:1.8;font-family:'Noto Sans JP',sans-serif}
 </style>
 <style>
 /* 2026-11-04: accessible booking navigation and overflow repair */
@@ -562,7 +564,7 @@ html,body{max-width:100%;overflow-x:clip}
 <label class="form-label-m" for="m-dob">生年月日<span class="optional">（任意）</span></label>
 <input class="form-input-m" id="m-dob" name="birthday" type="date"/>
 </div>
-<div class="form-group-m"><label class="form-label-m" for="m-message">ご質問・ご相談 <span class="optional">（任意）</span></label><textarea class="form-input-m" id="m-message" name="message" placeholder="気になることや、ご相談したいことをお書きください。" rows="4"></textarea></div>
+<div class="form-group-m"><label class="form-label-m" for="m-message">ご質問・ご相談 <span class="optional">（任意）</span></label><textarea class="form-input-m" id="m-message" name="message" placeholder="お問い合わせ内容や、ご質問・ご相談を自由にご記入ください。" rows="5"></textarea></div>
 <p class="before-submit">送信後、内容とお支払い方法をメールでご案内します。<br/>ご入金をもって正式なお申し込みとなります。</p>
 <button class="form-submit-m" type="submit">この内容で送信する →</button><p hidden="" id="menu-error" role="alert"></p>
 <p class="form-success-m" id="menu-success" role="status">送信が完了しました。1営業日以内にご連絡いたします。</p>

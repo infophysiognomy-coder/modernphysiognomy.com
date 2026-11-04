@@ -433,6 +433,8 @@ html{scroll-padding-top:86px}body{background:#fff;color:#242424}a,button{transit
 .hero .hero-explainer h2,.hero .hero-explainer .panel-points p,.hero .hero-explainer .panel-points strong{color:#242424!important}
 .hero .hero-explainer small{color:#65605c!important}
 .hero .hero-explainer .panel-points>div{border-color:#e9c9b9!important}
+
+#index-contact-form textarea.form-input{display:block;min-height:132px;resize:vertical;line-height:1.8;font-family:'Noto Sans JP',sans-serif}
 </style>
 <style>
 /* 2026-11-04: conversion-first responsive refinement */
@@ -810,6 +812,10 @@ html,body{max-width:100%;overflow-x:clip}
 <div class="form-group">
 <label class="form-label" for="idx-dob">生年月日<span class="optional">（任意）</span></label>
 <input class="form-input" id="idx-dob" name="birthday" type="date"/>
+</div>
+<div class="form-group">
+<label class="form-label" for="idx-message">ご質問・ご相談 <span class="optional">（任意）</span></label>
+<textarea class="form-input" id="idx-message" name="message" rows="5" placeholder="お問い合わせ内容や、ご質問・ご相談を自由にご記入ください。"></textarea>
 </div>
 <button class="form-submit" type="submit">送信する →</button>
 <p class="form-success" id="idx-success" role="status">送信が完了しました。1営業日以内にご連絡いたします。</p>
