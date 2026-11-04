@@ -786,10 +786,8 @@ html,body{max-width:100%;overflow-x:clip}
       鑑定・講座・メディア取材・コラボレーション・講演などのご相談は、以下のフォームよりお気軽にどうぞ。<br/>
       通常1営業日以内にご返信いたします。
     </p>
-<div aria-label="Instagramでのお問い合わせ" class="instagram-contact"><svg aria-hidden="true" viewbox="0 0 24 24"><rect height="19" rx="5" width="19" x="2.5" y="2.5"></rect><circle cx="12" cy="12" r="4.2"></circle><circle cx="17.8" cy="6.4" fill="#e85e34" r="1" stroke="none"></circle></svg><div><div class="ig-heading">インスタ：<a href="https://www.instagram.com/modernphysiognomy/" rel="noopener noreferrer" target="_blank">@modernphysiognomy</a></div><p>DMでお問い合わせ受け付けています</p></div></div><form action="https://formsubmit.co/ajax/info.physiognomy@gmail.com" class="contact-form-wrap" id="index-contact-form" method="POST">
+<div aria-label="Instagramでのお問い合わせ" class="instagram-contact"><svg aria-hidden="true" viewbox="0 0 24 24"><rect height="19" rx="5" width="19" x="2.5" y="2.5"></rect><circle cx="12" cy="12" r="4.2"></circle><circle cx="17.8" cy="6.4" fill="#e85e34" r="1" stroke="none"></circle></svg><div><div class="ig-heading">インスタ：<a href="https://www.instagram.com/modernphysiognomy/" rel="noopener noreferrer" target="_blank">@modernphysiognomy</a></div><p>DMでお問い合わせ受け付けています</p></div></div><form action="https://formspree.io/f/mgavddao" class="contact-form-wrap" id="index-contact-form" method="POST">
 <input name="_subject" type="hidden" value="【現代観相学研究所】お問い合わせ"/>
-<input name="_captcha" type="hidden" value="false"/>
-<input name="_template" type="hidden" value="table"/>
 <div class="form-group">
 <label class="form-label" for="idx-name">氏名</label>
 <input class="form-input" id="idx-name" name="name" placeholder="山田 花子" required="" type="text"/>
@@ -814,7 +812,8 @@ html,body{max-width:100%;overflow-x:clip}
 <input class="form-input" id="idx-dob" name="birthday" type="date"/>
 </div>
 <button class="form-submit" type="submit">送信する →</button>
-<p class="form-success" id="idx-success">送信が完了しました。1営業日以内にご連絡いたします。</p>
+<p class="form-success" id="idx-success" role="status">送信が完了しました。1営業日以内にご連絡いたします。</p>
+<p id="idx-error" role="alert" hidden style="margin-top:12px;color:#B93C17;font-size:14px">送信できませんでした。時間をおいて再度お試しいただくか、メールまたはInstagramのDMでご連絡ください。</p>
 </form>
 <p class="contact-note">
       ※ 生年月日をご記載いただくと、鑑定の際にプラスの情報をお伝えできます。
@@ -868,30 +867,30 @@ document.querySelectorAll('.faq-q').forEach(btn => {
   });
 });
 
-// Formspree AJAX submit (index form)
+// Formspree: keep the form fields unchanged and report genuine HTTP success only.
 const idxForm = document.getElementById('index-contact-form');
 if (idxForm) {
-  idxForm.addEventListener('submit', async e => {
-    e.preventDefault();
+  idxForm.addEventListener('submit', async (event) => {
+    event.preventDefault();
     const btn = idxForm.querySelector('.form-submit');
+    const success = document.getElementById('idx-success');
+    const error = document.getElementById('idx-error');
+    success.style.display = 'none';
+    error.hidden = true;
     btn.textContent = '送信中...';
     btn.disabled = true;
     try {
-      const res = await fetch('https://formsubmit.co/ajax/info.physiognomy@gmail.com', {
-        method: 'POST',
-        body: new FormData(idxForm),
-        headers: {Accept: 'application/json'}
+      const response = await fetch(idxForm.action, {
+        method: 'POST', body: new FormData(idxForm), headers: {'Accept': 'application/json'}
       });
-      if (res.ok) {
-        idxForm.reset();
-        document.getElementById('idx-success').style.display = 'block';
-        btn.textContent = '送信しました';
-      } else {
-        btn.textContent = 'エラーが発生しました。再度お試しください。';
-        btn.disabled = false;
-      }
-    } catch {
-      btn.textContent = '送信に失敗しました。再度お試しください。';
+      if (!response.ok) throw new Error('HTTP ' + response.status);
+      idxForm.reset();
+      success.style.display = 'block';
+      btn.textContent = '送信しました';
+    } catch (err) {
+      console.error('Inquiry submission failed:', err);
+      error.hidden = false;
+      btn.textContent = 'もう一度送信する →';
       btn.disabled = false;
     }
   });

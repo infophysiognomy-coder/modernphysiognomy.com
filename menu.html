@@ -537,10 +537,8 @@ html,body{max-width:100%;overflow-x:clip}
           ご希望のメニューを選択の上、以下のフォームよりお申し込みください。<br/>
           通常1営業日以内にご返信いたします。
         </p>
-<div aria-label="Instagramでのお問い合わせ" class="instagram-contact"><svg aria-hidden="true" viewbox="0 0 24 24"><rect height="19" rx="5" width="19" x="2.5" y="2.5"></rect><circle cx="12" cy="12" r="4.2"></circle><circle cx="17.8" cy="6.4" fill="#e85e34" r="1" stroke="none"></circle></svg><div><div class="ig-heading">インスタ：<a href="https://www.instagram.com/modernphysiognomy/" rel="noopener noreferrer" target="_blank">@modernphysiognomy</a></div><p>DMでお問い合わせ受け付けています</p></div></div><form action="https://formsubmit.co/ajax/info.physiognomy@gmail.com" class="contact-form-m" id="menu-contact-form" method="POST">
+<div aria-label="Instagramでのお問い合わせ" class="instagram-contact"><svg aria-hidden="true" viewbox="0 0 24 24"><rect height="19" rx="5" width="19" x="2.5" y="2.5"></rect><circle cx="12" cy="12" r="4.2"></circle><circle cx="17.8" cy="6.4" fill="#e85e34" r="1" stroke="none"></circle></svg><div><div class="ig-heading">インスタ：<a href="https://www.instagram.com/modernphysiognomy/" rel="noopener noreferrer" target="_blank">@modernphysiognomy</a></div><p>DMでお問い合わせ受け付けています</p></div></div><form action="https://formspree.io/f/mgavddao" class="contact-form-m" id="menu-contact-form" method="POST">
 <input name="_subject" type="hidden" value="【現代観相学研究所】鑑定お申し込み"/>
-<input name="_captcha" type="hidden" value="false"/>
-<input name="_template" type="hidden" value="table"/>
 <div class="form-group-m">
 <label class="form-label-m" for="m-name">氏名 <span class="required">必須</span></label>
 <input autocomplete="name" class="form-input-m" id="m-name" name="name" placeholder="山田 花子" required="" type="text"/>
@@ -615,34 +613,29 @@ document.querySelectorAll('[data-menu]').forEach(link => link.addEventListener('
  const menuValues = {"photo": "写真鑑定 ¥11,000（簡易鑑定書付き）", "session-light": "Zoom鑑定40分 ¥11,000（鑑定書なし）", "session": "Zoom鑑定40分 ¥33,000（鑑定書付き）"};
  select.value = menuValues[link.dataset.menu];
 }));
-// Existing FormSubmit delivery service
+// Formspree: verify the HTTP status rather than FormSubmit-specific JSON.
 const menuForm = document.getElementById('menu-contact-form');
 if (menuForm) {
-  menuForm.addEventListener('submit', async e => {
-    e.preventDefault();
+  menuForm.addEventListener('submit', async (event) => {
+    event.preventDefault();
     const btn = menuForm.querySelector('.form-submit-m');
-    document.getElementById('menu-success').style.display = 'none';
-    document.getElementById('menu-error').hidden = true;
+    const success = document.getElementById('menu-success');
+    const error = document.getElementById('menu-error');
+    success.style.display = 'none';
+    error.hidden = true;
     btn.textContent = '送信中...';
     btn.disabled = true;
     try {
-      const res = await fetch('https://formsubmit.co/ajax/info.physiognomy@gmail.com', {
-        method: 'POST',
-        body: new FormData(menuForm),
-        headers: {Accept: 'application/json'}
+      const response = await fetch(menuForm.action, {
+        method: 'POST', body: new FormData(menuForm), headers: {'Accept': 'application/json'}
       });
-      const result = await res.json();
-      if (res.ok && (result.success === true || result.success === 'true')) {
-        menuForm.reset();
-        document.getElementById('menu-success').style.display = 'block';
-        btn.textContent = '送信しました';
-      } else {
-        throw new Error('Submission failed');
-        btn.disabled = false;
-      }
-    } catch {
-      const error = document.getElementById('menu-error');
-      error.textContent = '送信できませんでした。時間をおいて再度お試しいただくか、下記メールアドレスへご連絡ください。';
+      if (!response.ok) throw new Error('HTTP ' + response.status);
+      menuForm.reset();
+      success.style.display = 'block';
+      btn.textContent = '送信しました';
+    } catch (err) {
+      console.error('Reading inquiry submission failed:', err);
+      error.textContent = '送信できませんでした。時間をおいて再度お試しいただくか、下記メールアドレスまたはInstagramのDMでご連絡ください。';
       error.hidden = false;
       btn.textContent = 'もう一度送信する →';
       btn.disabled = false;
